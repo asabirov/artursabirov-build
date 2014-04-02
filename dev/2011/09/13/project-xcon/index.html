@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='ru-RU'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Разработка сервиса видео-конференций</title>
+    <link href='http://feeds.feedburner.com/artursabirov' rel='alternate' title='ArturSabirov.ru' type='application/rss+xml'>
+    <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js?29' type='text/javascript'></script>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/dev/feed.xml" />
+    <script>
+      VK.init({apiId: 2348265, onlyWidgets: true});
+    </script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24946626-1']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <section>
+        <h1 id='page_heading'>
+          <a href='/'>Блог Артура Сабирова</a>
+        </h1>
+        <nav>
+          <a href="/dev">Разработка</a>
+          <a href="/projects/">Проекты</a>
+          <a href="/books">Обзор книг</a>
+          <a href="/about/">О себе</a>
+        </nav>
+      </section>
+    </header>
+    <section id='single-column'>
+      <article>
+        <h1>Разработка сервиса видео-конференций</h1>
+        <p>Задача была собрать сервис видео-конференций (вебинары). Ничего подобного раньше не приходилось создавать.</p>
+        
+        <p>Инструменты: Cirrus (Stratus), для сайта Rails и для клиента Flex. На момент создания, rtmp и мульткаст были лишь в java и Adobe Flash.</p>
+        
+        <p>Это был первый опыт работы с ActionScript 3. С флешем уже приходилось работать года 4 назад. Разрабатывал казуальные мини-игры для промо-акций на AS2. Переход на третью версию занял буквально несколько дней. </p>
+        
+        <p>Теперь о трудностях, с которыми пришлось столкнуться.</p>
+        
+        <h3>Flex</h3>
+        
+        <p>Документация ужасная. Хоть какое-то представление об архитектуре удалось получить из шедших с Flex примеров и <a href="http://www.adobe.com/devnet/flex/tourdeflex.html.">Flex De Tour</a>
+        Что касается комьюнити. У меня сложилось ощущение, что всех разработчиков Flex в конце 2010 массово отправили на переквалификацию. Комьюнити почти не подает признаков жизни. </p>
+        
+        <p>Один flash-программист высказал мнение, что фреймворк предназначался для корпоративного сектора. Программистов обучают сертифицированные Adobe&#39;ом тренеры. Отсюда и информационный вакуум. Похоже на правду. Ведь Enterprise еще тот отстой.</p>
+        
+        <p>Ладно, это всё пустяки. После прочтения книжки <a href="http://www.goodreads.com/book/show/7473613-flex-4-cookbook.">Flex 4 Cookbook: Real-world recipes for developing RIA</a>
+        Из статей, конечно, <a href="http://www.adobe.com/devnet/flex/articles/best_practices_pt1.html,">Flex Best Practices</a>
+        <a href="http://opensource.adobe.com/wiki/display/flexsdk/Coding+Conventions.">AS3 Coding Convetions</a></p>
+        
+        <p>Несколько советов по Flex&#39;у:
+        * Как бы это глупо не звучало — используйте фреймворк для фреймворка. Обратить внимание стоит на <a href="http://www.robotlegs.org">Robotlegs</a>
+        и <a href="http://puremvc.org.">PureMVC</a></p>
+        
+        <ul>
+        <li>Если вам нужно к компоненту добавить активный элемент, например кнопку — наследуйте (extens). Если просто декоративный, тогда скины (Skins).</li>
+        <li>Не пишите код в mxml. Это отвратительно. Для вызова классов в mxml есть тэг Declarations.</li>
+        <li>Все цветовые настройки держите во внешнем css. Кастомные скины по возможности делать с учетом глобального chromeColor.</li>
+        </ul>
+        
+        <h3>Cirrus, Red5 и Flash Media Server</h3>
+        
+        <p>После создания первого прототипа оказалось, что Cirrus не пробивает NAT&#39;ы.  Окей, перенес всё на Red5. Но у него проблемы мультикастом, точнее сказать его там вообще нет. И так мы пришли к <a href="http://www.adobe.com/products/flashmediaserver/amazonwebservices.">Flash Media Server</a></p>
+        
+        <p>Ситуация с FMS немного лучше, чем с Flex. С низкой вероятность, но всё же ответы можно получить на <a href="http://forums.adobe.com/community/flash/flash_media_server.">официальном форуме</a></p>
+        
+        <p>По FMS пока дам 1 совет. Используйте client.send() для передачи данных клиентам, вместо SharedObject. Доступ к SO лучше вообще запретить в через дерективу client.readAccess.</p>
+        
+        <h3>Презентации</h3>
+        
+        <p>На текущий момент для конвертации используются SWFTools, OpenOffice и jodconverter. И пока не нашел способа аккуратной открытия pptx и docx.</p>
+        
+        <h3>Запуск</h3>
+        
+        <p>FMS поднят через Apache. Сайт на Passanger с Nginx. OpenOffice на уровне демона. FmsConsole для мониторинга нагрузки. Всё работает.</p>
+        <h4 class='meta'>
+          <div class='tags'>
+            <a href="/dev/tags/flash/">flash</a>
+            <a href="/dev/tags/flex/">flex</a>
+          </div>
+        </h4>
+        <div id='disqus_thread'></div>
+        <script>
+          var disqus_shortname = 'artursabirovru'; // required: replace example with your forum shortname
+          
+          //var disqus_identifier = 'unique_dynamic_id_1234';
+          var disqus_url = 'http://artursabirov.ru//2011/09/13/project-xcon';
+          
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+              dsq.async = true; dsq.defer = 'defer';
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+      </article>
+    </section>
+    <script>
+      var disqus_shortname = 'artursabirovru';
+      (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+      
+      
+      var addthis_config = {
+          pubid: "ra-4e4f7ce25d6f5675",
+          data_track_clickback: true,
+          ui_language: "ru",
+          templates: {twitter: '{{text}} {{lurl}}'},
+          data_ga_tracker: "UA-24946626-1"
+      };
+    </script>
+    <script defer="defer" type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e4f7ce25d6f5675&domready=1"></script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
+  </body>
+</html>
+

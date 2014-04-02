@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='ru-RU'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Cramp и Rails</title>
+    <link href='http://feeds.feedburner.com/artursabirov' rel='alternate' title='ArturSabirov.ru' type='application/rss+xml'>
+    <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js?29' type='text/javascript'></script>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/dev/feed.xml" />
+    <script>
+      VK.init({apiId: 2348265, onlyWidgets: true});
+    </script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24946626-1']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <section>
+        <h1 id='page_heading'>
+          <a href='/'>Блог Артура Сабирова</a>
+        </h1>
+        <nav>
+          <a href="/dev">Разработка</a>
+          <a href="/projects/">Проекты</a>
+          <a href="/books">Обзор книг</a>
+          <a href="/about/">О себе</a>
+        </nav>
+      </section>
+    </header>
+    <section id='single-column'>
+      <article>
+        <h1>Cramp и Rails</h1>
+        <p>Если вам нужна асинхронность, то лучше сразу задуматься, нужен ли rails вовсе. На Cramp или Node.js можно без проблем совместить comet-транспорт с обычными http-request&#39;ами. Cramp хорошо сочитается с Sinatra, который недавно обзавелся своей версией <a href="https://github.com/stevehodgkiss/sinatra-asset-pipeline.">Assets Pipeline</a></p>
+        
+        <h3>Cramp</h3>
+        
+        <p><a href="http://cramp.in/.">Cramp</a>
+        Легкий фреймворк, использует EventMachine и файберсы. Умеет  работать с http, веб-сокетами, flash-сокетами и long-polling-запросами для старых браузеров.</p>
+        
+        <p>Пример приложения на Cramp взят отсюда — http://www.html5rocks.com/en/tutorials/casestudies/sunlight_streamcongress.html.</p>
+        
+        <p>app.ru</p>
+        <pre class="highlight plaintext">require "rubygems"
+        require "bundler"
+        Bundler.require
+        require 'cramp'
+        require 'http_router'
+        require 'active_support/json'
+        require 'thin'
+        
+        Cramp::Websocket.backend = :thin # используем асинхронный сервер thin
+        
+        class LiveSocket &lt; Cramp::Websocket
+           periodic_timer :check_activities, :every =&gt; 15
+        
+           def check_activities
+             @latest_activity ||= nil
+             new_activities = find_activities_since(@latest_activity)
+             @latest_activity = new_activities.first unless new_activities.empty?
+             render new_activities.to_json
+           end
+         end
+        
+        routes = HttpRouter.new do
+          add('/live').to(LiveSocket)
+        end
+        run routes
+        
+        </pre>
+        
+        <p>Запуск приложения</p>
+        <pre class="highlight plaintext">bundle exec thin --timeout 0 -R app.ru start
+        
+        </pre>
+        
+        <h3>Goliath</h3>
+        
+        <p>Сам я лично с ним не работал, но и упомянуть о нем не мог. Довольно известное решение в узких кругах. Посмотрите обязательно — <a href="https://github.com/postrank-labs/goliath.">https://github.com/postrank-labs/goliath</a></p>
+        
+        <h3>Node.js</h3>
+        
+        <p>Это конечно не ruby-way, зато выбор ноды дает нам некоторое <a href="http://posterous.mclov.in/unscientific-nodejs-vs-cramp-benchmarks.">преимущество в производительности</a>
+        Что будет немаловажным при нагрузках.</p>
+        
+        <p>Дополнительные npm модули для транспорта и маршрутизации:</p>
+        
+        <ul>
+        <li><p><a href="http://faye.jcoglan.com.">Faye</a></p></li>
+        <li><p><a href="https://github.com/maccman/juggernaut">Jaggernaut</a></p></li>
+        <li><p><a href="https://github.com/learnboost/socket.io">Socket.io</a></p></li>
+        </ul>
+        
+        <p>Подойдет любой из них. Возможности у них примерно равны.</p>
+        
+        <p>Пример приложения с использованием Faye (app.js):</p>
+        <pre class="highlight javascript"><span class="kd">var</span> <span class="nx">Faye</span>   <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'faye'</span><span class="p">),</span>
+            <span class="nx">server</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Faye</span><span class="p">.</span><span class="nx">NodeAdapter</span><span class="p">({</span><span class="na">mount</span><span class="p">:</span> <span class="s1">'/live'</span><span class="p">});</span>
+        
+        <span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">9292</span><span class="p">);</span> <span class="c1">// создаем сервер
+        </span>
+        <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">server</span><span class="p">.</span><span class="nx">getClient</span><span class="p">()</span>
+        
+        <span class="c1">// прослушка канала messages
+        </span><span class="nx">client</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s1">'/messages'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">.</span><span class="nx">text</span><span class="p">);</span>
+        <span class="p">});</span>
+        
+        <span class="c1">// публикация в канал messages
+        </span><span class="nx">client</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">'/messages'</span><span class="p">,</span> <span class="p">{</span>
+          <span class="na">text</span><span class="p">:</span> <span class="s1">'Hello world'</span>
+        <span class="p">});</span>
+        
+        </pre>
+        
+        <p>Запуск:</p>
+        
+        <p><code>forever app.js</code></p>
+        
+        <h3>Erlang</h3>
+        
+        <p>Сложность языка накладывают свои ограничения по скорости разработки и квалификации, но это лучший выбор если вы ограничены в серверных ресурсах.</p>
+        
+        <p>Пример работы с веб-сокетами на фреймворке MochiWeb — <a href="https://github.com/RJ/mochiweb-websockets/tree/master/examples/websockets">https://github.com/RJ/mochiweb-websockets/tree/master/examples/websockets</a></p>
+        
+        <h3>Склейка</h3>
+        
+        <p>Ситуация теперь следующая. Сайт на 80м порту (пусть будет Nginx), real-time сервер на 9292. Чтобы избежать нарушения <a href="http://en.wikipedia.org/wiki/Same_origin_policy">same-origin-policy</a>
+        нам потребуется объединить обе части сервера. </p>
+        
+        <p>Этой проблемы можно было избежать, написав всё на Node.JS или Cramp. О чем говорил в начале статьи.</p>
+        
+        <h3>HAPRoxy</h3>
+        
+        <p>Сам Nginx не умеет маршрутизировать websocket&#39;ы и http на одном хосте. В этом поможет HAProxy — очень простой и производительный proxy-сервер.</p>
+        <pre class="highlight plaintext">wget http://haproxy.1wt.eu/download/1.4/src/haproxy-1.4.18.tar.gz
+        tar zxvf http://haproxy.1wt.eu/download/1.4/src/haproxy-1.4.18.tar.gz
+        mv haproxy-1.4.18 /usr/local/haproxy
+        ln -s /usr/local/haproxy/haproxy /usr/sbin/haproxy
+        
+        </pre>
+        
+        <p>Скрипт автозапуска для CentOS:</p>
+        <pre class="highlight shell"><span class="c"># description: HA-Proxy is a TCP/HTTP reverse proxy which is particularly suited \</span>
+        <span class="c">#              for high availability environments.</span>
+        <span class="c"># processname: haproxy</span>
+        <span class="c"># chkconfig: 345 20 80</span>
+        <span class="c"># config: /etc/haproxy.cfg</span>
+        <span class="c"># pidfile: /var/run/haproxy.pid</span>
+        
+        <span class="c"># Source function library.</span>
+        <span class="k">if</span> <span class="o">[</span> -f /etc/init.d/functions <span class="o">]</span>; <span class="k">then</span>
+          . /etc/init.d/functions
+        <span class="k">elif</span> <span class="o">[</span> -f /etc/rc.d/init.d/functions <span class="o">]</span> ; <span class="k">then</span>
+          . /etc/rc.d/init.d/functions
+        <span class="k">else
+          </span><span class="nb">exit </span>0
+        <span class="k">fi</span>
+        
+        <span class="c"># Source networking configuration.</span>
+        . /etc/sysconfig/network
+        
+        <span class="c"># Check that networking is up.</span>
+        <span class="o">[</span> <span class="k">${</span><span class="nv">NETWORKING</span><span class="k">}</span> <span class="o">=</span> <span class="s2">"no"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">exit </span>0
+        
+        <span class="o">[</span> -f /etc/haproxy.cfg <span class="o">]</span> <span class="o">||</span> <span class="nb">exit </span>1
+        
+        <span class="nv">RETVAL</span><span class="o">=</span>0
+        
+        start<span class="o">()</span> <span class="o">{</span>
+          /usr/sbin/haproxy -c -q -f /etc/haproxy.cfg
+          <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne 0 <span class="o">]</span>; <span class="k">then
+            </span><span class="nb">echo</span> <span class="s2">"Errors found in configuration file."</span>
+            <span class="k">return </span>1
+          <span class="k">fi
+        
+          </span><span class="nb">echo</span> -n <span class="s2">"Starting HAproxy: "</span>
+          daemon /usr/sbin/haproxy -D -f /etc/haproxy.cfg -p /var/run/haproxy.pid
+          <span class="nv">RETVAL</span><span class="o">=</span><span class="nv">$?</span>
+          <span class="nb">echo</span>
+          <span class="o">[</span> <span class="nv">$RETVAL</span> -eq 0 <span class="o">]</span> <span class="o">&amp;&amp;</span> touch /var/lock/subsys/haproxy
+          <span class="k">return</span> <span class="nv">$RETVAL</span>
+        <span class="o">}</span>
+        
+        stop<span class="o">()</span> <span class="o">{</span>
+          <span class="nb">echo</span> -n <span class="s2">"Shutting down HAproxy: "</span>
+          killproc haproxy -USR1
+          <span class="nv">RETVAL</span><span class="o">=</span><span class="nv">$?</span>
+          <span class="nb">echo</span>
+          <span class="o">[</span> <span class="nv">$RETVAL</span> -eq 0 <span class="o">]</span> <span class="o">&amp;&amp;</span> rm -f /var/lock/subsys/haproxy
+          <span class="o">[</span> <span class="nv">$RETVAL</span> -eq 0 <span class="o">]</span> <span class="o">&amp;&amp;</span> rm -f /var/run/haproxy.pid
+          <span class="k">return</span> <span class="nv">$RETVAL</span>
+        <span class="o">}</span>
+        
+        restart<span class="o">()</span> <span class="o">{</span>
+          /usr/sbin/haproxy -c -q -f /etc/haproxy.cfg
+          <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne 0 <span class="o">]</span>; <span class="k">then
+            </span><span class="nb">echo</span> <span class="s2">"Errors found in configuration file, check it with 'haproxy check'."</span>
+            <span class="k">return </span>1
+          <span class="k">fi
+          </span>stop
+          start
+        <span class="o">}</span>
+        
+        check<span class="o">()</span> <span class="o">{</span>
+          /usr/sbin/haproxy -c -q -V -f /etc/haproxy.cfg
+        <span class="o">}</span>
+        
+        rhstatus<span class="o">()</span> <span class="o">{</span>
+          status haproxy
+        <span class="o">}</span>
+        
+        condrestart<span class="o">()</span> <span class="o">{</span>
+          <span class="o">[</span> -e /var/lock/subsys/haproxy <span class="o">]</span> <span class="o">&amp;&amp;</span> restart <span class="o">||</span> :
+        <span class="o">}</span>
+        
+        <span class="c"># See how we were called.</span>
+        <span class="k">case</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="k">in
+          </span>start<span class="p">)</span>
+            start
+            <span class="p">;;</span>
+          stop<span class="p">)</span>
+            stop
+            <span class="p">;;</span>
+          restart<span class="p">)</span>
+            restart
+            <span class="p">;;</span>
+          reload<span class="p">)</span>
+            restart
+            <span class="p">;;</span>
+          condrestart<span class="p">)</span>
+            condrestart
+            <span class="p">;;</span>
+          status<span class="p">)</span>
+            rhstatus
+            <span class="p">;;</span>
+          check<span class="p">)</span>
+            check
+            <span class="p">;;</span>
+          <span class="k">*</span><span class="p">)</span>
+            <span class="nb">echo</span> <span class="s2">$"Usage: haproxy {start|stop|restart|reload|condrestart|status|check}"</span>
+            <span class="nv">RETVAL</span><span class="o">=</span>1
+        <span class="k">esac
+        
+        </span><span class="nb">exit</span> <span class="nv">$RETVAL</span>
+        
+        </pre>
+        <pre class="highlight plaintext">chkconfig haproxy on
+        
+        </pre>
+        
+        <p>Настроим конфигурацию для адреса 85.17.162.170. Nginx будет 8081 порту, Node.JS на 9292. Вместо Node.JS может быть любой бэкэнд, конфиг от этого не сильно изменится.</p>
+        
+        <p>/etc/haproxy.conf</p>
+        <pre class="highlight plaintext">global
+            maxconn 4096
+            spread-checks 5
+            pidfile /var/run/haproxy.pid
+        
+            user    haproxy
+            group   haproxy
+        
+        defaults
+            mode http
+            option forwardfor
+            option abortonclose
+            option httpclose
+            no option accept-invalid-http-request
+            no option accept-invalid-http-response
+            option forwardfor except 127.0.0.1 header X-Forwarded-For
+        
+        frontend all 85.17.162.170:80
+            timeout client 1d
+        
+            acl is_nodejs url_sub faye # если мы используется Faye
+            acl is_nodejs hdr(upgrade) -i websocket # определяем веб-сокеты по заголовкам
+            acl is_nodejs hdr_beg(Host) -i ws # определяем веб-сокеты по ws://
+            use_backend nodejs_backend if is_nodejs # нужные отправляем на Node.JS
+            default_backend   nginx_backend    # остальные на nginx
+        
+        backend nodejs_backend
+            server server1 85.17.162.170:9292 maxconn 200 check
+            balance roundrobin    
+            timeout queue 5s
+            timeout server  86400000
+        
+        backend nginx_backend
+            balance roundrobin
+            option forwardfor
+            timeout connect 100s    
+            timeout server 25s
+            server server1 85.17.162.170:8081 check
+        
+        </pre>
+        
+        <p>Необходимо убедиться, что Nginx больше не прослушивает 80й порт и в конфигах стоит &ldquo;listen 85.17.162.92:8081&rdquo;.</p>
+        
+        <p>Запуск.</p>
+        <pre class="highlight plaintext">service haproxy start
+        
+        </pre>
+        
+        <h3>Frontend</h3>
+        
+        <p>Рассмотрим на примере с Faye. </p>
+        
+        <p>Подключаем faye.js. </p>
+        <pre class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"http://domain.com/faye.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        </pre>
+        
+        <p>Этот файл генерируется самим faye.</p>
+        
+        <p>Подключаемся к каналу /messages:</p>
+        <pre class="highlight html">var client = new Faye.Client('http://domain.com/live');
+        var subscription = client.subscribe('/messages', function(message) {
+            console.log(message)
+        });
+        
+        </pre>
+        
+        <h3>Frontend</h3>
+        
+        <p>Рассмотрим на примере с Faye. </p>
+        
+        <p>Подключаем faye.js. </p>
+        <pre class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"http://domain.com/faye.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        </pre>
+        
+        <p>Этот файл генерируется самим faye.</p>
+        
+        <p>Подключаемся к каналу /messages:</p>
+        <pre class="highlight html">var client = new Faye.Client('http://domain.com/live');
+        var subscription = client.subscribe('/messages', function(message) {
+            console.log(message)
+        });
+        
+        </pre>
+        
+        <h3>Резюме</h3>
+        
+        <p>Real-time приложения требуют особого подхода и далеко не все классические инструменты подходят для этих целей. Ruby хоть умеет создавать треды, обладает реализацией eventmachine и даже облегчает код файберсами, но сильно проигрывает в производительности асинхронным технологиям. В Node.JS и Erlang изначально были продуманы проблемы многозадачности и эффективного использования ресурсов. В real-time приложениях это может быть критически важным фактором.</p>
+        <h4 class='meta'>
+          <div class='tags'>
+            <a href="/dev/tags/rails/">rails</a>
+            <a href="/dev/tags/ruby/">ruby</a>
+            <a href="/dev/tags/node-js/">node.js</a>
+            <a href="/dev/tags/erlang/">erlang</a>
+          </div>
+        </h4>
+        <div id='disqus_thread'></div>
+        <script>
+          var disqus_shortname = 'artursabirovru'; // required: replace example with your forum shortname
+          
+          //var disqus_identifier = 'unique_dynamic_id_1234';
+          var disqus_url = 'http://artursabirov.ru//2011/10/19/assync-servers';
+          
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+              dsq.async = true; dsq.defer = 'defer';
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+      </article>
+    </section>
+    <script>
+      var disqus_shortname = 'artursabirovru';
+      (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+      
+      
+      var addthis_config = {
+          pubid: "ra-4e4f7ce25d6f5675",
+          data_track_clickback: true,
+          ui_language: "ru",
+          templates: {twitter: '{{text}} {{lurl}}'},
+          data_ga_tracker: "UA-24946626-1"
+      };
+    </script>
+    <script defer="defer" type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e4f7ce25d6f5675&domready=1"></script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
+  </body>
+</html>
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Артур Сабиров</title>
+  <subtitle>Обзор книг</subtitle>
+  <updated>2011-08-31T20:00:00Z</updated>
+  <author>
+    <name>Артур Сабиров</name>
+  </author>
+  <entry>
+    <title>Pro JavaScript Design Patterns</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/pro-javascript-design-patterns/"/>
+    <id>http://artursabirov.ru/books/pro-javascript-design-patterns/</id>
+    <published>2011-08-31T20:00:00Z</published>
+    <updated>2011-08-31T20:00:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;В последнее время по теме паттернов вышло множество книг, это одна из них.&lt;/p&gt;
+
+&lt;p&gt;В ней рассматриваются популярные паттерны: Factory, Bridge, Composite, Facade, Adapter, Decorator, Flyweight, Proxy. Очень подробно описаны условия для применения, реализация и их недостатки.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Deadline, Том ДеМарко</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/deadline-demarco/"/>
+    <id>http://artursabirov.ru/books/deadline-demarco/</id>
+    <published>2011-08-12T20:00:00Z</published>
+    <updated>2011-08-12T20:00:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Deadline — история руководителя проектов, которому было поручено собрать команду для разработки нескольких проектов на маленьком остравном государстве. Срок ограничен, ресурсы нет. Главному герою приходится столкнуться со множеством трудностей, которые известны каждому менеджеру, но не каждый умеет с ними справляться.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

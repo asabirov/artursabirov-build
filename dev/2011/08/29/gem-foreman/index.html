@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='ru-RU'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Foreman</title>
+    <link href='http://feeds.feedburner.com/artursabirov' rel='alternate' title='ArturSabirov.ru' type='application/rss+xml'>
+    <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js?29' type='text/javascript'></script>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/dev/feed.xml" />
+    <script>
+      VK.init({apiId: 2348265, onlyWidgets: true});
+    </script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24946626-1']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <section>
+        <h1 id='page_heading'>
+          <a href='/'>Блог Артура Сабирова</a>
+        </h1>
+        <nav>
+          <a href="/dev">Разработка</a>
+          <a href="/projects/">Проекты</a>
+          <a href="/books">Обзор книг</a>
+          <a href="/about/">О себе</a>
+        </nav>
+      </section>
+    </header>
+    <section id='single-column'>
+      <article>
+        <h1>Foreman</h1>
+        <p>Во время разработки приходится запускать множество процессов: thin, faye, spork, sphinx, node.js. Пр. У каждого проекта своё окружение и переключение между ними занимает не мало времени.  Упростить задачу может Foreman.</p>
+        
+        <h3>Установка</h3>
+        <pre class="highlight shell">gem install foreman
+        </pre>
+        
+        <p>Создаем конфиг Procfile, в котором прописываем все процессы для запуска.</p>
+        <pre class="highlight plaintext">spork: spork
+        thin: bundle exec rails s thin -p 3003
+        faye: bundle exec rackup faye.ru -s thin -E development
+        resque_sheduler: bundle exec rake resque:scheduler
+        
+        </pre>
+        
+        <h3>Использование</h3>
+        
+        <p>Запуск всех разом</p>
+        <pre class="highlight plaintext">foreman start
+        
+        </pre>
+        
+        <p>Или только необходимые</p>
+        <pre class="highlight plaintext">foreman start thin, faye
+        
+        </pre>
+        
+        <h3>Автозапуск</h3>
+        
+        <p>Генерация скрипта для inittab:</p>
+        <pre class="highlight plaintext">foreman export inittab
+        
+        </pre>
+        
+        <p>и upstart:</p>
+        <pre class="highlight plaintext">foreman export upstart
+        
+        </pre>
+        
+        <h3>Ссылки</h3>
+        
+        <p>Документация — <a href="http://ddollar.github.com/foreman">http://ddollar.github.com/foreman/</a></p>
+        
+        <p>Репозиторий — <a href="https://github.com/ddollar/foreman">https://github.com/ddollar/foreman</a></p>
+        
+        <h3>Резюме</h3>
+        
+        <p>Foreman&#39;у не не хватает запуска в фоновом режиме. Чтобы каждый процесс можно было перезапустить не задев остальные. В остальном же со своей задачей прекрасно справляется.</p>
+        <h4 class='meta'>
+          <div class='tags'>
+            <a href="/dev/tags/ruby/">ruby</a>
+          </div>
+        </h4>
+        <div id='disqus_thread'></div>
+        <script>
+          var disqus_shortname = 'artursabirovru'; // required: replace example with your forum shortname
+          
+          //var disqus_identifier = 'unique_dynamic_id_1234';
+          var disqus_url = 'http://artursabirov.ru//2011/08/29/gem-foreman';
+          
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+              dsq.async = true; dsq.defer = 'defer';
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+      </article>
+    </section>
+    <script>
+      var disqus_shortname = 'artursabirovru';
+      (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+      
+      
+      var addthis_config = {
+          pubid: "ra-4e4f7ce25d6f5675",
+          data_track_clickback: true,
+          ui_language: "ru",
+          templates: {twitter: '{{text}} {{lurl}}'},
+          data_ga_tracker: "UA-24946626-1"
+      };
+    </script>
+    <script defer="defer" type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e4f7ce25d6f5675&domready=1"></script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
+  </body>
+</html>
+

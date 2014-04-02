@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Артур Сабиров</title>
+  <subtitle>Разработка</subtitle>
+  <updated>2013-01-21T20:00:00Z</updated>
+  <author>
+    <name>Артур Сабиров</name>
+  </author>
+  <entry>
+    <title>Rails-footnote и RubyMine</title>
+    <link rel="alternate" href="http://artursabirov.ru/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/"/>
+    <id>http://artursabirov.ru/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/</id>
+    <published>2013-01-21T20:00:00Z</published>
+    <updated>2013-01-21T20:00:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;h3&gt;PhpStorm  и Xdebug&lt;/h3&gt;
+
+&lt;p&gt;В backtrace&amp;#39;е у XDebug предусмотрен простой переход к нужному файлу и на нужную строку. Только использует он протокол txmt (TextMate), что не пригодно с PhpStorm.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/xdebug.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Решение нашел тут: &lt;a href="http://youtrack.jetbrains.com/issue/IDEA-65879"&gt;http://youtrack.jetbrains.com/issue/IDEA-65879&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ставим плагин Remote Call: &lt;a href="http://plugins.jetbrains.net/plugin?pr=webide&amp;amp;amp;pluginId=6027"&gt;http://plugins.jetbrains.net/plugin?pr=webide&amp;amp;pluginId=6027&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;И прописываем в конфиге xdebug:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;xdebug.file_link_format = "javascript: var r = new XMLHttpRequest; r.open(\"get\", \"http://localhost:8091?message=%f:%l\");r.send()"
+
+&lt;/pre&gt;
+
+&lt;h3&gt;RubyMine и Rails Footnotes&lt;/h3&gt;
+
+&lt;p&gt;В Gemfile.rb:&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'rails-footnotes'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'&amp;gt;= 3.7.9'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:group&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="ss"&gt;:development&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;$ rails generate rails_footnotes:install&lt;/p&gt;
+
+&lt;p&gt;Добавляем фильтр в config/initializers/rails_footnotes.rb:&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;defined?&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;Footnotes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="no"&gt;Rails&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;env&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;development?&lt;/span&gt;
+  &lt;span class="no"&gt;Footnotes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;run!&lt;/span&gt; 
+
+  &lt;span class="no"&gt;Footnotes&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Filter&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;prefix&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"javascript: var r = new XMLHttpRequest; r.open('get', 'http://localhost:8091?message=%s:%d:%d');r.send()"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/footnotes.png" /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Ссылки&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/digidigo/ruby_footprints"&gt;https://github.com/digidigo/ruby_footprints&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/Zolotov/RemoteCall"&gt;https://github.com/Zolotov/RemoteCall&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>PostgreSQL 9.0 High Performance</title>
+    <link rel="alternate" href="http://artursabirov.ru/dev/2012/04/08/postgres-high-perfomance/"/>
+    <id>http://artursabirov.ru/dev/2012/04/08/postgres-high-perfomance/</id>
+    <published>2012-04-07T20:00:00Z</published>
+    <updated>2012-04-07T20:00:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Читая книгу &lt;a href="http://www.goodreads.com/book/show/10033368-postgresql-9-0-high-performance,"&gt;PostgreSQL 9.0 High Performance&lt;/a&gt;
+выписал некоторые интересные моменты, которые могут оказаться полезными простым разработчикам.&lt;/p&gt;
+
+&lt;h3&gt;Полезные команды.&lt;/h3&gt;
+
+&lt;p&gt;EXPLAIN ANALYZE [sql] — анализ выполненного запроса (используемые ноды, время выполнения, использование индексов).&lt;/p&gt;
+
+&lt;p&gt;VACUUM — дефрагментация базы. Можно запускать, если отключен autovacuum. Рекомендуется выполнять после большого удаления данных.&lt;/p&gt;
+
+&lt;p&gt;REINDEX INDEX [index_name] — перестройка индекса.&lt;/p&gt;
+
+&lt;p&gt;REINDEX TABLE [table_name] — перестройка индексов всей таблицы.&lt;/p&gt;
+
+&lt;h3&gt;Анализаторы логов&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://pgfouine.projects.postgresql.org/,"&gt;pgFouine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://bucardo.org/wiki/Pgsi,"&gt;pgsi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.maatkit.org/doc/mk-query-digest.html"&gt;mk-query-digest&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;pgFouine — наиболее удобный, хоть и требует веб-сервер для запуска.&lt;/p&gt;
+
+&lt;h3&gt;Рекомендации по использованию индексов&lt;/h3&gt;
+
+&lt;p&gt;Ставьте индексы на поля, по которым происходит поиск или сортировка.&lt;/p&gt;
+
+&lt;p&gt;Исключите использование ненужных индексов (найти их поможет EXPLAIN ANALYZE)&lt;/p&gt;
+
+&lt;h3&gt;Индексы&lt;/h3&gt;
+
+&lt;p&gt;B-Tree – индекс по-умолчанию. Подходит для всех типов.&lt;/p&gt;
+
+&lt;p&gt;Hash — эффективен при поиске по равенству: column_name = &amp;lsquo;value&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;GIN — дает быстрый поиск, но долгое обновление при INSERT. Применим для полнотекстового поиска.&lt;/p&gt;
+
+&lt;p&gt;GiST — для полнотекстового поиска. Быстрый поиск, но долгое обновление индекса. Так же применим для полнотекстового поиска.&lt;/p&gt;
+
+&lt;p&gt;При поиске с использованием LIKE или POSIX задать специальный параметр: &lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt; &lt;span class="n"&gt;varchar_pattern_ops&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Для других типов: text&lt;em&gt;pattern&lt;/em&gt;ops, bpchar&lt;em&gt;pattern&lt;/em&gt;ops, name&lt;em&gt;pattern&lt;/em&gt;ops.&lt;/p&gt;
+
+&lt;h3&gt;Составной индекс&lt;/h3&gt;
+
+&lt;p&gt;При поиске по по двум и более колонкам можно использовать составной индекс:&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;col_1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;col_2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;h3&gt;Частичный индекс&lt;/h3&gt;
+
+&lt;p&gt;В случае, если поиск совершается только по какому-то одному значению:&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="k"&gt;table&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="k"&gt;column_name&lt;/span&gt; &lt;span class="k"&gt;IS&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;h3&gt;Сортировка индексов&lt;/h3&gt;
+
+&lt;p&gt;При сортировке по индексу в одну сторону, например DESC, можно настроить и сам индекс:&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt;  &lt;span class="k"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt; &lt;span class="k"&gt;DESC&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Если имеются значения NULL, можно подвинуть их в начало:&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt;  &lt;span class="k"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt; &lt;span class="n"&gt;NULLS&lt;/span&gt; &lt;span class="k"&gt;FIRST&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;По умолчанию значения NULL хранятся в конце.&lt;/p&gt;
+
+&lt;h3&gt;Обработка значений в индексе&lt;/h3&gt;
+
+&lt;p&gt;Если в запросах используются функции:&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="k"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'x'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Можно подготовить значения и в самом индексе:&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt; 
+&lt;/pre&gt;
+
+&lt;h3&gt;OFFSET 0&lt;/h3&gt;
+
+&lt;p&gt;Использование «OFFSET 0» ускорит выполнение вложенных запросов:&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;prod_id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;orderlines&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;
+&lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;customers&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;orders&lt;/span&gt; &lt;span class="k"&gt;USING&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;customerid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;orders&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;orderid&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;orderid&lt;/span&gt; &lt;span class="k"&gt;OFFSET&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;orderdate&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'2004-12-01'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;/pre&gt;
+
+&lt;h3&gt;Ускорение SELECT count(*)&lt;/h3&gt;
+
+&lt;p&gt;В PostgreSQL, в отличии от других БД, медленный подсчет строк.&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Его можно ускорить, добавив какое-нибудь условие WHERE:&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;h3&gt;FOREIGN KEYS&lt;/h3&gt;
+
+&lt;p&gt;Добавление и изменение большого количества данных может оказаться медленным из-за использования внешних ключей (FOREIGN KEYS). Поэтому их можно  приглушить до окончания операции:&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;BEGIN&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="k"&gt;CONSTRAINTS&lt;/span&gt; &lt;span class="k"&gt;ALL&lt;/span&gt; &lt;span class="k"&gt;DEFERRED&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="k"&gt;update&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="n"&gt;statements&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;COMMIT&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <title>JSLint в Sublime Text</title>
+    <link rel="alternate" href="http://artursabirov.ru/dev/2012/01/23/sublime-text-jslint-integration/"/>
+    <id>http://artursabirov.ru/dev/2012/01/23/sublime-text-jslint-integration/</id>
+    <published>2012-01-22T20:00:00Z</published>
+    <updated>2012-01-22T20:00:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Расскажу, как совместить подключить JSLint в  Sublime Text 2.&lt;/p&gt;
+
+&lt;h1&gt;cut&lt;/h1&gt;
+
+&lt;p&gt;Консольный JSLint — &lt;a href="http://www.javascriptlint.com/download.htm"&gt;http://www.javascriptlint.com/download.htm&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Создаем новый build-сценарий: Tools → Build Systems → New Build System&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Вставляем и настраиваем путь до jslint (windows):&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;]()&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"d:/lib/jsl/jsl.exe"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"-process"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"$file"&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;selector&lt;/span&gt;&lt;span class="p"&gt;]()&lt;/span&gt;
+&lt;span class="s2"&gt;"source.js"&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;/pre&gt;
+
+&lt;p&gt;Сохраняем файл, жмем CTRL+B и смотрим результат.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint2.png" /&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Workflow в распределенной разработке</title>
+    <link rel="alternate" href="http://artursabirov.ru/dev/2011/12/12/distributed-development/"/>
+    <id>http://artursabirov.ru/dev/2011/12/12/distributed-development/</id>
+    <published>2011-12-11T20:00:00Z</published>
+    <updated>2011-12-11T20:00:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;В нашей компании, Social Quantum, несколько команд из разных городов, в сумме несколько десятков разработчиков. При этом получается стабильно разрабатывать и запускать новые проекты. Расскажу немного о том, как всё устроено.&lt;/p&gt;
+
+&lt;h3&gt;Инструменты&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Git;&lt;/li&gt;
+&lt;li&gt;Система управления проектами. У нас используется &lt;a href="http://unfuddle.com,"&gt;Unfuddle&lt;/a&gt;
+но я бы не называл его удачным выбором. Можете подобрать себе по вкусу, необходимы будут тикеты, wiki и подсчет времени (estimates). И не менее полезным будет хостинг репозиториев, привязки коммитов к тикету и тикетами друг с другом (assigns);&lt;/li&gt;
+&lt;li&gt;Skype.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Роли&lt;/h3&gt;
+
+&lt;p&gt;Каждый проект курирует один человек — руководитель проекта. Он занимается проектированием архитектуры, составлением и разделением задач по командам.
+В каждой команде присутствует один ведущий разработчик (DevLead). В идеале руководитель не должен давать прямых указаний разработчикам. Его задача раздавать и принимать задачи в команде.
+Разработчики, дизайнеры, тестеры и т.д.&lt;/p&gt;
+
+&lt;h3&gt;Разработка&lt;/h3&gt;
+
+&lt;p&gt;Продемонстрирую на примере.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Руководитель создает тикет (задачу), назовем её «Разработать систему приема платежей ВКонтакте» и направляет девлиду;&lt;/li&gt;
+&lt;li&gt;Лид детально дополняет детали реализации, выставляет сроки (initial estimates) и отправляет задачу члену команды;&lt;/li&gt;
+&lt;li&gt;Разработчик принимает тикет, в рабочем репозитории создает отдельную ветку (git checkout -b branchname), в качестве имени используется номер тикета;&lt;/li&gt;
+&lt;li&gt;Во время работы разработчик отчитывается по каждому этапу в тайм-трекере. Например, «изучил API ВКонтакте — 1 час», «написал класс VKPayment — 2 час» и «написал спеки и протестировал — 3 часа»;&lt;/li&gt;
+&lt;li&gt;Бранч отправляется в общий репозиторий (git push origin branchname), выставляет в тикете id-коммита и отправляет тикет девлиду. Если коммитов было несколько в бранче, то их склеивают (squash) в один (git rebase -i);&lt;/li&gt;
+&lt;li&gt;Лид проверяет реализации, качество кода, тесты и общую работоспособность. В случае замечаний отправляется на доработку, либо сливает в ветку проекта (git merge). Дальше может сам закрыть тикет, либо и отправить руководителю. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;По аналогичной схеме формируются и другие задачи. Будь-то баг-фиксы или тестирование.&lt;/p&gt;
+
+&lt;h3&gt;Внедрение нового разработчика в команду&lt;/h3&gt;
+
+&lt;p&gt;Разворачивается своё локальное рабочее окружение, примерно по такой инструкции:
+* клонирование репозитория;
+* настройка конфигов проекта;
+* установка rvm, ruby, gems и других зависимостей;
+* установка СУБД, создание баз и запуск миграций.&lt;/p&gt;
+
+&lt;p&gt;При этом время затраченное на установку также фиксируется в estimates-разработчика.&lt;/p&gt;
+
+&lt;h3&gt;Выкатывание релизов&lt;/h3&gt;
+
+&lt;p&gt;Деплоем занимается руководитель проекта. Прогоняются тесты и с помощью capistrano выкладывается обновление на всех серверах. &lt;/p&gt;
+
+&lt;h3&gt;Рекомендации&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Разработчикам в начале рабочего дня рекомендуется забирать последнюю версию проекта (git pull) и обновлять свою ветку (git rebase master);&lt;/li&gt;
+&lt;li&gt;В комментарии коммита можно указывать номер тикета. Это будет полезно при изучении истории коммитов (git log);&lt;/li&gt;
+&lt;li&gt;Крупные задачи можно разбить на несколько тикетов и раздать нескольким разработчикам;&lt;/li&gt;
+&lt;li&gt;Весь код желательно покрывать блочными и интеграционным тестами. Они помогут держать проект в рабочем состоянии;&lt;/li&gt;
+&lt;li&gt;Частый рефакторинг и code-review удерживают проект от загнивания.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Cramp и Rails</title>
+    <link rel="alternate" href="http://artursabirov.ru/dev/2011/10/19/assync-servers/"/>
+    <id>http://artursabirov.ru/dev/2011/10/19/assync-servers/</id>
+    <published>2011-10-18T20:00:00Z</published>
+    <updated>2011-10-18T20:00:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Если вам нужна асинхронность, то лучше сразу задуматься, нужен ли rails вовсе. На Cramp или Node.js можно без проблем совместить comet-транспорт с обычными http-request&amp;#39;ами. Cramp хорошо сочитается с Sinatra, который недавно обзавелся своей версией &lt;a href="https://github.com/stevehodgkiss/sinatra-asset-pipeline."&gt;Assets Pipeline&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Cramp&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://cramp.in/."&gt;Cramp&lt;/a&gt;
+Легкий фреймворк, использует EventMachine и файберсы. Умеет  работать с http, веб-сокетами, flash-сокетами и long-polling-запросами для старых браузеров.&lt;/p&gt;
+
+&lt;p&gt;Пример приложения на Cramp взят отсюда — http://www.html5rocks.com/en/tutorials/casestudies/sunlight_streamcongress.html.&lt;/p&gt;
+
+&lt;p&gt;app.ru&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;require "rubygems"
+require "bundler"
+Bundler.require
+require 'cramp'
+require 'http_router'
+require 'active_support/json'
+require 'thin'
+
+Cramp::Websocket.backend = :thin # используем асинхронный сервер thin
+
+class LiveSocket &amp;lt; Cramp::Websocket
+   periodic_timer :check_activities, :every =&amp;gt; 15
+
+   def check_activities
+     @latest_activity ||= nil
+     new_activities = find_activities_since(@latest_activity)
+     @latest_activity = new_activities.first unless new_activities.empty?
+     render new_activities.to_json
+   end
+ end
+
+routes = HttpRouter.new do
+  add('/live').to(LiveSocket)
+end
+run routes
+
+&lt;/pre&gt;
+
+&lt;p&gt;Запуск приложения&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;bundle exec thin --timeout 0 -R app.ru start
+
+&lt;/pre&gt;
+
+&lt;h3&gt;Goliath&lt;/h3&gt;
+
+&lt;p&gt;Сам я лично с ним не работал, но и упомянуть о нем не мог. Довольно известное решение в узких кругах. Посмотрите обязательно — &lt;a href="https://github.com/postrank-labs/goliath."&gt;https://github.com/postrank-labs/goliath&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Node.js&lt;/h3&gt;
+
+&lt;p&gt;Это конечно не ruby-way, зато выбор ноды дает нам некоторое &lt;a href="http://posterous.mclov.in/unscientific-nodejs-vs-cramp-benchmarks."&gt;преимущество в производительности&lt;/a&gt;
+Что будет немаловажным при нагрузках.&lt;/p&gt;
+
+&lt;p&gt;Дополнительные npm модули для транспорта и маршрутизации:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://faye.jcoglan.com."&gt;Faye&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://github.com/maccman/juggernaut"&gt;Jaggernaut&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://github.com/learnboost/socket.io"&gt;Socket.io&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Подойдет любой из них. Возможности у них примерно равны.&lt;/p&gt;
+
+&lt;p&gt;Пример приложения с использованием Faye (app.js):&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;Faye&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'faye'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="nx"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;Faye&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;NodeAdapter&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="na"&gt;mount&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'/live'&lt;/span&gt;&lt;span class="p"&gt;});&lt;/span&gt;
+
+&lt;span class="nx"&gt;server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;listen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9292&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;// создаем сервер
+&lt;/span&gt;
+&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getClient&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="c1"&gt;// прослушка канала messages
+&lt;/span&gt;&lt;span class="nx"&gt;client&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;subscribe&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/messages'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;message&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;message&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;text&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;});&lt;/span&gt;
+
+&lt;span class="c1"&gt;// публикация в канал messages
+&lt;/span&gt;&lt;span class="nx"&gt;client&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;publish&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/messages'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="na"&gt;text&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Hello world'&lt;/span&gt;
+&lt;span class="p"&gt;});&lt;/span&gt;
+
+&lt;/pre&gt;
+
+&lt;p&gt;Запуск:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;forever app.js&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Erlang&lt;/h3&gt;
+
+&lt;p&gt;Сложность языка накладывают свои ограничения по скорости разработки и квалификации, но это лучший выбор если вы ограничены в серверных ресурсах.&lt;/p&gt;
+
+&lt;p&gt;Пример работы с веб-сокетами на фреймворке MochiWeb — &lt;a href="https://github.com/RJ/mochiweb-websockets/tree/master/examples/websockets"&gt;https://github.com/RJ/mochiweb-websockets/tree/master/examples/websockets&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Склейка&lt;/h3&gt;
+
+&lt;p&gt;Ситуация теперь следующая. Сайт на 80м порту (пусть будет Nginx), real-time сервер на 9292. Чтобы избежать нарушения &lt;a href="http://en.wikipedia.org/wiki/Same_origin_policy"&gt;same-origin-policy&lt;/a&gt;
+нам потребуется объединить обе части сервера. &lt;/p&gt;
+
+&lt;p&gt;Этой проблемы можно было избежать, написав всё на Node.JS или Cramp. О чем говорил в начале статьи.&lt;/p&gt;
+
+&lt;h3&gt;HAPRoxy&lt;/h3&gt;
+
+&lt;p&gt;Сам Nginx не умеет маршрутизировать websocket&amp;#39;ы и http на одном хосте. В этом поможет HAProxy — очень простой и производительный proxy-сервер.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;wget http://haproxy.1wt.eu/download/1.4/src/haproxy-1.4.18.tar.gz
+tar zxvf http://haproxy.1wt.eu/download/1.4/src/haproxy-1.4.18.tar.gz
+mv haproxy-1.4.18 /usr/local/haproxy
+ln -s /usr/local/haproxy/haproxy /usr/sbin/haproxy
+
+&lt;/pre&gt;
+
+&lt;p&gt;Скрипт автозапуска для CentOS:&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;span class="c"&gt;# description: HA-Proxy is a TCP/HTTP reverse proxy which is particularly suited \&lt;/span&gt;
+&lt;span class="c"&gt;#              for high availability environments.&lt;/span&gt;
+&lt;span class="c"&gt;# processname: haproxy&lt;/span&gt;
+&lt;span class="c"&gt;# chkconfig: 345 20 80&lt;/span&gt;
+&lt;span class="c"&gt;# config: /etc/haproxy.cfg&lt;/span&gt;
+&lt;span class="c"&gt;# pidfile: /var/run/haproxy.pid&lt;/span&gt;
+
+&lt;span class="c"&gt;# Source function library.&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -f /etc/init.d/functions &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
+  . /etc/init.d/functions
+&lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -f /etc/rc.d/init.d/functions &lt;span class="o"&gt;]&lt;/span&gt; ; &lt;span class="k"&gt;then&lt;/span&gt;
+  . /etc/rc.d/init.d/functions
+&lt;span class="k"&gt;else
+  &lt;/span&gt;&lt;span class="nb"&gt;exit &lt;/span&gt;0
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="c"&gt;# Source networking configuration.&lt;/span&gt;
+. /etc/sysconfig/network
+
+&lt;span class="c"&gt;# Check that networking is up.&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;NETWORKING&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"no"&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;exit &lt;/span&gt;0
+
+&lt;span class="o"&gt;[&lt;/span&gt; -f /etc/haproxy.cfg &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit &lt;/span&gt;1
+
+&lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+
+start&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  /usr/sbin/haproxy -c -q -f /etc/haproxy.cfg
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$?&lt;/span&gt; -ne 0 &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Errors found in configuration file."&lt;/span&gt;
+    &lt;span class="k"&gt;return &lt;/span&gt;1
+  &lt;span class="k"&gt;fi
+
+  &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="s2"&gt;"Starting HAproxy: "&lt;/span&gt;
+  daemon /usr/sbin/haproxy -D -f /etc/haproxy.cfg -p /var/run/haproxy.pid
+  &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$?&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt;
+  &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt; -eq 0 &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; touch /var/lock/subsys/haproxy
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+stop&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="s2"&gt;"Shutting down HAproxy: "&lt;/span&gt;
+  killproc haproxy -USR1
+  &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$?&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt;
+  &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt; -eq 0 &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -f /var/lock/subsys/haproxy
+  &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt; -eq 0 &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -f /var/run/haproxy.pid
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+restart&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  /usr/sbin/haproxy -c -q -f /etc/haproxy.cfg
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$?&lt;/span&gt; -ne 0 &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Errors found in configuration file, check it with 'haproxy check'."&lt;/span&gt;
+    &lt;span class="k"&gt;return &lt;/span&gt;1
+  &lt;span class="k"&gt;fi
+  &lt;/span&gt;stop
+  start
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+check&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  /usr/sbin/haproxy -c -q -V -f /etc/haproxy.cfg
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+rhstatus&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  status haproxy
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+condrestart&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="o"&gt;[&lt;/span&gt; -e /var/lock/subsys/haproxy &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; restart &lt;span class="o"&gt;||&lt;/span&gt; :
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="c"&gt;# See how we were called.&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="k"&gt;in
+  &lt;/span&gt;start&lt;span class="p"&gt;)&lt;/span&gt;
+    start
+    &lt;span class="p"&gt;;;&lt;/span&gt;
+  stop&lt;span class="p"&gt;)&lt;/span&gt;
+    stop
+    &lt;span class="p"&gt;;;&lt;/span&gt;
+  restart&lt;span class="p"&gt;)&lt;/span&gt;
+    restart
+    &lt;span class="p"&gt;;;&lt;/span&gt;
+  reload&lt;span class="p"&gt;)&lt;/span&gt;
+    restart
+    &lt;span class="p"&gt;;;&lt;/span&gt;
+  condrestart&lt;span class="p"&gt;)&lt;/span&gt;
+    condrestart
+    &lt;span class="p"&gt;;;&lt;/span&gt;
+  status&lt;span class="p"&gt;)&lt;/span&gt;
+    rhstatus
+    &lt;span class="p"&gt;;;&lt;/span&gt;
+  check&lt;span class="p"&gt;)&lt;/span&gt;
+    check
+    &lt;span class="p"&gt;;;&lt;/span&gt;
+  &lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;$"Usage: haproxy {start|stop|restart|reload|condrestart|status|check}"&lt;/span&gt;
+    &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+&lt;span class="k"&gt;esac
+
+&lt;/span&gt;&lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+
+&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;chkconfig haproxy on
+
+&lt;/pre&gt;
+
+&lt;p&gt;Настроим конфигурацию для адреса 85.17.162.170. Nginx будет 8081 порту, Node.JS на 9292. Вместо Node.JS может быть любой бэкэнд, конфиг от этого не сильно изменится.&lt;/p&gt;
+
+&lt;p&gt;/etc/haproxy.conf&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;global
+    maxconn 4096
+    spread-checks 5
+    pidfile /var/run/haproxy.pid
+
+    user    haproxy
+    group   haproxy
+
+defaults
+    mode http
+    option forwardfor
+    option abortonclose
+    option httpclose
+    no option accept-invalid-http-request
+    no option accept-invalid-http-response
+    option forwardfor except 127.0.0.1 header X-Forwarded-For
+
+frontend all 85.17.162.170:80
+    timeout client 1d
+
+    acl is_nodejs url_sub faye # если мы используется Faye
+    acl is_nodejs hdr(upgrade) -i websocket # определяем веб-сокеты по заголовкам
+    acl is_nodejs hdr_beg(Host) -i ws # определяем веб-сокеты по ws://
+    use_backend nodejs_backend if is_nodejs # нужные отправляем на Node.JS
+    default_backend   nginx_backend    # остальные на nginx
+
+backend nodejs_backend
+    server server1 85.17.162.170:9292 maxconn 200 check
+    balance roundrobin    
+    timeout queue 5s
+    timeout server  86400000
+
+backend nginx_backend
+    balance roundrobin
+    option forwardfor
+    timeout connect 100s    
+    timeout server 25s
+    server server1 85.17.162.170:8081 check
+
+&lt;/pre&gt;
+
+&lt;p&gt;Необходимо убедиться, что Nginx больше не прослушивает 80й порт и в конфигах стоит &amp;ldquo;listen 85.17.162.92:8081&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Запуск.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;service haproxy start
+
+&lt;/pre&gt;
+
+&lt;h3&gt;Frontend&lt;/h3&gt;
+
+&lt;p&gt;Рассмотрим на примере с Faye. &lt;/p&gt;
+
+&lt;p&gt;Подключаем faye.js. &lt;/p&gt;
+&lt;pre class="highlight html"&gt;&lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"text/javascript"&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;"http://domain.com/faye.js"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Этот файл генерируется самим faye.&lt;/p&gt;
+
+&lt;p&gt;Подключаемся к каналу /messages:&lt;/p&gt;
+&lt;pre class="highlight html"&gt;var client = new Faye.Client('http://domain.com/live');
+var subscription = client.subscribe('/messages', function(message) {
+    console.log(message)
+});
+
+&lt;/pre&gt;
+
+&lt;h3&gt;Frontend&lt;/h3&gt;
+
+&lt;p&gt;Рассмотрим на примере с Faye. &lt;/p&gt;
+
+&lt;p&gt;Подключаем faye.js. &lt;/p&gt;
+&lt;pre class="highlight html"&gt;&lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"text/javascript"&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;"http://domain.com/faye.js"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Этот файл генерируется самим faye.&lt;/p&gt;
+
+&lt;p&gt;Подключаемся к каналу /messages:&lt;/p&gt;
+&lt;pre class="highlight html"&gt;var client = new Faye.Client('http://domain.com/live');
+var subscription = client.subscribe('/messages', function(message) {
+    console.log(message)
+});
+
+&lt;/pre&gt;
+
+&lt;h3&gt;Резюме&lt;/h3&gt;
+
+&lt;p&gt;Real-time приложения требуют особого подхода и далеко не все классические инструменты подходят для этих целей. Ruby хоть умеет создавать треды, обладает реализацией eventmachine и даже облегчает код файберсами, но сильно проигрывает в производительности асинхронным технологиям. В Node.JS и Erlang изначально были продуманы проблемы многозадачности и эффективного использования ресурсов. В real-time приложениях это может быть критически важным фактором.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Docco</title>
+    <link rel="alternate" href="http://artursabirov.ru/dev/2011/09/23/docco/"/>
+    <id>http://artursabirov.ru/dev/2011/09/23/docco/</id>
+    <published>2011-09-22T20:00:00Z</published>
+    <updated>2011-09-22T20:00:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Docco давно стал популярен в среде opensource, всё чаще можно встретить документацию. Например, &lt;a href="http://documentcloud.github.com/backbone/docs/backbone.html."&gt;backbone.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Текущая поддержкая языков: js, ruby, coffee, python.&lt;/p&gt;
+
+&lt;p&gt;Docco NPM — &lt;a href="http://jashkenas.github.com/docco/"&gt;http://jashkenas.github.com/docco/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Реализация на других языках:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rocco (Ruby) — &lt;a href="http://rtomayko.github.com/rocco/"&gt;http://rtomayko.github.com/rocco/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Shocco (Shell) — &lt;a href="http://rtomayko.github.com/shocco/"&gt;http://rtomayko.github.com/shocco/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pycco (Python) — &lt;a href="http://fitzgen.github.com/pycco/"&gt;http://fitzgen.github.com/pycco/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Marginalia (Clojure) — &lt;a href="http://fogus.me/fun/marginalia/"&gt;http://fogus.me/fun/marginalia/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Locco (Lue) — &lt;a href="http://rgieseke.github.com/locco/"&gt;http://rgieseke.github.com/locco/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Nocco (.NET) — &amp;ldquo;http://dontangg.github.com/nocco/&amp;rdquo;:http://dontangg.github.com/nocco/&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+</feed>
