@@ -20,21 +20,21 @@
 
 &lt;p&gt;Что же касается меня, я по-прежнему работаю в FunBox, в компании сильных разработчиков, за этот период у меня существенно изменилось отношение к ведению блога.
 Писать о каких-либо технических бирюльках или програмерских новинках стало не так интересно — все это минутные переживания, к завтрашнему утру уже никому не интересны.
-Чтобы не забрасывать его окончательно, слегка расширю спектр тем: былая техническая рубрика уходит в &lt;a href="/dev"&gt;/dev&lt;/a&gt;, обзоры книг в &lt;a href="/books"&gt;/books&lt;/a&gt;, а
-посты на отвлеченные темы появятся в &lt;a href="/life"&gt;/life&lt;/a&gt;.&lt;/p&gt;
+Чтобы не забрасывать его окончательно, слегка расширю спектр тем: былая техническая рубрика уходит в &lt;a href="http://artursabirov.ru/dev"&gt;/dev&lt;/a&gt;, обзоры книг в &lt;a href="http://artursabirov.ru/books"&gt;/books&lt;/a&gt;, а
+посты на отвлеченные темы появятся в &lt;a href="http://artursabirov.ru/life"&gt;/life&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Соответственно, отдельные RSS:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://feeds.feedburner.com/artursabirov/dev"&gt;http://feeds.feedburner.com/artursabirov/dev&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://feeds.feedburner.com/artursabirov/books"&gt;http://feeds.feedburner.com/artursabirov/books&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://feeds.feedburner.com/artursabirov/life"&gt;http://feeds.feedburner.com/artursabirov/life&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://feeds.feedburner.com/artursabirov"&gt;http://feeds.feedburner.com/artursabirov&lt;/a&gt; для всех вместе&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://feeds.feedburner.com/artursabirov/dev"&gt;http://feeds.feedburner.com/artursabirov/dev&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://feeds.feedburner.com/artursabirov/books"&gt;http://feeds.feedburner.com/artursabirov/books&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://feeds.feedburner.com/artursabirov/life"&gt;http://feeds.feedburner.com/artursabirov/life&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://feeds.feedburner.com/artursabirov"&gt;http://feeds.feedburner.com/artursabirov&lt;/a&gt; для всех вместе&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Новый блог, следуя тенденциями, собран на middleman, как оказалось, очень удобный инструмент.
 На настройку генератора, оформления и адаптацую статей ушло всего пару дней.
-Если кому интересно, исходники  выложил на &lt;a href="http://github.com/asabirov/artursabirov-middleman"&gt;github&lt;/a&gt;.&lt;/p&gt;
+Если кому интересно, исходники  выложил на &lt;a href="http://artursabirov.ruhttp://github.com/asabirov/artursabirov-middleman"&gt;github&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -50,11 +50,11 @@
 
 &lt;p&gt;В backtrace'е у XDebug предусмотрен простой переход к нужному файлу и на нужную строку. Только использует он протокол txmt (TextMate), что не пригодно с PhpStorm.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="" src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/xdebug.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://artursabirov.ru/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/xdebug.png" /&gt;&lt;/p&gt;
 
-&lt;p&gt;Решение нашел тут: &lt;a href="http://youtrack.jetbrains.com/issue/IDEA-65879"&gt;http://youtrack.jetbrains.com/issue/IDEA-65879&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Решение нашел тут: &lt;a href="http://artursabirov.ruhttp://youtrack.jetbrains.com/issue/IDEA-65879"&gt;http://youtrack.jetbrains.com/issue/IDEA-65879&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Ставим плагин Remote Call: &lt;a href="http://plugins.jetbrains.net/plugin?pr=webide&amp;amp;amp;pluginId=6027"&gt;http://plugins.jetbrains.net/plugin?pr=webide&amp;amp;pluginId=6027&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ставим плагин Remote Call: &lt;a href="http://artursabirov.ruhttp://plugins.jetbrains.net/plugin?pr=webide&amp;amp;amp;pluginId=6027"&gt;http://plugins.jetbrains.net/plugin?pr=webide&amp;amp;pluginId=6027&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;И прописываем в конфиге xdebug:&lt;/p&gt;
 
@@ -81,13 +81,13 @@
 
 &lt;/pre&gt;
 
-&lt;p&gt;&lt;img alt="" src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/footnotes.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://artursabirov.ru/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/footnotes.png" /&gt;&lt;/p&gt;
 
 &lt;h3 id="section"&gt;Ссылки&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href="https://github.com/digidigo/ruby_footprints"&gt;https://github.com/digidigo/ruby_footprints&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://artursabirov.ruhttps://github.com/digidigo/ruby_footprints"&gt;https://github.com/digidigo/ruby_footprints&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://github.com/Zolotov/RemoteCall"&gt;https://github.com/Zolotov/RemoteCall&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://artursabirov.ruhttps://github.com/Zolotov/RemoteCall"&gt;https://github.com/Zolotov/RemoteCall&lt;/a&gt;&lt;/p&gt;
 
 </content>
   </entry>
@@ -100,7 +100,7 @@
     <author>
       <name>Артур Сабиров</name>
     </author>
-    <content type="html">&lt;p&gt;Читая книгу &lt;a href="http://www.goodreads.com/book/show/10033368-postgresql-9-0-high-performance,"&gt;PostgreSQL 9.0 High Performance&lt;/a&gt;
+    <content type="html">&lt;p&gt;Читая книгу &lt;a href="http://artursabirov.ruhttp://www.goodreads.com/book/show/10033368-postgresql-9-0-high-performance,"&gt;PostgreSQL 9.0 High Performance&lt;/a&gt;
 выписал некоторые интересные моменты, которые могут оказаться полезными простым разработчикам.&lt;/p&gt;
 
 &lt;h3 id="section"&gt;Полезные команды.&lt;/h3&gt;
@@ -116,9 +116,9 @@
 &lt;h3 id="section-1"&gt;Анализаторы логов&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://pgfouine.projects.postgresql.org/,"&gt;pgFouine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://bucardo.org/wiki/Pgsi,"&gt;pgsi&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.maatkit.org/doc/mk-query-digest.html"&gt;mk-query-digest&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://pgfouine.projects.postgresql.org/,"&gt;pgFouine&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://bucardo.org/wiki/Pgsi,"&gt;pgsi&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://www.maatkit.org/doc/mk-query-digest.html"&gt;mk-query-digest&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;pgFouine — наиболее удобный, хоть и требует веб-сервер для запуска.&lt;/p&gt;
@@ -230,11 +230,11 @@
 
 &lt;h1 id="cut"&gt;cut&lt;/h1&gt;
 
-&lt;p&gt;Консольный JSLint — &lt;a href="http://www.javascriptlint.com/download.htm"&gt;http://www.javascriptlint.com/download.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Консольный JSLint — &lt;a href="http://artursabirov.ruhttp://www.javascriptlint.com/download.htm"&gt;http://www.javascriptlint.com/download.htm&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Создаем новый build-сценарий: Tools → Build Systems → New Build System&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="" src="/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://artursabirov.ru/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Вставляем и настраиваем путь до jslint (windows):&lt;/p&gt;
 
@@ -249,7 +249,7 @@
 
 &lt;p&gt;Сохраняем файл, жмем CTRL+B и смотрим результат.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="" src="/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://artursabirov.ru/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint2.png" /&gt;&lt;/p&gt;
 
 </content>
   </entry>
@@ -268,7 +268,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;Git;&lt;/li&gt;
-  &lt;li&gt;Система управления проектами. У нас используется &lt;a href="http://unfuddle.com,"&gt;Unfuddle&lt;/a&gt;
+  &lt;li&gt;Система управления проектами. У нас используется &lt;a href="http://artursabirov.ruhttp://unfuddle.com,"&gt;Unfuddle&lt;/a&gt;
 но я бы не называл его удачным выбором. Можете подобрать себе по вкусу, необходимы будут тикеты, wiki и подсчет времени (estimates). И не менее полезным будет хостинг репозиториев, привязки коммитов к тикету и тикетами друг с другом (assigns);&lt;/li&gt;
   &lt;li&gt;Skype.&lt;/li&gt;
 &lt;/ul&gt;

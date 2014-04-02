@@ -19,11 +19,11 @@
 
 &lt;p&gt;В backtrace'е у XDebug предусмотрен простой переход к нужному файлу и на нужную строку. Только использует он протокол txmt (TextMate), что не пригодно с PhpStorm.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="" src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/xdebug.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://artursabirov.ru/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/xdebug.png" /&gt;&lt;/p&gt;
 
-&lt;p&gt;Решение нашел тут: &lt;a href="http://youtrack.jetbrains.com/issue/IDEA-65879"&gt;http://youtrack.jetbrains.com/issue/IDEA-65879&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Решение нашел тут: &lt;a href="http://artursabirov.ruhttp://youtrack.jetbrains.com/issue/IDEA-65879"&gt;http://youtrack.jetbrains.com/issue/IDEA-65879&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Ставим плагин Remote Call: &lt;a href="http://plugins.jetbrains.net/plugin?pr=webide&amp;amp;amp;pluginId=6027"&gt;http://plugins.jetbrains.net/plugin?pr=webide&amp;amp;pluginId=6027&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ставим плагин Remote Call: &lt;a href="http://artursabirov.ruhttp://plugins.jetbrains.net/plugin?pr=webide&amp;amp;amp;pluginId=6027"&gt;http://plugins.jetbrains.net/plugin?pr=webide&amp;amp;pluginId=6027&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;И прописываем в конфиге xdebug:&lt;/p&gt;
 
@@ -50,13 +50,13 @@
 
 &lt;/pre&gt;
 
-&lt;p&gt;&lt;img alt="" src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/footnotes.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://artursabirov.ru/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/footnotes.png" /&gt;&lt;/p&gt;
 
 &lt;h3 id="section"&gt;Ссылки&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href="https://github.com/digidigo/ruby_footprints"&gt;https://github.com/digidigo/ruby_footprints&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://artursabirov.ruhttps://github.com/digidigo/ruby_footprints"&gt;https://github.com/digidigo/ruby_footprints&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://github.com/Zolotov/RemoteCall"&gt;https://github.com/Zolotov/RemoteCall&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://artursabirov.ruhttps://github.com/Zolotov/RemoteCall"&gt;https://github.com/Zolotov/RemoteCall&lt;/a&gt;&lt;/p&gt;
 
 </content>
   </entry>
@@ -69,7 +69,7 @@
     <author>
       <name>Артур Сабиров</name>
     </author>
-    <content type="html">&lt;p&gt;Читая книгу &lt;a href="http://www.goodreads.com/book/show/10033368-postgresql-9-0-high-performance,"&gt;PostgreSQL 9.0 High Performance&lt;/a&gt;
+    <content type="html">&lt;p&gt;Читая книгу &lt;a href="http://artursabirov.ruhttp://www.goodreads.com/book/show/10033368-postgresql-9-0-high-performance,"&gt;PostgreSQL 9.0 High Performance&lt;/a&gt;
 выписал некоторые интересные моменты, которые могут оказаться полезными простым разработчикам.&lt;/p&gt;
 
 &lt;h3 id="section"&gt;Полезные команды.&lt;/h3&gt;
@@ -85,9 +85,9 @@
 &lt;h3 id="section-1"&gt;Анализаторы логов&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://pgfouine.projects.postgresql.org/,"&gt;pgFouine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://bucardo.org/wiki/Pgsi,"&gt;pgsi&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.maatkit.org/doc/mk-query-digest.html"&gt;mk-query-digest&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://pgfouine.projects.postgresql.org/,"&gt;pgFouine&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://bucardo.org/wiki/Pgsi,"&gt;pgsi&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://www.maatkit.org/doc/mk-query-digest.html"&gt;mk-query-digest&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;pgFouine — наиболее удобный, хоть и требует веб-сервер для запуска.&lt;/p&gt;
@@ -199,11 +199,11 @@
 
 &lt;h1 id="cut"&gt;cut&lt;/h1&gt;
 
-&lt;p&gt;Консольный JSLint — &lt;a href="http://www.javascriptlint.com/download.htm"&gt;http://www.javascriptlint.com/download.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Консольный JSLint — &lt;a href="http://artursabirov.ruhttp://www.javascriptlint.com/download.htm"&gt;http://www.javascriptlint.com/download.htm&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Создаем новый build-сценарий: Tools → Build Systems → New Build System&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="" src="/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://artursabirov.ru/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Вставляем и настраиваем путь до jslint (windows):&lt;/p&gt;
 
@@ -218,7 +218,7 @@
 
 &lt;p&gt;Сохраняем файл, жмем CTRL+B и смотрим результат.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="" src="/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://artursabirov.ru/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint2.png" /&gt;&lt;/p&gt;
 
 </content>
   </entry>
@@ -237,7 +237,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;Git;&lt;/li&gt;
-  &lt;li&gt;Система управления проектами. У нас используется &lt;a href="http://unfuddle.com,"&gt;Unfuddle&lt;/a&gt;
+  &lt;li&gt;Система управления проектами. У нас используется &lt;a href="http://artursabirov.ruhttp://unfuddle.com,"&gt;Unfuddle&lt;/a&gt;
 но я бы не называл его удачным выбором. Можете подобрать себе по вкусу, необходимы будут тикеты, wiki и подсчет времени (estimates). И не менее полезным будет хостинг репозиториев, привязки коммитов к тикету и тикетами друг с другом (assigns);&lt;/li&gt;
   &lt;li&gt;Skype.&lt;/li&gt;
 &lt;/ul&gt;
@@ -297,11 +297,11 @@
     <author>
       <name>Артур Сабиров</name>
     </author>
-    <content type="html">&lt;p&gt;Если вам нужна асинхронность, то лучше сразу задуматься, нужен ли rails вовсе. На Cramp или Node.js можно без проблем совместить comet-транспорт с обычными http-request'ами. Cramp хорошо сочитается с Sinatra, который недавно обзавелся своей версией &lt;a href="https://github.com/stevehodgkiss/sinatra-asset-pipeline."&gt;Assets Pipeline&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;Если вам нужна асинхронность, то лучше сразу задуматься, нужен ли rails вовсе. На Cramp или Node.js можно без проблем совместить comet-транспорт с обычными http-request'ами. Cramp хорошо сочитается с Sinatra, который недавно обзавелся своей версией &lt;a href="http://artursabirov.ruhttps://github.com/stevehodgkiss/sinatra-asset-pipeline."&gt;Assets Pipeline&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id="cramp"&gt;Cramp&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href="http://cramp.in/."&gt;Cramp&lt;/a&gt;
+&lt;p&gt;&lt;a href="http://artursabirov.ruhttp://cramp.in/."&gt;Cramp&lt;/a&gt;
 Легкий фреймворк, использует EventMachine и файберсы. Умеет  работать с http, веб-сокетами, flash-сокетами и long-polling-запросами для старых браузеров.&lt;/p&gt;
 
 &lt;p&gt;Пример приложения на Cramp взят отсюда — http://www.html5rocks.com/en/tutorials/casestudies/sunlight_streamcongress.html.&lt;/p&gt;
@@ -344,21 +344,21 @@ run routes
 
 &lt;h3 id="goliath"&gt;Goliath&lt;/h3&gt;
 
-&lt;p&gt;Сам я лично с ним не работал, но и упомянуть о нем не мог. Довольно известное решение в узких кругах. Посмотрите обязательно — &lt;a href="https://github.com/postrank-labs/goliath."&gt;https://github.com/postrank-labs/goliath&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Сам я лично с ним не работал, но и упомянуть о нем не мог. Довольно известное решение в узких кругах. Посмотрите обязательно — &lt;a href="http://artursabirov.ruhttps://github.com/postrank-labs/goliath."&gt;https://github.com/postrank-labs/goliath&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id="nodejs"&gt;Node.js&lt;/h3&gt;
 
-&lt;p&gt;Это конечно не ruby-way, зато выбор ноды дает нам некоторое &lt;a href="http://posterous.mclov.in/unscientific-nodejs-vs-cramp-benchmarks."&gt;преимущество в производительности&lt;/a&gt;
+&lt;p&gt;Это конечно не ruby-way, зато выбор ноды дает нам некоторое &lt;a href="http://artursabirov.ruhttp://posterous.mclov.in/unscientific-nodejs-vs-cramp-benchmarks."&gt;преимущество в производительности&lt;/a&gt;
 Что будет немаловажным при нагрузках.&lt;/p&gt;
 
 &lt;p&gt;Дополнительные npm модули для транспорта и маршрутизации:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href="http://faye.jcoglan.com."&gt;Faye&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href="http://artursabirov.ruhttp://faye.jcoglan.com."&gt;Faye&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/maccman/juggernaut"&gt;Jaggernaut&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/learnboost/socket.io"&gt;Socket.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttps://github.com/maccman/juggernaut"&gt;Jaggernaut&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://artursabirov.ruhttps://github.com/learnboost/socket.io"&gt;Socket.io&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Подойдет любой из них. Возможности у них примерно равны.&lt;/p&gt;
@@ -392,11 +392,11 @@ run routes
 
 &lt;p&gt;Сложность языка накладывают свои ограничения по скорости разработки и квалификации, но это лучший выбор если вы ограничены в серверных ресурсах.&lt;/p&gt;
 
-&lt;p&gt;Пример работы с веб-сокетами на фреймворке MochiWeb — &lt;a href="https://github.com/RJ/mochiweb-websockets/tree/master/examples/websockets"&gt;https://github.com/RJ/mochiweb-websockets/tree/master/examples/websockets&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Пример работы с веб-сокетами на фреймворке MochiWeb — &lt;a href="http://artursabirov.ruhttps://github.com/RJ/mochiweb-websockets/tree/master/examples/websockets"&gt;https://github.com/RJ/mochiweb-websockets/tree/master/examples/websockets&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id="section"&gt;Склейка&lt;/h3&gt;
 
-&lt;p&gt;Ситуация теперь следующая. Сайт на 80м порту (пусть будет Nginx), real-time сервер на 9292. Чтобы избежать нарушения &lt;a href="http://en.wikipedia.org/wiki/Same_origin_policy"&gt;same-origin-policy&lt;/a&gt;
+&lt;p&gt;Ситуация теперь следующая. Сайт на 80м порту (пусть будет Nginx), real-time сервер на 9292. Чтобы избежать нарушения &lt;a href="http://artursabirov.ruhttp://en.wikipedia.org/wiki/Same_origin_policy"&gt;same-origin-policy&lt;/a&gt;
 нам потребуется объединить обе части сервера. &lt;/p&gt;
 
 &lt;p&gt;Этой проблемы можно было избежать, написав всё на Node.JS или Cramp. О чем говорил в начале статьи.&lt;/p&gt;
