@@ -7,7 +7,7 @@
     <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js?29' type='text/javascript'></script>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/dev/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://feeds.feedburner.com/artursabirov//dev" />
     <script>
       VK.init({apiId: 2348265, onlyWidgets: true});
     </script>
@@ -31,9 +31,10 @@
         </h1>
         <nav>
           <a href="/dev">Разработка</a>
-          <a href="/projects/">Проекты</a>
+          <a href="/projects">Проекты</a>
           <a href="/books">Обзор книг</a>
-          <a href="/about/">О себе</a>
+          <a href="/life">Жизнь</a>
+          <a href="/about">О себе</a>
         </nav>
       </section>
     </header>
@@ -43,7 +44,7 @@
         <p>Читая книгу <a href="http://www.goodreads.com/book/show/10033368-postgresql-9-0-high-performance,">PostgreSQL 9.0 High Performance</a>
         выписал некоторые интересные моменты, которые могут оказаться полезными простым разработчикам.</p>
         
-        <h3>Полезные команды.</h3>
+        <h3 id="section">Полезные команды.</h3>
         
         <p>EXPLAIN ANALYZE [sql] — анализ выполненного запроса (используемые ноды, время выполнения, использование индексов).</p>
         
@@ -53,99 +54,107 @@
         
         <p>REINDEX TABLE [table_name] — перестройка индексов всей таблицы.</p>
         
-        <h3>Анализаторы логов</h3>
+        <h3 id="section-1">Анализаторы логов</h3>
         
         <ul>
-        <li><a href="http://pgfouine.projects.postgresql.org/,">pgFouine</a></li>
-        <li><a href="http://bucardo.org/wiki/Pgsi,">pgsi</a></li>
-        <li><a href="http://www.maatkit.org/doc/mk-query-digest.html">mk-query-digest</a></li>
+          <li><a href="http://pgfouine.projects.postgresql.org/,">pgFouine</a></li>
+          <li><a href="http://bucardo.org/wiki/Pgsi,">pgsi</a></li>
+          <li><a href="http://www.maatkit.org/doc/mk-query-digest.html">mk-query-digest</a></li>
         </ul>
         
         <p>pgFouine — наиболее удобный, хоть и требует веб-сервер для запуска.</p>
         
-        <h3>Рекомендации по использованию индексов</h3>
+        <h3 id="section-2">Рекомендации по использованию индексов</h3>
         
         <p>Ставьте индексы на поля, по которым происходит поиск или сортировка.</p>
         
         <p>Исключите использование ненужных индексов (найти их поможет EXPLAIN ANALYZE)</p>
         
-        <h3>Индексы</h3>
+        <h3 id="section-3">Индексы</h3>
         
         <p>B-Tree – индекс по-умолчанию. Подходит для всех типов.</p>
         
-        <p>Hash — эффективен при поиске по равенству: column_name = &lsquo;value&rsquo;.</p>
+        <p>Hash — эффективен при поиске по равенству: column_name = 'value'.</p>
         
         <p>GIN — дает быстрый поиск, но долгое обновление при INSERT. Применим для полнотекстового поиска.</p>
         
         <p>GiST — для полнотекстового поиска. Быстрый поиск, но долгое обновление индекса. Так же применим для полнотекстового поиска.</p>
         
         <p>При поиске с использованием LIKE или POSIX задать специальный параметр: </p>
+        
         <pre class="highlight sql"><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">index_name</span> <span class="k">ON</span> <span class="k">table_name</span><span class="p">(</span><span class="k">column_name</span> <span class="n">varchar_pattern_ops</span><span class="p">);</span>
         </pre>
+        <p>Для других типов: text_pattern_ops, bpchar_pattern_ops, name_pattern_ops.</p>
         
-        <p>Для других типов: text<em>pattern</em>ops, bpchar<em>pattern</em>ops, name<em>pattern</em>ops.</p>
-        
-        <h3>Составной индекс</h3>
+        <h3 id="section-4">Составной индекс</h3>
         
         <p>При поиске по по двум и более колонкам можно использовать составной индекс:</p>
+        
         <pre class="highlight sql"><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">index_name</span> <span class="k">ON</span> <span class="k">table_name</span><span class="p">(</span><span class="n">col_1</span><span class="p">,</span> <span class="n">col_2</span><span class="p">);</span>
         </pre>
         
-        <h3>Частичный индекс</h3>
+        <h3 id="section-5">Частичный индекс</h3>
         
         <p>В случае, если поиск совершается только по какому-то одному значению:</p>
+        
         <pre class="highlight sql"><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">index_name</span> <span class="k">ON</span> <span class="k">table</span> <span class="n">name</span> <span class="k">WHERE</span> <span class="k">column_name</span> <span class="k">IS</span> <span class="n">value</span><span class="p">;</span>
         </pre>
         
-        <h3>Сортировка индексов</h3>
+        <h3 id="section-6">Сортировка индексов</h3>
         
         <p>При сортировке по индексу в одну сторону, например DESC, можно настроить и сам индекс:</p>
+        
         <pre class="highlight sql"><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">index_name</span> <span class="k">ON</span>  <span class="k">table_name</span><span class="p">(</span><span class="k">column_name</span> <span class="k">DESC</span><span class="p">);</span>
         </pre>
         
         <p>Если имеются значения NULL, можно подвинуть их в начало:</p>
+        
         <pre class="highlight sql"><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">index_name</span> <span class="k">ON</span>  <span class="k">table_name</span><span class="p">(</span><span class="k">column_name</span> <span class="n">NULLS</span> <span class="k">FIRST</span><span class="p">);</span>
         </pre>
         
         <p>По умолчанию значения NULL хранятся в конце.</p>
         
-        <h3>Обработка значений в индексе</h3>
+        <h3 id="section-7">Обработка значений в индексе</h3>
         
         <p>Если в запросах используются функции:</p>
+        
         <pre class="highlight sql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">table_name</span> <span class="k">WHERE</span> <span class="k">lower</span><span class="p">(</span><span class="k">column_name</span><span class="p">)</span> <span class="o">=</span> <span class="s1">'x'</span><span class="p">;</span>
         </pre>
         
         <p>Можно подготовить значения и в самом индексе:</p>
+        
         <pre class="highlight sql"><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">index_name</span> <span class="k">ON</span> <span class="k">table_name</span><span class="p">(</span><span class="k">lower</span><span class="p">(</span><span class="k">column_name</span><span class="p">));</span> 
         </pre>
         
-        <h3>OFFSET 0</h3>
+        <h3 id="offset-0">OFFSET 0</h3>
         
         <p>Использование «OFFSET 0» ускорит выполнение вложенных запросов:</p>
+        
         <pre class="highlight sql"><span class="k">SELECT</span> <span class="n">l</span><span class="p">.</span><span class="n">prod_id</span> <span class="k">FROM</span> <span class="n">orderlines</span> <span class="n">l</span>
         <span class="k">WHERE</span> <span class="k">EXISTS</span> <span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">customers</span> <span class="k">JOIN</span> <span class="n">orders</span> <span class="k">USING</span> <span class="p">(</span><span class="n">customerid</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">orders</span><span class="p">.</span><span class="n">orderid</span> <span class="o">=</span> <span class="n">l</span><span class="p">.</span><span class="n">orderid</span> <span class="k">OFFSET</span> <span class="mi">0</span><span class="p">)</span>
         <span class="k">AND</span> <span class="n">l</span><span class="p">.</span><span class="n">orderdate</span><span class="o">=</span><span class="s1">'2004-12-01'</span><span class="p">;</span>
-        
         </pre>
         
-        <h3>Ускорение SELECT count(*)</h3>
+        <h3 id="select-count">Ускорение SELECT count(*)</h3>
         
         <p>В PostgreSQL, в отличии от других БД, медленный подсчет строк.</p>
+        
         <pre class="highlight sql"><span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>  <span class="k">FROM</span> <span class="n">t</span><span class="p">;</span>
         </pre>
         
         <p>Его можно ускорить, добавив какое-нибудь условие WHERE:</p>
+        
         <pre class="highlight sql"><span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t</span> <span class="k">WHERE</span> <span class="n">k</span><span class="o">&gt;</span><span class="mi">10</span> <span class="k">and</span> <span class="n">k</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">;</span>
         </pre>
         
-        <h3>FOREIGN KEYS</h3>
+        <h3 id="foreign-keys">FOREIGN KEYS</h3>
         
         <p>Добавление и изменение большого количества данных может оказаться медленным из-за использования внешних ключей (FOREIGN KEYS). Поэтому их можно  приглушить до окончания операции:</p>
+        
         <pre class="highlight sql"><span class="k">BEGIN</span><span class="p">;</span>
         <span class="k">SET</span> <span class="k">CONSTRAINTS</span> <span class="k">ALL</span> <span class="k">DEFERRED</span><span class="p">;</span>
         <span class="p">[</span><span class="k">update</span> <span class="k">or</span> <span class="k">insert</span> <span class="n">statements</span><span class="p">]</span>
         <span class="k">COMMIT</span><span class="p">;</span>
-        
         </pre>
         <h4 class='meta'>
           <div class='tags'>

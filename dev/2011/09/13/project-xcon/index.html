@@ -7,7 +7,7 @@
     <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js?29' type='text/javascript'></script>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/dev/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://feeds.feedburner.com/artursabirov//dev" />
     <script>
       VK.init({apiId: 2348265, onlyWidgets: true});
     </script>
@@ -31,9 +31,10 @@
         </h1>
         <nav>
           <a href="/dev">Разработка</a>
-          <a href="/projects/">Проекты</a>
+          <a href="/projects">Проекты</a>
           <a href="/books">Обзор книг</a>
-          <a href="/about/">О себе</a>
+          <a href="/life">Жизнь</a>
+          <a href="/about">О себе</a>
         </nav>
       </section>
     </header>
@@ -48,40 +49,40 @@
         
         <p>Теперь о трудностях, с которыми пришлось столкнуться.</p>
         
-        <h3>Flex</h3>
+        <h3 id="flex">Flex</h3>
         
         <p>Документация ужасная. Хоть какое-то представление об архитектуре удалось получить из шедших с Flex примеров и <a href="http://www.adobe.com/devnet/flex/tourdeflex.html.">Flex De Tour</a>
         Что касается комьюнити. У меня сложилось ощущение, что всех разработчиков Flex в конце 2010 массово отправили на переквалификацию. Комьюнити почти не подает признаков жизни. </p>
         
-        <p>Один flash-программист высказал мнение, что фреймворк предназначался для корпоративного сектора. Программистов обучают сертифицированные Adobe&#39;ом тренеры. Отсюда и информационный вакуум. Похоже на правду. Ведь Enterprise еще тот отстой.</p>
+        <p>Один flash-программист высказал мнение, что фреймворк предназначался для корпоративного сектора. Программистов обучают сертифицированные Adobe'ом тренеры. Отсюда и информационный вакуум. Похоже на правду. Ведь Enterprise еще тот отстой.</p>
         
         <p>Ладно, это всё пустяки. После прочтения книжки <a href="http://www.goodreads.com/book/show/7473613-flex-4-cookbook.">Flex 4 Cookbook: Real-world recipes for developing RIA</a>
         Из статей, конечно, <a href="http://www.adobe.com/devnet/flex/articles/best_practices_pt1.html,">Flex Best Practices</a>
         <a href="http://opensource.adobe.com/wiki/display/flexsdk/Coding+Conventions.">AS3 Coding Convetions</a></p>
         
-        <p>Несколько советов по Flex&#39;у:
+        <p>Несколько советов по Flex'у:
         * Как бы это глупо не звучало — используйте фреймворк для фреймворка. Обратить внимание стоит на <a href="http://www.robotlegs.org">Robotlegs</a>
         и <a href="http://puremvc.org.">PureMVC</a></p>
         
         <ul>
-        <li>Если вам нужно к компоненту добавить активный элемент, например кнопку — наследуйте (extens). Если просто декоративный, тогда скины (Skins).</li>
-        <li>Не пишите код в mxml. Это отвратительно. Для вызова классов в mxml есть тэг Declarations.</li>
-        <li>Все цветовые настройки держите во внешнем css. Кастомные скины по возможности делать с учетом глобального chromeColor.</li>
+          <li>Если вам нужно к компоненту добавить активный элемент, например кнопку — наследуйте (extens). Если просто декоративный, тогда скины (Skins).</li>
+          <li>Не пишите код в mxml. Это отвратительно. Для вызова классов в mxml есть тэг Declarations.</li>
+          <li>Все цветовые настройки держите во внешнем css. Кастомные скины по возможности делать с учетом глобального chromeColor.</li>
         </ul>
         
-        <h3>Cirrus, Red5 и Flash Media Server</h3>
+        <h3 id="cirrus-red5--flash-media-server">Cirrus, Red5 и Flash Media Server</h3>
         
-        <p>После создания первого прототипа оказалось, что Cirrus не пробивает NAT&#39;ы.  Окей, перенес всё на Red5. Но у него проблемы мультикастом, точнее сказать его там вообще нет. И так мы пришли к <a href="http://www.adobe.com/products/flashmediaserver/amazonwebservices.">Flash Media Server</a></p>
+        <p>После создания первого прототипа оказалось, что Cirrus не пробивает NAT'ы.  Окей, перенес всё на Red5. Но у него проблемы мультикастом, точнее сказать его там вообще нет. И так мы пришли к <a href="http://www.adobe.com/products/flashmediaserver/amazonwebservices.">Flash Media Server</a></p>
         
         <p>Ситуация с FMS немного лучше, чем с Flex. С низкой вероятность, но всё же ответы можно получить на <a href="http://forums.adobe.com/community/flash/flash_media_server.">официальном форуме</a></p>
         
         <p>По FMS пока дам 1 совет. Используйте client.send() для передачи данных клиентам, вместо SharedObject. Доступ к SO лучше вообще запретить в через дерективу client.readAccess.</p>
         
-        <h3>Презентации</h3>
+        <h3 id="section">Презентации</h3>
         
         <p>На текущий момент для конвертации используются SWFTools, OpenOffice и jodconverter. И пока не нашел способа аккуратной открытия pptx и docx.</p>
         
-        <h3>Запуск</h3>
+        <h3 id="section-1">Запуск</h3>
         
         <p>FMS поднят через Apache. Сайт на Passanger с Nginx. OpenOffice на уровне демона. FmsConsole для мониторинга нагрузки. Всё работает.</p>
         <h4 class='meta'>

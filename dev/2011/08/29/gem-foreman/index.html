@@ -7,7 +7,7 @@
     <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js?29' type='text/javascript'></script>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/dev/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://feeds.feedburner.com/artursabirov//dev" />
     <script>
       VK.init({apiId: 2348265, onlyWidgets: true});
     </script>
@@ -31,9 +31,10 @@
         </h1>
         <nav>
           <a href="/dev">Разработка</a>
-          <a href="/projects/">Проекты</a>
+          <a href="/projects">Проекты</a>
           <a href="/books">Обзор книг</a>
-          <a href="/about/">О себе</a>
+          <a href="/life">Жизнь</a>
+          <a href="/about">О себе</a>
         </nav>
       </section>
     </header>
@@ -42,11 +43,13 @@
         <h1>Foreman</h1>
         <p>Во время разработки приходится запускать множество процессов: thin, faye, spork, sphinx, node.js. Пр. У каждого проекта своё окружение и переключение между ними занимает не мало времени.  Упростить задачу может Foreman.</p>
         
-        <h3>Установка</h3>
+        <h3 id="section">Установка</h3>
+        
         <pre class="highlight shell">gem install foreman
         </pre>
         
         <p>Создаем конфиг Procfile, в котором прописываем все процессы для запуска.</p>
+        
         <pre class="highlight plaintext">spork: spork
         thin: bundle exec rails s thin -p 3003
         faye: bundle exec rackup faye.ru -s thin -E development
@@ -54,39 +57,43 @@
         
         </pre>
         
-        <h3>Использование</h3>
+        <h3 id="section-1">Использование</h3>
         
         <p>Запуск всех разом</p>
+        
         <pre class="highlight plaintext">foreman start
         
         </pre>
         
         <p>Или только необходимые</p>
+        
         <pre class="highlight plaintext">foreman start thin, faye
         
         </pre>
         
-        <h3>Автозапуск</h3>
+        <h3 id="section-2">Автозапуск</h3>
         
         <p>Генерация скрипта для inittab:</p>
+        
         <pre class="highlight plaintext">foreman export inittab
         
         </pre>
         
         <p>и upstart:</p>
+        
         <pre class="highlight plaintext">foreman export upstart
         
         </pre>
         
-        <h3>Ссылки</h3>
+        <h3 id="section-3">Ссылки</h3>
         
         <p>Документация — <a href="http://ddollar.github.com/foreman">http://ddollar.github.com/foreman/</a></p>
         
         <p>Репозиторий — <a href="https://github.com/ddollar/foreman">https://github.com/ddollar/foreman</a></p>
         
-        <h3>Резюме</h3>
+        <h3 id="section-4">Резюме</h3>
         
-        <p>Foreman&#39;у не не хватает запуска в фоновом режиме. Чтобы каждый процесс можно было перезапустить не задев остальные. В остальном же со своей задачей прекрасно справляется.</p>
+        <p>Foreman'у не не хватает запуска в фоновом режиме. Чтобы каждый процесс можно было перезапустить не задев остальные. В остальном же со своей задачей прекрасно справляется.</p>
         <h4 class='meta'>
           <div class='tags'>
             <a href="/dev/tags/ruby/">ruby</a>

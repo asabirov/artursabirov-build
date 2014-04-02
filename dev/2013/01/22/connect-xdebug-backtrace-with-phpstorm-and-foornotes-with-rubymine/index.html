@@ -7,7 +7,7 @@
     <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js?29' type='text/javascript'></script>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/dev/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://feeds.feedburner.com/artursabirov//dev" />
     <script>
       VK.init({apiId: 2348265, onlyWidgets: true});
     </script>
@@ -31,39 +31,43 @@
         </h1>
         <nav>
           <a href="/dev">Разработка</a>
-          <a href="/projects/">Проекты</a>
+          <a href="/projects">Проекты</a>
           <a href="/books">Обзор книг</a>
-          <a href="/about/">О себе</a>
+          <a href="/life">Жизнь</a>
+          <a href="/about">О себе</a>
         </nav>
       </section>
     </header>
     <section id='single-column'>
       <article>
         <h1>Rails-footnote и RubyMine</h1>
-        <h3>PhpStorm  и Xdebug</h3>
+        <h3 id="phpstorm---xdebug">PhpStorm  и Xdebug</h3>
         
-        <p>В backtrace&#39;е у XDebug предусмотрен простой переход к нужному файлу и на нужную строку. Только использует он протокол txmt (TextMate), что не пригодно с PhpStorm.</p>
+        <p>В backtrace'е у XDebug предусмотрен простой переход к нужному файлу и на нужную строку. Только использует он протокол txmt (TextMate), что не пригодно с PhpStorm.</p>
         
-        <p><img src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/xdebug.png" /></p>
+        <p><img alt="" src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/xdebug.png" /></p>
         
         <p>Решение нашел тут: <a href="http://youtrack.jetbrains.com/issue/IDEA-65879">http://youtrack.jetbrains.com/issue/IDEA-65879</a></p>
         
         <p>Ставим плагин Remote Call: <a href="http://plugins.jetbrains.net/plugin?pr=webide&amp;amp;pluginId=6027">http://plugins.jetbrains.net/plugin?pr=webide&amp;pluginId=6027</a></p>
         
         <p>И прописываем в конфиге xdebug:</p>
+        
         <pre class="highlight plaintext">xdebug.file_link_format = "javascript: var r = new XMLHttpRequest; r.open(\"get\", \"http://localhost:8091?message=%f:%l\");r.send()"
         
         </pre>
         
-        <h3>RubyMine и Rails Footnotes</h3>
+        <h3 id="rubymine--rails-footnotes">RubyMine и Rails Footnotes</h3>
         
         <p>В Gemfile.rb:</p>
+        
         <pre class="highlight ruby"><span class="n">gem</span> <span class="s1">'rails-footnotes'</span><span class="p">,</span> <span class="s1">'&gt;= 3.7.9'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>
         </pre>
         
         <p>$ rails generate rails_footnotes:install</p>
         
         <p>Добавляем фильтр в config/initializers/rails_footnotes.rb:</p>
+        
         <pre class="highlight ruby"><span class="k">if</span> <span class="n">defined?</span><span class="p">(</span><span class="no">Footnotes</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">.</span><span class="nf">development?</span>
           <span class="no">Footnotes</span><span class="p">.</span><span class="nf">run!</span> 
         
@@ -72,9 +76,9 @@
         
         </pre>
         
-        <p><img src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/footnotes.png" /></p>
+        <p><img alt="" src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/footnotes.png" /></p>
         
-        <h3>Ссылки</h3>
+        <h3 id="section">Ссылки</h3>
         
         <p><a href="https://github.com/digidigo/ruby_footprints">https://github.com/digidigo/ruby_footprints</a></p>
         

@@ -7,7 +7,7 @@
     <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js?29' type='text/javascript'></script>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/dev/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://feeds.feedburner.com/artursabirov//dev" />
     <script>
       VK.init({apiId: 2348265, onlyWidgets: true});
     </script>
@@ -31,23 +31,26 @@
         </h1>
         <nav>
           <a href="/dev">Разработка</a>
-          <a href="/projects/">Проекты</a>
+          <a href="/projects">Проекты</a>
           <a href="/books">Обзор книг</a>
-          <a href="/about/">О себе</a>
+          <a href="/life">Жизнь</a>
+          <a href="/about">О себе</a>
         </nav>
       </section>
     </header>
     <section id='single-column'>
       <article>
         <h1>Selenium Server на CentOS</h1>
-        <h3>Установка</h3>
+        <h3 id="section">Установка</h3>
         
         <p>Для начала потребуется виртуальный буфер для эмуляции иксов.</p>
+        
         <pre class="highlight plaintext">yum install Xvfb
         
         </pre>
         
         <p>Скрипт автозагрузки:</p>
+        
         <pre class="highlight shell"><span class="c">#!/bin/bash</span>
         <span class="c">#</span>
         <span class="c"># /etc/rc.d/init.d/xvfbd</span>
@@ -79,7 +82,7 @@
                     /sbin/pidof -o  %PPID -x Xvfb &gt; /var/run/Xvfb.pid
                 <span class="k">fi
                 </span><span class="nb">echo</span>
-                <span class="p">;;</span>
+           		<span class="p">;;</span>
             stop<span class="p">)</span>
                 <span class="nb">echo</span> -n <span class="s2">"Shutting down : X Virtual Frame Buffer"</span>
                 killproc <span class="nv">$PROG</span>
@@ -88,14 +91,14 @@
                 <span class="nb">echo</span>
                 <span class="p">;;</span>
             restart|reload<span class="p">)</span>
-                <span class="nv">$0</span> stop
-                <span class="nv">$0</span> start
+            	<span class="nv">$0</span> stop
+            	<span class="nv">$0</span> start
                 <span class="nv">RETVAL</span><span class="o">=</span><span class="nv">$?</span>
-                <span class="p">;;</span>
+              	<span class="p">;;</span>
             status<span class="p">)</span>
-                status Xvfb
-                <span class="nv">RETVAL</span><span class="o">=</span><span class="nv">$?</span>
-                <span class="p">;;</span>
+            	status Xvfb
+            	<span class="nv">RETVAL</span><span class="o">=</span><span class="nv">$?</span>
+            	<span class="p">;;</span>
             <span class="k">*</span><span class="p">)</span>
              <span class="nb">echo</span> <span class="s2">$"Usage: </span><span class="nv">$0</span><span class="s2"> (start|stop|restart|reload|status)"</span>
              <span class="nb">exit </span>1
@@ -106,6 +109,7 @@
         </pre>
         
         <p>Добавим его в автозагрузку и запустим.</p>
+        
         <pre class="highlight shell">chmod +x /etc/init.d/xvfb
         chkconfig xvfb on
         service xvfb start
@@ -113,6 +117,7 @@
         </pre>
         
         <p>Таперь Selenium Server.</p>
+        
         <pre class="highlight shell">mkdir /usr/local/lib/selenium
         <span class="nb">cd</span> /usr/local/lib/selenium
         wget http://selenium.googlecode.com/files/selenium-server-standalone-2.4.0.jar
@@ -122,6 +127,7 @@
         </pre>
         
         <p>/etc/init.d/selenium</p>
+        
         <pre class="highlight shell"><span class="c">#!/bin/bash</span>
         
         <span class="k">case</span> <span class="s2">"</span><span class="k">${</span><span class="nv">1</span><span class="k">:-</span><span class="s1">''</span><span class="k">}</span><span class="s2">"</span> <span class="k">in</span>
@@ -179,6 +185,7 @@
         </pre>
         
         <p>Запуск процесса:</p>
+        
         <pre class="highlight shell">chmod +x /etc/init.d/selenium
         chkconfig selenium on
         service selenium start
@@ -186,6 +193,7 @@
         </pre>
         
         <p>Подключение FireFox:</p>
+        
         <pre class="highlight shell"><span class="nb">cd</span> /tmp
         wget http://mirror.informatik.uni-mannheim.de/pub/mirrors/mozilla.org/firefox/releases/6.0/linux-i686/en-US/firefox-6.0.tar.bz2
         tar xvf firefox-6.0.tar.bz2
@@ -194,9 +202,10 @@
         
         </pre>
         
-        <h3>Результат</h3>
+        <h3 id="section-1">Результат</h3>
         
         <p>Пример скрипта:</p>
+        
         <pre class="highlight ruby"><span class="nb">require</span> <span class="s1">'rubygems'</span>
         <span class="n">gem</span> <span class="s2">"selenium-client"</span>
         <span class="nb">require</span> <span class="s2">"selenium/client"</span>
@@ -212,11 +221,12 @@
         <span class="vi">@selenium_driver</span><span class="p">.</span><span class="nf">stop</span>
         
         </pre>
+        
         <pre class="highlight shell">gem install selenium-client
         ruby test.rb
         </pre>
         
-        <h3>Резюме</h3>
+        <h3 id="section-2">Резюме</h3>
         
         <p>Серверный selenium легко подключается к rspec и либо CI. Предоставляет больший выбор браузеров, нежели phantomjs.</p>
         

@@ -7,7 +7,7 @@
     <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js?29' type='text/javascript'></script>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/dev/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://feeds.feedburner.com/artursabirov//dev" />
     <script>
       VK.init({apiId: 2348265, onlyWidgets: true});
     </script>
@@ -31,9 +31,10 @@
         </h1>
         <nav>
           <a href="/dev">Разработка</a>
-          <a href="/projects/">Проекты</a>
+          <a href="/projects">Проекты</a>
           <a href="/books">Обзор книг</a>
-          <a href="/about/">О себе</a>
+          <a href="/life">Жизнь</a>
+          <a href="/about">О себе</a>
         </nav>
       </section>
     </header>
@@ -42,9 +43,10 @@
         <h1>Генераторы JSON для Rails</h1>
         <p>Сериализация объектов обычное явление в проектах Rails, для этих целей обычно используется сериализатор из ActiveSupport, но для составных контейнеров не очень удобен.</p>
         
-        <h3>Нативный ERB</h3>
+        <h3 id="erb">Нативный ERB</h3>
         
         <p>Самый простой вариант.</p>
+        
         <pre class="highlight ruby"><span class="k">class</span> <span class="nc">CountriesController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
           <span class="k">def</span> <span class="nf">index</span>
             <span class="vi">@counties</span> <span class="o">=</span> <span class="no">Country</span><span class="p">.</span><span class="nf">all</span>
@@ -53,6 +55,7 @@
           <span class="k">end</span>
         <span class="k">end</span>
         </pre>
+        
         <pre class="highlight ruby"><span class="o">&lt;</span><span class="sx">%- @countries.each do |country|%&gt;
         {
             'name': '&lt;%= country.long_name %&gt;',
@@ -63,11 +66,13 @@
         
         <p>Выбор старообрядцев.</p>
         
-        <h3>RABL</h3>
+        <h3 id="rabl">RABL</h3>
         
         <p>Самый популярный на github.</p>
+        
         <pre class="highlight ruby"><span class="n">gem</span> <span class="s2">"json_builder"</span>
         </pre>
+        
         <pre class="highlight ruby"><span class="n">collection</span> <span class="vi">@posts</span>
         <span class="n">attributes</span> <span class="ss">:id</span><span class="p">,</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:subject</span>
         <span class="n">child</span><span class="p">(</span><span class="ss">:user</span><span class="p">)</span> <span class="p">{</span> <span class="n">attributes</span> <span class="ss">:full_name</span> <span class="p">}</span>
@@ -75,6 +80,7 @@
         </pre>
         
         <p>http://localhost:3000/posts.json</p>
+        
         <pre class="highlight json"><span class="p">[{</span><span class="w">  </span><span class="err">post</span><span class="w"> </span><span class="p">:</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="err">id</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="err">title</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w"> </span><span class="err">subject</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
@@ -88,22 +94,25 @@
         
         <p><a href="https://github.com/nesquena/rabl">https://github.com/nesquena/rabl</a></p>
         
-        <h3>JSON Builder</h3>
+        <h3 id="json-builder">JSON Builder</h3>
         
         <p>Второй по популярности.</p>
+        
         <pre class="highlight plaintext">gem "json_builder"
         </pre>
         
         <p><br /></p>
+        
         <pre class="highlight ruby"><span class="k">class</span> <span class="nc">PostsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
           <span class="n">respond_to</span> <span class="ss">:json</span>
-        
+          
           <span class="k">def</span> <span class="nf">index</span>
             <span class="vi">@posts</span> <span class="o">=</span> <span class="no">Post</span><span class="p">.</span><span class="nf">all</span>
             <span class="n">respond_with</span> <span class="vi">@posts</span>
           <span class="k">end</span>
         <span class="k">end</span>
         </pre>
+        
         <pre class="highlight ruby"><span class="n">json</span><span class="p">.</span><span class="nf">posts</span> <span class="k">do</span>
           <span class="n">json</span><span class="p">.</span><span class="nf">array!</span> <span class="vi">@posts</span> <span class="k">do</span>
             <span class="vi">@posts</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span>
@@ -116,6 +125,7 @@
         </pre>
         
         <p>http://localhost:3000/posts.json</p>
+        
         <pre class="highlight json"><span class="p">{</span><span class="w">
           </span><span class="err">[posts]()</span><span class="w">
         </span><span class="err">[</span><span class="w">
@@ -137,11 +147,13 @@
         
         <p><a href="https://github.com/dewski/json_builder">https://github.com/dewski/json_builder</a></p>
         
-        <h3>Jsonify</h3>
+        <h3 id="jsonify">Jsonify</h3>
         
         <p>Совсем новый проект, стремительно набирающий популярность.</p>
+        
         <pre class="highlight ruby"><span class="n">gem</span> <span class="s2">"jsonify-rails"</span>
         </pre>
+        
         <pre class="highlight ruby"><span class="n">json</span><span class="p">.</span><span class="nf">post</span> <span class="k">do</span>
           <span class="n">json</span><span class="p">.</span><span class="nf">title</span> <span class="vi">@post</span><span class="p">.</span><span class="nf">title</span>
           <span class="n">json</span><span class="p">.</span><span class="nf">body_plain</span> <span class="vi">@post</span><span class="p">.</span><span class="nf">body_plain</span>
@@ -150,6 +162,7 @@
         </pre>
         
         <p>http://localhost:3000/posts.json</p>
+        
         <pre class="highlight json"><span class="p">{</span><span class="w">
             </span><span class="err">post</span><span class="w"> </span><span class="p">:{</span><span class="w">
                 </span><span class="err">title</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
@@ -163,7 +176,7 @@
         
         <p><a href="https://github.com/bsiggelkow/jsonify-rails">Wrapper для Rails — https://github.com/bsiggelkow/jsonify-rails</a></p>
         
-        <h3>Argonaut, Tokamak и Tequila</h3>
+        <h3 id="argonaut-tokamak--tequila">Argonaut, Tokamak и Tequila</h3>
         
         <p>Проекты скорее мертвые, чем просто «стабильные». Argonaut и Tokamak не совместимы с Rails 3.1. </p>
         
