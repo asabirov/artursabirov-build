@@ -15,7 +15,7 @@
     <author>
       <name>Артур Сабиров</name>
     </author>
-    <content type="html">&lt;p&gt;На днях собрал простую утилиту для проверки орфографии в прямо терминале. В деле выглядит она так:&lt;/p&gt;
+    <content type="html">&lt;p&gt;На днях собрал небольшой консольный скрипт для проверки орфографии в терминале. В деле выглядит она так:&lt;/p&gt;
 
 &lt;p&gt;&lt;img alt="Проверка файла" src="http://artursabirov.ru/dev/2014/04/04/yspell/yspell.jpg" /&gt;&lt;/p&gt;
 
@@ -23,7 +23,7 @@
 
 &lt;p&gt;&lt;img alt="Проверка строки" src="http://artursabirov.ru/dev/2014/04/04/yspell/yspell2.jpg" /&gt;&lt;/p&gt;
 
-&lt;p&gt;Тексты проверяются через &lt;a href="http://artursabirov.ruhttp://api.yandex.ru/speller/"&gt;Yandex Speller&lt;/a&gt;, для русскоязычных текстов он мне он показался лучше, чем ispell, более того не нужно возиться со словарями.
+&lt;p&gt;Тексты проверяются через &lt;a href="http://artursabirov.ruhttp://api.yandex.ru/speller/"&gt;Yandex Speller&lt;/a&gt;, для русскоязычных текстов он мне он показался лучше, чем ispell, и не нужно возиться с установкой словарями.
 YSpell можно использовать как консольную утилиту, так и подключить в виде библиотеки.&lt;/p&gt;
 
 &lt;h2 id="section"&gt;Установка&lt;/h2&gt;
