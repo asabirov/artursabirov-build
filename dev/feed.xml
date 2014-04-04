@@ -15,7 +15,7 @@
     <author>
       <name>Артур Сабиров</name>
     </author>
-    <content type="html">&lt;p&gt;На днях собрал небольшой консольный скрипт для проверки орфографии в терминале. В деле выглядит она так:&lt;/p&gt;
+    <content type="html">&lt;p&gt;На днях собрал небольшой консольный скрипт для проверки орфографии в терминале. В деле выглядит он так:&lt;/p&gt;
 
 &lt;p&gt;&lt;img alt="Проверка файла" src="http://artursabirov.ru/dev/2014/04/04/yspell/yspell.jpg" /&gt;&lt;/p&gt;
 
