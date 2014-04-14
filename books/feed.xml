@@ -2,10 +2,48 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Артур Сабиров</title>
   <subtitle>Обзор книг</subtitle>
-  <updated>2011-08-31T20:00:00Z</updated>
+  <updated>2014-04-12T21:02:00Z</updated>
   <author>
     <name>Артур Сабиров</name>
   </author>
+  <entry>
+    <title>The Passionate Programmer</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/passionate-programmer/"/>
+    <id>http://artursabirov.ru/books/passionate-programmer/</id>
+    <published>2014-04-12T21:02:00Z</published>
+    <updated>2014-04-12T21:02:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Ни для кого не секрет, что полная увлеченность своим делом приносит как успех в карьере, так и удовлетворенность работой. Программирование не является исключением.
+О мотивации и развитии технических навыков написано достаточно книг, но The Passionate Programmer уже стала почти библией программистов за два года с момента публикации.&lt;/p&gt;
+
+&lt;p&gt;Описанные в книге рекомендации помогут как начинающим разработчикам составить план на будущее, так и состоявшимся — слезть с насидевшего места и найти новые пути развития.&lt;/p&gt;
+
+&lt;h2 id="mindmap"&gt;Mindmap&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://artursabirov.ru/images/mindmaps/the-passionate-programmer.jpg" rel="lightbox"&gt;&lt;img alt="Mindmap" src="http://artursabirov.ru/images/mindmaps/the-passionate-programmer.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Познер о Познере</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/pozner-o-poznere/"/>
+    <id>http://artursabirov.ru/books/pozner-o-poznere/</id>
+    <published>2014-04-05T06:04:00Z</published>
+    <updated>2014-04-05T06:04:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Познер пишет не так много книг, а человек с такой широкой эрудицией и историческим опытом, считаю, должен писать больше.
+Познер о Познере — это собрание интервью с комментариями, которые Владимир Владимирович проводил на своей авторской передаче.
+В частности в книге интервью с Горбачевым, Егором Гайдаром, Чубайсом — политические деятели переходного периода; Никита Михалков, Андрей Кончаловский — режиссеры;
+Юрий Лужков и Хилари Клинтон.&lt;/p&gt;
+
+&lt;p&gt;Книга интересна с точки зрения истории и политики: в беседах затрагиваются темы Советского союза, экономических реформ начала 90х, состояние общества и культуры.&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Pro JavaScript Design Patterns</title>
     <link rel="alternate" href="http://artursabirov.ru/books/pro-javascript-design-patterns/"/>

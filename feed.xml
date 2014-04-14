@@ -2,10 +2,48 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Артур Сабиров</title>
   <subtitle>Все разделы</subtitle>
-  <updated>2014-04-04T04:13:00Z</updated>
+  <updated>2014-04-12T21:02:00Z</updated>
   <author>
     <name>Артур Сабиров</name>
   </author>
+  <entry>
+    <title>The Passionate Programmer</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/passionate-programmer/"/>
+    <id>http://artursabirov.ru/books/passionate-programmer/</id>
+    <published>2014-04-12T21:02:00Z</published>
+    <updated>2014-04-12T21:02:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Ни для кого не секрет, что полная увлеченность своим делом приносит как успех в карьере, так и удовлетворенность работой. Программирование не является исключением.
+О мотивации и развитии технических навыков написано достаточно книг, но The Passionate Programmer уже стала почти библией программистов за два года с момента публикации.&lt;/p&gt;
+
+&lt;p&gt;Описанные в книге рекомендации помогут как начинающим разработчикам составить план на будущее, так и состоявшимся — слезть с насидевшего места и найти новые пути развития.&lt;/p&gt;
+
+&lt;h2 id="mindmap"&gt;Mindmap&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://artursabirov.ru/images/mindmaps/the-passionate-programmer.jpg" rel="lightbox"&gt;&lt;img alt="Mindmap" src="http://artursabirov.ru/images/mindmaps/the-passionate-programmer.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Познер о Познере</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/pozner-o-poznere/"/>
+    <id>http://artursabirov.ru/books/pozner-o-poznere/</id>
+    <published>2014-04-05T06:04:00Z</published>
+    <updated>2014-04-05T06:04:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Познер пишет не так много книг, а человек с такой широкой эрудицией и историческим опытом, считаю, должен писать больше.
+Познер о Познере — это собрание интервью с комментариями, которые Владимир Владимирович проводил на своей авторской передаче.
+В частности в книге интервью с Горбачевым, Егором Гайдаром, Чубайсом — политические деятели переходного периода; Никита Михалков, Андрей Кончаловский — режиссеры;
+Юрий Лужков и Хилари Клинтон.&lt;/p&gt;
+
+&lt;p&gt;Книга интересна с точки зрения истории и политики: в беседах затрагиваются темы Советского союза, экономических реформ начала 90х, состояние общества и культуры.&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>YSpell</title>
     <link rel="alternate" href="http://artursabirov.ru/dev/2014/04/04/yspell/"/>
@@ -154,168 +192,6 @@ Options
 &lt;p&gt;&lt;a href="http://artursabirov.ruhttps://github.com/digidigo/ruby_footprints"&gt;https://github.com/digidigo/ruby_footprints&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://artursabirov.ruhttps://github.com/Zolotov/RemoteCall"&gt;https://github.com/Zolotov/RemoteCall&lt;/a&gt;&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
-    <title>PostgreSQL 9.0 High Performance</title>
-    <link rel="alternate" href="http://artursabirov.ru/dev/2012/04/08/postgres-high-perfomance/"/>
-    <id>http://artursabirov.ru/dev/2012/04/08/postgres-high-perfomance/</id>
-    <published>2012-04-07T20:00:00Z</published>
-    <updated>2012-04-07T20:00:00Z</updated>
-    <author>
-      <name>Артур Сабиров</name>
-    </author>
-    <content type="html">&lt;p&gt;Читая книгу &lt;a href="http://artursabirov.ruhttp://www.goodreads.com/book/show/10033368-postgresql-9-0-high-performance,"&gt;PostgreSQL 9.0 High Performance&lt;/a&gt;
-выписал некоторые интересные моменты, которые могут оказаться полезными простым разработчикам.&lt;/p&gt;
-
-&lt;h2 id="section"&gt;Полезные команды.&lt;/h2&gt;
-
-&lt;p&gt;EXPLAIN ANALYZE [sql] — анализ выполненного запроса (используемые ноды, время выполнения, использование индексов).&lt;/p&gt;
-
-&lt;p&gt;VACUUM — дефрагментация базы. Можно запускать, если отключен autovacuum. Рекомендуется выполнять после большого удаления данных.&lt;/p&gt;
-
-&lt;p&gt;REINDEX INDEX [index_name] — перестройка индекса.&lt;/p&gt;
-
-&lt;p&gt;REINDEX TABLE [table_name] — перестройка индексов всей таблицы.&lt;/p&gt;
-
-&lt;h2 id="section-1"&gt;Анализаторы логов&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://pgfouine.projects.postgresql.org/,"&gt;pgFouine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://bucardo.org/wiki/Pgsi,"&gt;pgsi&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://www.maatkit.org/doc/mk-query-digest.html"&gt;mk-query-digest&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;pgFouine — наиболее удобный, хоть и требует веб-сервер для запуска.&lt;/p&gt;
-
-&lt;h2 id="section-2"&gt;Рекомендации по использованию индексов&lt;/h2&gt;
-
-&lt;p&gt;Ставьте индексы на поля, по которым происходит поиск или сортировка.&lt;/p&gt;
-
-&lt;p&gt;Исключите использование ненужных индексов (найти их поможет EXPLAIN ANALYZE)&lt;/p&gt;
-
-&lt;h2 id="section-3"&gt;Индексы&lt;/h2&gt;
-
-&lt;p&gt;B-Tree – индекс по-умолчанию. Подходит для всех типов.&lt;/p&gt;
-
-&lt;p&gt;Hash — эффективен при поиске по равенству: column_name = 'value'.&lt;/p&gt;
-
-&lt;p&gt;GIN — дает быстрый поиск, но долгое обновление при INSERT. Применим для полнотекстового поиска.&lt;/p&gt;
-
-&lt;p&gt;GiST — для полнотекстового поиска. Быстрый поиск, но долгое обновление индекса. Так же применим для полнотекстового поиска.&lt;/p&gt;
-
-&lt;p&gt;При поиске с использованием LIKE или POSIX задать специальный параметр: &lt;/p&gt;
-
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt; &lt;span class="n"&gt;varchar_pattern_ops&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Для других типов: text_pattern_ops, bpchar_pattern_ops, name_pattern_ops.&lt;/p&gt;
-
-&lt;h2 id="section-4"&gt;Составной индекс&lt;/h2&gt;
-
-&lt;p&gt;При поиске по по двум и более колонкам можно использовать составной индекс:&lt;/p&gt;
-
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;col_1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;col_2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;h2 id="section-5"&gt;Частичный индекс&lt;/h2&gt;
-
-&lt;p&gt;В случае, если поиск совершается только по какому-то одному значению:&lt;/p&gt;
-
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="k"&gt;table&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="k"&gt;column_name&lt;/span&gt; &lt;span class="k"&gt;IS&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;h2 id="section-6"&gt;Сортировка индексов&lt;/h2&gt;
-
-&lt;p&gt;При сортировке по индексу в одну сторону, например DESC, можно настроить и сам индекс:&lt;/p&gt;
-
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt;  &lt;span class="k"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt; &lt;span class="k"&gt;DESC&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Если имеются значения NULL, можно подвинуть их в начало:&lt;/p&gt;
-
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt;  &lt;span class="k"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt; &lt;span class="n"&gt;NULLS&lt;/span&gt; &lt;span class="k"&gt;FIRST&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;По умолчанию значения NULL хранятся в конце.&lt;/p&gt;
-
-&lt;h2 id="section-7"&gt;Обработка значений в индексе&lt;/h2&gt;
-
-&lt;p&gt;Если в запросах используются функции:&lt;/p&gt;
-
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="k"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'x'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Можно подготовить значения и в самом индексе:&lt;/p&gt;
-
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;index_name&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt; 
-&lt;/pre&gt;
-
-&lt;h2 id="offset-0"&gt;OFFSET 0&lt;/h2&gt;
-
-&lt;p&gt;Использование «OFFSET 0» ускорит выполнение вложенных запросов:&lt;/p&gt;
-
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;prod_id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;orderlines&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;
-&lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;customers&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;orders&lt;/span&gt; &lt;span class="k"&gt;USING&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;customerid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;orders&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;orderid&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;orderid&lt;/span&gt; &lt;span class="k"&gt;OFFSET&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;orderdate&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'2004-12-01'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;h2 id="select-count"&gt;Ускорение SELECT count(*)&lt;/h2&gt;
-
-&lt;p&gt;В PostgreSQL, в отличии от других БД, медленный подсчет строк.&lt;/p&gt;
-
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Его можно ускорить, добавив какое-нибудь условие WHERE:&lt;/p&gt;
-
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;h2 id="foreign-keys"&gt;FOREIGN KEYS&lt;/h2&gt;
-
-&lt;p&gt;Добавление и изменение большого количества данных может оказаться медленным из-за использования внешних ключей (FOREIGN KEYS). Поэтому их можно  приглушить до окончания операции:&lt;/p&gt;
-
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;BEGIN&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="k"&gt;CONSTRAINTS&lt;/span&gt; &lt;span class="k"&gt;ALL&lt;/span&gt; &lt;span class="k"&gt;DEFERRED&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="k"&gt;update&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="n"&gt;statements&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="k"&gt;COMMIT&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>JSLint в Sublime Text</title>
-    <link rel="alternate" href="http://artursabirov.ru/dev/2012/01/23/sublime-text-jslint-integration/"/>
-    <id>http://artursabirov.ru/dev/2012/01/23/sublime-text-jslint-integration/</id>
-    <published>2012-01-22T20:00:00Z</published>
-    <updated>2012-01-22T20:00:00Z</updated>
-    <author>
-      <name>Артур Сабиров</name>
-    </author>
-    <content type="html">&lt;p&gt;Расскажу, как совместить подключить JSLint в  Sublime Text 2.&lt;/p&gt;
-
-&lt;h1 id="cut"&gt;cut&lt;/h1&gt;
-
-&lt;p&gt;Консольный JSLint — &lt;a href="http://artursabirov.ruhttp://www.javascriptlint.com/download.htm"&gt;http://www.javascriptlint.com/download.htm&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Создаем новый build-сценарий: Tools → Build Systems → New Build System&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="" src="http://artursabirov.ru/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Вставляем и настраиваем путь до jslint (windows):&lt;/p&gt;
-
-&lt;pre class="highlight javascript"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;]()&lt;/span&gt;
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"d:/lib/jsl/jsl.exe"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"-process"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"$file"&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;selector&lt;/span&gt;&lt;span class="p"&gt;]()&lt;/span&gt;
-&lt;span class="s2"&gt;"source.js"&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;/pre&gt;
-
-&lt;p&gt;Сохраняем файл, жмем CTRL+B и смотрим результат.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="" src="http://artursabirov.ru/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint2.png" /&gt;&lt;/p&gt;
 
 </content>
   </entry>

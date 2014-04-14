@@ -2,7 +2,7 @@
 <html dir='ltr' lang='ru-RU'>
   <head>
     <meta charset='utf-8'>
-    <title>Обзор книг</title>
+    <title>Познер о Познере</title>
     <link href='http://feeds.feedburner.com/artursabirov' rel='alternate' title='ArturSabirov.ru' type='application/rss+xml'>
     <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
@@ -40,35 +40,31 @@
     </header>
     <section id='single-column'>
       <article>
-        <h1>Обзор книг</h1>
-        <article class='books-list'>
-          <div class='book'>
-            <a href='/books/passionate-programmer/'>
-              <img src="/images/books/passionate_programmer.jpg" />
-              <div class='title'>The Passionate Programmer</div>
-            </a>
-          </div>
-          <div class='book'>
-            <a href='/books/pozner-o-poznere/'>
-              <img src="/images/books/pozner.jpg" />
-              <div class='title'>Познер о Познере</div>
-            </a>
-          </div>
-          <div class='book'>
-            <a href='/books/pro-javascript-design-patterns/'>
-              <img src="/images/books/pro_design_js.jpg" />
-              <div class='title'>Pro JavaScript Design Patterns</div>
-            </a>
-          </div>
-          <div class='book'>
-            <a href='/books/deadline-demarco/'>
-              <img src="/images/books/DeadLine.jpg" />
-              <div class='title'>Deadline, Том ДеМарко</div>
-            </a>
-          </div>
-        </article>
-        <div class='pagination'>
-        </div>
+        <section class='book-review'>
+          <h1>Познер о Познере</h1>
+          <img class="cover" src="/images/books/pozner.jpg" />
+          <p>Познер пишет не так много книг, а человек с такой широкой эрудицией и историческим опытом, считаю, должен писать больше.
+          Познер о Познере — это собрание интервью с комментариями, которые Владимир Владимирович проводил на своей авторской передаче.
+          В частности в книге интервью с Горбачевым, Егором Гайдаром, Чубайсом — политические деятели переходного периода; Никита Михалков, Андрей Кончаловский — режиссеры;
+          Юрий Лужков и Хилари Клинтон.</p>
+          
+          <p>Книга интересна с точки зрения истории и политики: в беседах затрагиваются темы Советского союза, экономических реформ начала 90х, состояние общества и культуры.</p>
+          <div id='disqus_thread'></div>
+          <script>
+            var disqus_shortname = 'artursabirovru'; // required: replace example with your forum shortname
+            
+            //var disqus_identifier = 'unique_dynamic_id_1234';
+            var disqus_url = 'http://artursabirov.ru/books/pozner-o-poznere/';
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+                dsq.async = true; dsq.defer = 'defer';
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+        </section>
       </article>
     </section>
     <script>
@@ -93,3 +89,4 @@
     <script src="/javascripts/application.js" type="text/javascript"></script>
   </body>
 </html>
+
