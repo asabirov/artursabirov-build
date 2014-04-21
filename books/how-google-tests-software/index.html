@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='ru-RU'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Как тестируют в Google</title>
+    <link href='http://feeds.feedburner.com/artursabirov' rel='alternate' title='ArturSabirov.ru' type='application/rss+xml'>
+    <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js?29' type='text/javascript'></script>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://feeds.feedburner.com/artursabirov//books" />
+    <script>
+      VK.init({apiId: 2348265, onlyWidgets: true});
+    </script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24946626-1']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <section>
+        <h1 id='page_heading'>
+          <a href='/'>Блог Артура Сабирова</a>
+        </h1>
+        <nav>
+          <a href="/dev">Разработка</a>
+          <a href="/projects">Проекты</a>
+          <a href="/books">Обзор книг</a>
+          <a href="/life">Жизнь</a>
+          <a href="/about">О себе</a>
+        </nav>
+      </section>
+    </header>
+    <section id='single-column'>
+      <article>
+        <section class='book-review'>
+          <h1>Как тестируют в Google</h1>
+          <img class="cover" src="/images/books/how-google-tests-software.png" />
+          <p>Не смотря на свои масштабы, в компании работает <a href="http://investor.google.com/financial/tables.html">49 тыс. человек</a>,
+          Google удается выпускать и развивать огромное количество продуктов: Google Plus, Android, YouTube, Drive и веб-сервисы google.com от поиска до веб-аналитики.
+          Всеми этими проектами пользуются десятки и сотки миллионов людей, требование к качеству этих проектов очень высокое.
+          Поэтому тестирование в компании на столько же важно, как и разработка.</p>
+          
+          <h2 id="google--qa">В Google нет QA.</h2>
+          <p>За качество отвечают в сами разработчики, тестировщики лишь помогают им в этом.
+          Написанный код лучше всего протестирует тот кто его написал, поэтому создание тестов является неотъемлемой частью написания кода.</p>
+          
+          <h2 id="google----">В Google тестировщики такие же разработчики</h2>
+          <p>Практически все тестировщики обладают высокими техническими навыками, им приходится подготавливать тестовые окружения,
+          следить за качеством автоматических тестов написанных разработчиками и дописывать при необходимости, также писать инструменты для упрощения тестирования.
+          Целый офис в Бангалоре сосредоточен на создании инструментов для тестирования.</p>
+          
+          <h2 id="section">Инструменты</h2>
+          <p>Тестировщиками написано множество инструментов, которые упрощают процесс тестирования и диагностики.
+          Широко используются в компании: <a href="https://code.google.com/p/qualitybots/">Quality Bots</a> для регрессионного тестирования,
+          <a href="https://code.google.com/p/bite-project/">BITE</a> для тестировщиков веб-сервисом, Diagnostic Utility встроенный в Chrome.</p>
+          
+          <h2 id="section-1">Автоматизация</h2>
+          <p>Тестирование начинается с тест-плана и составления тест-кейсов. Планы пишутся по модели <a href="https://code.google.com/p/test-analytics/wiki/AccExplained">ACC (Attribute, Component, Capability)</a>
+           — составляется список компонентов, возможностей/фич продукта и их основных характеристик (надежный, простой, доступный).
+          Собранный список формируется в тест-кейсы, что и является первоочередной целью модели ACC.
+          Для упрощения создания таких планов в Google написан и выложен в открытый доступ <a href="https://code.google.com/p/test-analytics/">открытый доступ</a> Google Test Application.</p>
+          
+          <h2 id="section-2">Для кого книга</h2>
+          <p>Книга написана без погружения в технические детали, поэтому может оказаться интересна большому количеству читателей.
+          В частности, разработчикам, для которых качество — не пустой звук, тестировщикам и руководителям QA.</p>
+          
+          <h2 id="mindmap">Mindmap</h2>
+          
+          <p><a href="/images/mindmaps/how-google-tests-software.png"><img alt="Mindmap" src="/images/mindmaps/how-google-tests-software/how-google-tests-software-thumb.png" /></a></p>
+          <div id='disqus_thread'></div>
+          <script>
+            var disqus_shortname = 'artursabirovru'; // required: replace example with your forum shortname
+            
+            //var disqus_identifier = 'unique_dynamic_id_1234';
+            var disqus_url = 'http://artursabirov.ru/books/how-google-tests-software/';
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+                dsq.async = true; dsq.defer = 'defer';
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+        </section>
+      </article>
+    </section>
+    <script>
+      var disqus_shortname = 'artursabirovru';
+      (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+      
+      
+      var addthis_config = {
+          pubid: "ra-4e4f7ce25d6f5675",
+          data_track_clickback: true,
+          ui_language: "ru",
+          templates: {twitter: '{{text}} {{lurl}}'},
+          data_ga_tracker: "UA-24946626-1"
+      };
+    </script>
+    <script defer="defer" type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e4f7ce25d6f5675&domready=1"></script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
+  </body>
+</html>
+
