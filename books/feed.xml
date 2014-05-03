@@ -28,6 +28,26 @@
 </content>
   </entry>
   <entry>
+    <title>[Книги] Повседневная жизнь Москвы в сталинскую эпоху. 1930-1940-е годы</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/moscow-30-40/"/>
+    <id>http://artursabirov.ru/books/moscow-30-40/</id>
+    <published>2014-05-03T16:17:00Z</published>
+    <updated>2014-05-03T16:17:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Эта книга о жизни простых людей в 30е и 40е годы. Эпоха правления Сталина и тяжелые годы Великой Отечественной войны.&lt;/p&gt;
+
+&lt;p&gt;Автор позволяет взглянуть и «прогуляться» по улицам Москве тех лет. Рассказывает о содержимых полок в магазинах и универмагах, о школе, досуге и настроениях простых москвичей. Транспорте и одежде.&lt;/p&gt;
+
+&lt;p&gt;Отдельно описывается военное время. Столица почти год подвергалась бомбардировкам люфтваффе, с июля 41го по апрель 42го.
+Москве, надо сказать, повезло больше, чем Лондону (в Лондоне погибло более 40 000 человек, В Москве 1 327 ).
+Жителям столицы пришлось приспосабливаться. Прятались от бомб в метро, тушили пожары, извлекали раненых, глушили неразорвавшиеся бомбы и искали пропитание.&lt;/p&gt;
+
+&lt;p&gt;Это лишь немногое из того, что рассказывается в книге.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>[Книги] Как тестируют в Google</title>
     <link rel="alternate" href="http://artursabirov.ru/books/how-google-tests-software/"/>
     <id>http://artursabirov.ru/books/how-google-tests-software/</id>
@@ -106,20 +126,6 @@ Google удается выпускать и развивать огромное 
 
 &lt;p&gt;Книга интересна с точки зрения истории и политики: в беседах затрагиваются темы Советского союза, экономических реформ начала 90х, состояние общества и культуры.&lt;/p&gt;
 
-</content>
-  </entry>
-  <entry>
-    <title>Pro JavaScript Design Patterns</title>
-    <link rel="alternate" href="http://artursabirov.ru/books/pro-javascript-design-patterns/"/>
-    <id>http://artursabirov.ru/books/pro-javascript-design-patterns/</id>
-    <published>2011-08-31T20:00:00Z</published>
-    <updated>2011-08-31T20:00:00Z</updated>
-    <author>
-      <name>Артур Сабиров</name>
-    </author>
-    <content type="html">&lt;p&gt;В последнее время по теме паттернов вышло множество книг, это одна из них.&lt;/p&gt;
-
-&lt;p&gt;В ней рассматриваются популярные паттерны: Factory, Bridge, Composite, Facade, Adapter, Decorator, Flyweight, Proxy. Очень подробно описаны условия для применения, реализация и их недостатки.&lt;/p&gt;
 </content>
   </entry>
 </feed>

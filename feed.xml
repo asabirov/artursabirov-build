@@ -28,6 +28,26 @@
 </content>
   </entry>
   <entry>
+    <title>[Книги] Повседневная жизнь Москвы в сталинскую эпоху. 1930-1940-е годы</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/moscow-30-40/"/>
+    <id>http://artursabirov.ru/books/moscow-30-40/</id>
+    <published>2014-05-03T16:17:00Z</published>
+    <updated>2014-05-03T16:17:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Эта книга о жизни простых людей в 30е и 40е годы. Эпоха правления Сталина и тяжелые годы Великой Отечественной войны.&lt;/p&gt;
+
+&lt;p&gt;Автор позволяет взглянуть и «прогуляться» по улицам Москве тех лет. Рассказывает о содержимых полок в магазинах и универмагах, о школе, досуге и настроениях простых москвичей. Транспорте и одежде.&lt;/p&gt;
+
+&lt;p&gt;Отдельно описывается военное время. Столица почти год подвергалась бомбардировкам люфтваффе, с июля 41го по апрель 42го.
+Москве, надо сказать, повезло больше, чем Лондону (в Лондоне погибло более 40 000 человек, В Москве 1 327 ).
+Жителям столицы пришлось приспосабливаться. Прятались от бомб в метро, тушили пожары, извлекали раненых, глушили неразорвавшиеся бомбы и искали пропитание.&lt;/p&gt;
+
+&lt;p&gt;Это лишь немногое из того, что рассказывается в книге.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>[Книги] Как тестируют в Google</title>
     <link rel="alternate" href="http://artursabirov.ru/books/how-google-tests-software/"/>
     <id>http://artursabirov.ru/books/how-google-tests-software/</id>
@@ -105,72 +125,6 @@ Google удается выпускать и развивать огромное 
 Юрий Лужков и Хилари Клинтон.&lt;/p&gt;
 
 &lt;p&gt;Книга интересна с точки зрения истории и политики: в беседах затрагиваются темы Советского союза, экономических реформ начала 90х, состояние общества и культуры.&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
-    <title>YSpell</title>
-    <link rel="alternate" href="http://artursabirov.ru/dev/2014/04/04/yspell/"/>
-    <id>http://artursabirov.ru/dev/2014/04/04/yspell/</id>
-    <published>2014-04-04T04:13:00Z</published>
-    <updated>2014-04-04T04:13:00Z</updated>
-    <author>
-      <name>Артур Сабиров</name>
-    </author>
-    <content type="html">&lt;p&gt;На днях собрал небольшой консольный скрипт для проверки орфографии в терминале. В деле выглядит он так:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="Проверка файла" src="http://artursabirov.ru/dev/2014/04/04/yspell/yspell.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Проверка строки:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="Проверка строки" src="http://artursabirov.ru/dev/2014/04/04/yspell/yspell2.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Тексты проверяются через &lt;a href="http://artursabirov.ruhttp://api.yandex.ru/speller/"&gt;Yandex Speller&lt;/a&gt;, для русскоязычных текстов он мне он показался лучше, чем ispell, и не нужно возиться с установкой словарями.
-YSpell можно использовать как консольную утилиту, так и подключить в виде библиотеки.&lt;/p&gt;
-
-&lt;h2 id="section"&gt;Установка&lt;/h2&gt;
-
-&lt;pre class="highlight ruby"&gt;&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;yspell&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Если жe в Gemfile&lt;/p&gt;
-
-&lt;pre class="highlight ruby"&gt;&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'yspell'&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;h2 id="yspell"&gt;Консольная утилита yspell&lt;/h2&gt;
-
-&lt;pre class="highlight shell"&gt;Использование: yspell TEXT &lt;span class="o"&gt;[&lt;/span&gt;OPTIONS]
-
-Options
-      --file FILE              Путь до файла
-  -l, --language LANG          В каких словарях проверять текст.
-                               Доступны: ru, en и uk &lt;span class="o"&gt;(&lt;/span&gt;по-умолчанию проверяются в русском и английском, &lt;span class="s2"&gt;"ru,en"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-  -f, --format FORMAT          Формат проверяемого файла &lt;span class="o"&gt;(&lt;/span&gt;html или plain&lt;span class="o"&gt;)&lt;/span&gt;
-  -s, --suggestions POSITION   Где показывать подсказки
-                               inline — рядом, after - после текста, none — не показывать
-  -v, --verbose                Показ процесса проверки
-  -h, --help                   Показ справки
-&lt;/pre&gt;
-
-&lt;h2 id="yspell-1"&gt;Библиотека YSpell&lt;/h2&gt;
-
-&lt;pre class="highlight ruby"&gt;&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;'yspell'&lt;/span&gt;
-
-&lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;YSpell&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;new&lt;/span&gt;
-&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;check&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'sme text to chck'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;
-    &lt;span class="c1"&gt;#&amp;lt;YSpell::SpellError::UnknownWord:0x007f92a9156a38 @position=0, @row=0, @column=0, @length=3, @word="sme", @suggestions=["some", "me"], @code=1&amp;gt;,&lt;/span&gt;
-    &lt;span class="c1"&gt;#&amp;lt;YSpell::SpellError::UnknownWord:0x007f92a9156808 @position=13, @row=0, @column=13, @length=4, @word="chck", @suggestions=["check", "chick", "chuck"], @code=1&amp;gt;&lt;/span&gt;
-&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;h2 id="section-1"&gt;Ссылки&lt;/h2&gt;
-
-&lt;p&gt;RubyGems — &lt;a href="http://artursabirov.ruhttps://rubygems.org/gems/yspell"&gt;https://rubygems.org/gems/yspell&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub — &lt;a href="http://artursabirov.ruhttps://github.com/asabirov/yspell"&gt;https://github.com/asabirov/yspell&lt;/a&gt;&lt;/p&gt;
 
 </content>
   </entry>
