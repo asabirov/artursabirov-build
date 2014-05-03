@@ -2,10 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Артур Сабиров</title>
   <subtitle>Все разделы</subtitle>
-  <updated>2014-04-20T19:25:00Z</updated>
+  <updated>2014-05-03T16:17:00Z</updated>
   <author>
     <name>Артур Сабиров</name>
   </author>
+  <entry>
+    <title>[Книги] Взлет и падение третьего рейха</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/the-rise-and-fall-of-the-third-reich/"/>
+    <id>http://artursabirov.ru/books/the-rise-and-fall-of-the-third-reich/</id>
+    <published>2014-05-03T16:17:00Z</published>
+    <updated>2014-05-03T16:17:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Ульям Ширер — американский журналист, прожил в Германии с 1934 по 1940. Был свидетелем зарождения третьего рейха и присутствовал,
+в качестве журналиста на некоторых исторических событиях.
+После войны получил доступ документам, которые американцы успели вывезти из Берлина и брошенных нацистских штабов.&lt;/p&gt;
+
+&lt;p&gt;В книге подробно описана история Германии после первой мировой, приход нацистов к власти и хронология второй мировой войны.
+События восстановлены по документам, личными воспоминаниями очевидцев и стенограммам допросов, проведенных на Нюрнбергском процессе.&lt;/p&gt;
+
+&lt;p&gt;Ширер пошел еще глубже и попытался найти истоки национал-социализма, личности и теории, которые повлияли на формирование нацисткой идеологии.&lt;/p&gt;
+
+&lt;p&gt;Подробно описаны преступления, совершенные за 16 лет третьим рейхом. Истребление коммунистов, массовые убийства евреев, расстрелы и пытки военнопленных — лишь часть из них.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>[Книги] Как тестируют в Google</title>
     <link rel="alternate" href="http://artursabirov.ru/books/how-google-tests-software/"/>
@@ -151,37 +172,6 @@ Options
 
 &lt;p&gt;GitHub — &lt;a href="http://artursabirov.ruhttps://github.com/asabirov/yspell"&gt;https://github.com/asabirov/yspell&lt;/a&gt;&lt;/p&gt;
 
-</content>
-  </entry>
-  <entry>
-    <title>Обновление блога</title>
-    <link rel="alternate" href="http://artursabirov.ru/life/2014/04/02/blog-update/"/>
-    <id>http://artursabirov.ru/life/2014/04/02/blog-update/</id>
-    <published>2014-04-02T06:49:00Z</published>
-    <updated>2014-04-02T06:49:00Z</updated>
-    <author>
-      <name>Артур Сабиров</name>
-    </author>
-    <content type="html">&lt;p&gt;Обновил блог. Старый свою роль отыграл, а движок enki оказался чертовски не удобен, что порой отбивало редкое желание что-либо писать.
-Кстати, странное явление последних двух лет — из 13 русскоязычных технических блогов в моем ридере живы не более пяти. Исписались?&lt;/p&gt;
-
-&lt;p&gt;Что же касается меня, я по-прежнему работаю в FunBox, в компании сильных разработчиков, за этот период у меня существенно изменилось отношение к ведению блога.
-Писать о каких-либо технических бирюльках или програмерских новинках стало не так интересно, к завтрашнему утру они уже никому не интересны.
-Чтобы не забрасывать его окончательно, слегка расширю спектр тем: былая техническая рубрика уходит в &lt;a href="http://artursabirov.ru/dev"&gt;/dev&lt;/a&gt;, обзоры книг в &lt;a href="http://artursabirov.ru/books"&gt;/books&lt;/a&gt;, а
-посты на отвлеченные темы появятся в &lt;a href="http://artursabirov.ru/life"&gt;/life&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Соответственно, отдельные RSS:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://feeds.feedburner.com/artursabirov/dev"&gt;http://feeds.feedburner.com/artursabirov/dev&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://feeds.feedburner.com/artursabirov/books"&gt;http://feeds.feedburner.com/artursabirov/books&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://feeds.feedburner.com/artursabirov/life"&gt;http://feeds.feedburner.com/artursabirov/life&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://artursabirov.ruhttp://feeds.feedburner.com/artursabirov"&gt;http://feeds.feedburner.com/artursabirov&lt;/a&gt; общий&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Новый блог, следуя тенденциям, собран на middleman, как оказалось, очень удобный инструмент.
-На настройку генератора, оформления и адаптацию статей ушло всего пару дней.
-Если кому интересно, исходники  выложил на &lt;a href="http://artursabirov.ruhttp://github.com/asabirov/artursabirov-middleman"&gt;github&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
 </feed>

@@ -2,10 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Артур Сабиров</title>
   <subtitle>Обзор книг</subtitle>
-  <updated>2014-04-20T19:25:00Z</updated>
+  <updated>2014-05-03T16:17:00Z</updated>
   <author>
     <name>Артур Сабиров</name>
   </author>
+  <entry>
+    <title>[Книги] Взлет и падение третьего рейха</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/the-rise-and-fall-of-the-third-reich/"/>
+    <id>http://artursabirov.ru/books/the-rise-and-fall-of-the-third-reich/</id>
+    <published>2014-05-03T16:17:00Z</published>
+    <updated>2014-05-03T16:17:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Ульям Ширер — американский журналист, прожил в Германии с 1934 по 1940. Был свидетелем зарождения третьего рейха и присутствовал,
+в качестве журналиста на некоторых исторических событиях.
+После войны получил доступ документам, которые американцы успели вывезти из Берлина и брошенных нацистских штабов.&lt;/p&gt;
+
+&lt;p&gt;В книге подробно описана история Германии после первой мировой, приход нацистов к власти и хронология второй мировой войны.
+События восстановлены по документам, личными воспоминаниями очевидцев и стенограммам допросов, проведенных на Нюрнбергском процессе.&lt;/p&gt;
+
+&lt;p&gt;Ширер пошел еще глубже и попытался найти истоки национал-социализма, личности и теории, которые повлияли на формирование нацисткой идеологии.&lt;/p&gt;
+
+&lt;p&gt;Подробно описаны преступления, совершенные за 16 лет третьим рейхом. Истребление коммунистов, массовые убийства евреев, расстрелы и пытки военнопленных — лишь часть из них.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>[Книги] Как тестируют в Google</title>
     <link rel="alternate" href="http://artursabirov.ru/books/how-google-tests-software/"/>
@@ -99,19 +120,6 @@ Google удается выпускать и развивать огромное 
     <content type="html">&lt;p&gt;В последнее время по теме паттернов вышло множество книг, это одна из них.&lt;/p&gt;
 
 &lt;p&gt;В ней рассматриваются популярные паттерны: Factory, Bridge, Composite, Facade, Adapter, Decorator, Flyweight, Proxy. Очень подробно описаны условия для применения, реализация и их недостатки.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Deadline, Том ДеМарко</title>
-    <link rel="alternate" href="http://artursabirov.ru/books/deadline-demarco/"/>
-    <id>http://artursabirov.ru/books/deadline-demarco/</id>
-    <published>2011-08-12T20:00:00Z</published>
-    <updated>2011-08-12T20:00:00Z</updated>
-    <author>
-      <name>Артур Сабиров</name>
-    </author>
-    <content type="html">&lt;p&gt;Deadline — история руководителя проектов, которому было поручено собрать команду для разработки нескольких проектов на маленьком остравном государстве. Срок ограничен, ресурсы нет. Главному герою приходится столкнуться со множеством трудностей, которые известны каждому менеджеру, но не каждый умеет с ними справляться.&lt;/p&gt;
-
 </content>
   </entry>
 </feed>
