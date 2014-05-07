@@ -2,10 +2,44 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Артур Сабиров</title>
   <subtitle>Все разделы</subtitle>
-  <updated>2014-05-03T16:17:00Z</updated>
+  <updated>2014-05-07T12:12:00Z</updated>
   <author>
     <name>Артур Сабиров</name>
   </author>
+  <entry>
+    <title>Автоматическое добавление ветки в commit message</title>
+    <link rel="alternate" href="http://artursabirov.ru/dev/2014/05/07/append-branch-name-to-commit-message/"/>
+    <id>http://artursabirov.ru/dev/2014/05/07/append-branch-name-to-commit-message/</id>
+    <published>2014-05-07T12:12:00Z</published>
+    <updated>2014-05-07T12:12:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Как многие знают, Jira умеет подцеплять коммиты в историю, если в комментарии указать номер задачи.&lt;/p&gt;
+
+&lt;p&gt;Чтобы не писать для каждого коммита номер, собрал простой hook.&lt;/p&gt;
+
+&lt;pre class="highlight shell"&gt;&lt;span class="c"&gt;#!/bin/sh&lt;/span&gt;
+&lt;span class="nv"&gt;BRANCH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;git rev-parse --abbrev-ref HEAD&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;CURRENT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;grep -e &lt;span class="s2"&gt;"^[^#]"&lt;/span&gt; &lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -z &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$CURRENT&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;
+  &lt;span class="k"&gt;then
+    &lt;/span&gt;&lt;span class="nv"&gt;NEW_MSG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;; cat &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$NEW_MSG&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &amp;gt; &lt;span class="nv"&gt;$1&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Он добавляет название текущей ветки в комментарий, если COMMIT_EDITMSG пуст.&lt;/p&gt;
+
+&lt;h2 id="section"&gt;Установка&lt;/h2&gt;
+
+&lt;pre class="highlight plaintext"&gt;curl https://gist.githubusercontent.com/asabirov/9f40e3d280ee7ad633db/raw/prepare-commit-msg \
+    &amp;gt; .git/hooks/prepare-commit-msg
+chmod +x .git/hooks/prepare-commit-msg
+&lt;/pre&gt;
+</content>
+  </entry>
   <entry>
     <title>[Книги] Взлет и падение третьего рейха</title>
     <link rel="alternate" href="http://artursabirov.ru/books/the-rise-and-fall-of-the-third-reich/"/>
@@ -107,24 +141,6 @@ Google удается выпускать и развивать огромное 
 &lt;h2 id="mindmap"&gt;Mindmap&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href="http://artursabirov.ru/images/mindmaps/the-passionate-programmer.png"&gt;&lt;img alt="Mindmap" src="http://artursabirov.ru/images/mindmaps/the-passionate-programmer/the-passionate-programmer-thumb.png" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
-    <title>Познер о Познере</title>
-    <link rel="alternate" href="http://artursabirov.ru/books/pozner-o-poznere/"/>
-    <id>http://artursabirov.ru/books/pozner-o-poznere/</id>
-    <published>2014-04-05T06:04:00Z</published>
-    <updated>2014-04-05T06:04:00Z</updated>
-    <author>
-      <name>Артур Сабиров</name>
-    </author>
-    <content type="html">&lt;p&gt;Познер пишет не так много книг, а человек с такой широкой эрудицией и историческим опытом, считаю, должен писать больше.
-Познер о Познере — это собрание интервью с комментариями, которые Владимир Владимирович проводил на своей авторской передаче.
-В частности в книге интервью с Горбачевым, Егором Гайдаром, Чубайсом — политические деятели переходного периода; Никита Михалков, Андрей Кончаловский — режиссеры;
-Юрий Лужков и Хилари Клинтон.&lt;/p&gt;
-
-&lt;p&gt;Книга интересна с точки зрения истории и политики: в беседах затрагиваются темы Советского союза, экономических реформ начала 90х, состояние общества и культуры.&lt;/p&gt;
 
 </content>
   </entry>
