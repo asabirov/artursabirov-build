@@ -7,7 +7,7 @@
     <name>Артур Сабиров</name>
   </author>
   <entry>
-    <title>Автоматическое добавление ветки в commit message</title>
+    <title>Hook для добавления названия ветки в комментарий commit'а</title>
     <link rel="alternate" href="http://artursabirov.ru/dev/2014/05/07/append-branch-name-to-commit-message/"/>
     <id>http://artursabirov.ru/dev/2014/05/07/append-branch-name-to-commit-message/</id>
     <published>2014-05-07T12:12:00Z</published>
