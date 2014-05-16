@@ -2,10 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Артур Сабиров</title>
   <subtitle>Обзор книг</subtitle>
-  <updated>2014-05-14T15:00:00Z</updated>
+  <updated>2014-05-16T15:01:00Z</updated>
   <author>
     <name>Артур Сабиров</name>
   </author>
+  <entry>
+    <title>CoffeScript Application Development</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/coffescript-application-development/"/>
+    <id>http://artursabirov.ru/books/coffescript-application-development/</id>
+    <published>2014-05-16T15:01:00Z</published>
+    <updated>2014-05-16T15:01:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;Обычно, за написание книг по небольшим технологиям берутся не самые технически продвинутые люди. CoffeeScript можно самостоятельно освоить за 10 минут, за через 30 писать код не заглядывая в документацию.&lt;/p&gt;
+
+&lt;p&gt;Эту книгу было интересно прочесть, с учетом того, что я не первый год пишу на CoffeeScript. Открыл для себя возможностей языка, ранее неизвестные мне.&lt;/p&gt;
+
+&lt;p&gt;Советую прочесть тем, кто хочет освоить язык и просто освежить знания CoffeeScript.&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>[Книги] ElasticSearch Server</title>
     <link rel="alternate" href="http://artursabirov.ru/books/elasticsearch-server/"/>
@@ -46,27 +63,6 @@
 </content>
   </entry>
   <entry>
-    <title>[Книги] Взлет и падение третьего рейха</title>
-    <link rel="alternate" href="http://artursabirov.ru/books/the-rise-and-fall-of-the-third-reich/"/>
-    <id>http://artursabirov.ru/books/the-rise-and-fall-of-the-third-reich/</id>
-    <published>2014-05-03T16:17:00Z</published>
-    <updated>2014-05-03T16:17:00Z</updated>
-    <author>
-      <name>Артур Сабиров</name>
-    </author>
-    <content type="html">&lt;p&gt;Ульям Ширер — американский журналист, прожил в Германии с 1934 по 1940. Был свидетелем зарождения третьего рейха и присутствовал,
-в качестве журналиста на некоторых исторических событиях.
-После войны получил доступ документам, которые американцы успели вывезти из Берлина и брошенных нацистских штабов.&lt;/p&gt;
-
-&lt;p&gt;В книге подробно описана история Германии после первой мировой, приход нацистов к власти и хронология второй мировой войны.
-События восстановлены по документам, личными воспоминаниями очевидцев и стенограммам допросов, проведенных на Нюрнбергском процессе.&lt;/p&gt;
-
-&lt;p&gt;Ширер пошел еще глубже и попытался найти истоки национал-социализма, личности и теории, которые повлияли на формирование нацисткой идеологии.&lt;/p&gt;
-
-&lt;p&gt;Подробно описаны преступления, совершенные за 16 лет третьим рейхом. Истребление коммунистов, массовые убийства евреев, расстрелы и пытки военнопленных — лишь часть из них.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>[Книги] Повседневная жизнь Москвы в сталинскую эпоху. 1930-1940-е годы</title>
     <link rel="alternate" href="http://artursabirov.ru/books/moscow-30-40/"/>
     <id>http://artursabirov.ru/books/moscow-30-40/</id>
@@ -87,46 +83,24 @@
 </content>
   </entry>
   <entry>
-    <title>[Книги] Как тестируют в Google</title>
-    <link rel="alternate" href="http://artursabirov.ru/books/how-google-tests-software/"/>
-    <id>http://artursabirov.ru/books/how-google-tests-software/</id>
-    <published>2014-04-20T19:25:00Z</published>
-    <updated>2014-04-20T19:25:00Z</updated>
+    <title>[Книги] Взлет и падение третьего рейха</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/the-rise-and-fall-of-the-third-reich/"/>
+    <id>http://artursabirov.ru/books/the-rise-and-fall-of-the-third-reich/</id>
+    <published>2014-05-03T16:17:00Z</published>
+    <updated>2014-05-03T16:17:00Z</updated>
     <author>
       <name>Артур Сабиров</name>
     </author>
-    <content type="html">&lt;p&gt;Не смотря на свои масштабы (в компании работает &lt;a href="http://artursabirov.ruhttp://investor.google.com/financial/tables.html"&gt;49 тыс. человек&lt;/a&gt;)
-Google удается выпускать и развивать огромное количество продуктов: Google Plus, Android, YouTube, Drive и веб-сервисы google.com от поиска до веб-аналитики.
-Всеми этими проектами пользуются десятки и сотки миллионов людей, требование к качеству очень высокое. Тестирование для компании на столько же важно, как и разработка.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Ульям Ширер — американский журналист, прожил в Германии с 1934 по 1940. Был свидетелем зарождения третьего рейха и присутствовал,
+в качестве журналиста на некоторых исторических событиях.
+После войны получил доступ документам, которые американцы успели вывезти из Берлина и брошенных нацистских штабов.&lt;/p&gt;
 
-&lt;h2 id="google--qa"&gt;В Google нет QA.&lt;/h2&gt;
-&lt;p&gt;За качество отвечают сами разработчики, тестировщики помогают им поддерживать качество и производительность.
-Написанный код лучше всего протестирует тот, кто этот код написал, поэтому создание тестов является неотъемлемой частью написания кода.&lt;/p&gt;
+&lt;p&gt;В книге подробно описана история Германии после первой мировой, приход нацистов к власти и хронология второй мировой войны.
+События восстановлены по документам, личными воспоминаниями очевидцев и стенограммам допросов, проведенных на Нюрнбергском процессе.&lt;/p&gt;
 
-&lt;h2 id="google----"&gt;В Google тестировщики такие же разработчики&lt;/h2&gt;
-&lt;p&gt;Практически все тестировщики обладают высокими техническими навыками, им приходится подготавливать тестовые окружения,
-следить за качеством автоматических тестов написанных разработчиками и дописывать при необходимости, также писать инструменты для упрощения тестирования.
-Целый офис в Бангалоре сосредоточен на создании инструментов для повышения качества тестирования.&lt;/p&gt;
+&lt;p&gt;Ширер пошел еще глубже и попытался найти истоки национал-социализма, личности и теории, которые повлияли на формирование нацисткой идеологии.&lt;/p&gt;
 
-&lt;h2 id="section"&gt;Инструменты&lt;/h2&gt;
-&lt;p&gt;Тестировщиками написано множество инструментов, которые упрощают процесс тестирования, диагностики сбоев и раннего выявления багов.
-Широко используются в компании: &lt;a href="http://artursabirov.ruhttps://code.google.com/p/qualitybots/"&gt;Quality Bots&lt;/a&gt; для регрессионного тестирования,
-&lt;a href="http://artursabirov.ruhttps://code.google.com/p/bite-project/"&gt;BITE&lt;/a&gt; для тестировщиков веб-сервисом, Diagnostic Utility встроенный в Chrome.&lt;/p&gt;
-
-&lt;h2 id="section-1"&gt;Автоматизация&lt;/h2&gt;
-&lt;p&gt;Тестирование начинается с тест-плана, тест-кейсов и анализа рисков. Планы пишутся по модели &lt;a href="http://artursabirov.ruhttps://code.google.com/p/test-analytics/wiki/AccExplained"&gt;ACC (Attribute, Component, Capability)&lt;/a&gt;
- — составляется список компонентов, возможностей/фич продукта и их основных характеристик (надежный, простой, доступный).
-Собранный список формируется в тест-кейсы, что и является первоочередной целью модели ACC.
-Для упрощения создания таких планов в Google написан и выложен в открытый доступ &lt;a href="http://artursabirov.ruhttps://code.google.com/p/test-analytics/"&gt;открытый доступ&lt;/a&gt; Google Test Application.&lt;/p&gt;
-
-&lt;h2 id="section-2"&gt;Для кого книга&lt;/h2&gt;
-&lt;p&gt;Книга написана без глубокого погружения в технические детали, поэтому может быть интересна большому количеству читателей.
-В частности, разработчикам, для которых качество не пустой звук, тестировщикам и руководителям QA.&lt;/p&gt;
-
-&lt;h2 id="mindmap"&gt;Mindmap&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="http://artursabirov.ru/images/mindmaps/how-google-tests-software.png"&gt;&lt;img alt="Mindmap" src="http://artursabirov.ru/images/mindmaps/how-google-tests-software/how-google-tests-software-thumb.png" /&gt;&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;Подробно описаны преступления, совершенные за 16 лет третьим рейхом. Истребление коммунистов, массовые убийства евреев, расстрелы и пытки военнопленных — лишь часть из них.&lt;/p&gt;
 </content>
   </entry>
 </feed>
