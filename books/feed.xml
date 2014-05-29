@@ -2,10 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Артур Сабиров</title>
   <subtitle>Обзор книг</subtitle>
-  <updated>2014-05-23T10:47:00Z</updated>
+  <updated>2014-05-29T07:03:00Z</updated>
   <author>
     <name>Артур Сабиров</name>
   </author>
+  <entry>
+    <title>[Книги] Testing Backbone.Js</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/testing-backbone-js/"/>
+    <id>http://artursabirov.ru/books/testing-backbone-js/</id>
+    <published>2014-05-29T07:03:00Z</published>
+    <updated>2014-05-29T07:03:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="http://artursabirov.ru/images/books/testing-backbone-js.jpg" height="300" /&gt;&lt;/p&gt; &lt;p&gt;Хорошая книжка, если вы не знаете с чего начать тестирование приложений Backbone.js.&lt;/p&gt;
+
+&lt;p&gt;В ней предлагается использовать Mocha в качестве test runner, Chai для ассертов, sinon.js для создания заглушек объектов, ассинхронности, xhr, таймеров и т.д.&lt;/p&gt;
+
+&lt;p&gt;Книга короткая, без лишней воды, с наглядными примерами кода.  &lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>[Книги] Mastering Nginx</title>
     <link rel="alternate" href="http://artursabirov.ru/books/mastering-nginx/"/>
@@ -220,28 +237,6 @@
 &lt;p&gt;Также автор не обходит стороной и практическое применение встроенных инструментов: подсветка найденного, автокомплит, поэтапная подгрузка результатов, кэширование.&lt;/p&gt;
 
 &lt;p&gt;Книга идеальна для первого знакомства с ElasticSearch.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>[Книги] Nano Workouts</title>
-    <link rel="alternate" href="http://artursabirov.ru/books/nano-workouts/"/>
-    <id>http://artursabirov.ru/books/nano-workouts/</id>
-    <published>2014-05-14T05:15:00Z</published>
-    <updated>2014-05-14T05:15:00Z</updated>
-    <author>
-      <name>Артур Сабиров</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img src="http://artursabirov.ru/images/books/nano-workouts.jpg" height="300" /&gt;&lt;/p&gt; &lt;p&gt;Никогда не задумывались о том, что смотря сериалы можно подкачать пресс, чистя зубы — икры, а возвращаясь с магазина бицепсы? Нано-тренировки решают эту задачу.&lt;/p&gt;
-
-&lt;p&gt;Небольшие упражнения легко совмещаются с повседневными деятельностью.
-Для них не нужно выделять время, платить за тренажерный зал, приобретать спортивную форму или инвентарь.
-Не смотря на то, что мышцы так не накачаешь, простые упражнения вполне способны поддерживать их тонус и гибкость суставов.&lt;/p&gt;
-
-&lt;p&gt;Мне книга понравилась. Я давно стараюсь вести здоровый образ жизни: утренние пробежки, пешие прогулки, с недавнего времени велосипед.
-Но в рабочее время и во время чтения книг, а читаю я много, нахожусь практически без движений.
-Именно в эти периоды «нано-упражнения» гармонично вписались, и уже добавил несколько своих.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://artursabirov.ru/images/mindmaps/nano-workouts.png"&gt;&lt;img alt="Mindmap" src="http://artursabirov.ru/images/mindmaps/nano-workouts/nano-workouts-thumb.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>
