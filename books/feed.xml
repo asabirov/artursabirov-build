@@ -17,9 +17,9 @@
     </author>
     <content type="html">&lt;p&gt;&lt;img src="http://artursabirov.ru/images/books/testing-backbone-js.jpg" height="300" /&gt;&lt;/p&gt; &lt;p&gt;Хорошая книжка, если вы не знаете с чего начать тестирование приложений Backbone.js.&lt;/p&gt;
 
-&lt;p&gt;В ней предлагается использовать Mocha в качестве test runner, Chai для ассертов, sinon.js для создания заглушек объектов, ассинхронности, xhr, таймеров и т.д.&lt;/p&gt;
+&lt;p&gt;В ней предлагается использовать Mocha в качестве test runner, Chai для ассертов, sinon.js для создания заглушек объектов, асинхронности, xhr, таймеров и т.д.&lt;/p&gt;
 
-&lt;p&gt;Книга короткая, без лишней воды, с наглядными примерами кода.  &lt;/p&gt;
+&lt;p&gt;Книга короткая, без лишней воды, с наглядными примерами кода.&lt;/p&gt;
 
 </content>
   </entry>
