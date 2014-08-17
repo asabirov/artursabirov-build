@@ -2,10 +2,82 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Артур Сабиров</title>
   <subtitle>Обзор книг</subtitle>
-  <updated>2014-06-13T07:25:00Z</updated>
+  <updated>2014-08-17T16:06:00Z</updated>
   <author>
     <name>Артур Сабиров</name>
   </author>
+  <entry>
+    <title>Growing Rails Applications in Practice</title>
+    <link rel="alternate" href="http://artursabirov.ru/books/growing-rails-application-in-practice/"/>
+    <id>http://artursabirov.ru/books/growing-rails-application-in-practice/</id>
+    <published>2014-08-17T16:06:00Z</published>
+    <updated>2014-08-17T16:06:00Z</updated>
+    <author>
+      <name>Артур Сабиров</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="http://artursabirov.ru/images/books/growing-rails-application-in-practice.png" height="300" /&gt;&lt;/p&gt; &lt;p&gt;Rails проекты могут вырастать до огромных размеров. Держать код руководствуясь только соглашениями фреймворка, приводит к нагромождению кода в моделях, контроллера.
+В книге даются простые и полезные советы как этого избежать, чтобы независимо от размера вашего проекта, его также легко было поддерживать, как на первых этапах.&lt;/p&gt;
+
+&lt;h3 id="section"&gt;Организация контроллеров&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Держите CRUD методы легкими, выносите код в отдельные методы.&lt;/li&gt;
+  &lt;li&gt;Используйте ActiveResource для типичных CRUD контроллеров. Недостаток — добавляет магии в код.&lt;/li&gt;
+  &lt;li&gt;Выносите код итераций по модели (условную валидацию, рассылку уведомлений и т.д) в объекты ActiveRecord::Base или ActiveType::Object. (Паттерн FormObject).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="section-1"&gt;Организация моделей&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Используйте композицию (например, выносите методы поиска и Note в класс Note::Search).&lt;/li&gt;
+  &lt;li&gt;Держите связанные модели под одним неймспейсом. Также контроллеры и шаблоны.&lt;/li&gt;
+  &lt;li&gt;Если одна модель используется с разным уровнем доступа и валидацией, создавайте для каждого случая отдельные модели (User -&amp;gt; User::AsSignIn, User::AsAdminEdit).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="section-2"&gt;Организация шаблонов&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Если есть директория с именем во множественном числе и единственном — объедините их.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="css"&gt;Организация CSS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Используйте БЭМ именование (блоки, элементы, модификаторы) .&lt;/li&gt;
+  &lt;li&gt;Ведите style-guide (hologram gem умеет генерировать по комментариям).&lt;/li&gt;
+  &lt;li&gt;Блок не должен быть связан с другими блоками.&lt;/li&gt;
+  &lt;li&gt;Не обязательно задавать классы в компонентных тегах (table, dl, ul).&lt;/li&gt;
+  &lt;li&gt;Используйте :before и :after, где нужен дополнительный элемент. Вместо написания дополнительного тега.&lt;/li&gt;
+  &lt;li&gt;Используйте media-queries вместо генерации модификаторов на js.&lt;/li&gt;
+  &lt;li&gt;Для user-generated текстов задавайте стили по-умолчанию, чтобы не приходилось добавлять классы к тегам.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="gems"&gt;Советы по выбору gems&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Не используйте первые мажорные версии. Переходите, когда минорная версия дойдет хотя бы до 3й (х.х.3).&lt;/li&gt;
+  &lt;li&gt;Гемы должны быть качественным: хороший код, покрытие тестами, регулярные коммиты.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="section-3"&gt;Выбор базы данных&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Критерии выбора: стабилен при нагрузках, свободное распространение, устойчивость при отказе железа, имеется развитый gem-адаптер (binding gem), выполняется бекап без блокировок, высокая производительность, большое коммьюнити.&lt;/li&gt;
+  &lt;li&gt;Прежде чем добавлять новое хранилище, посмотрите, может быть уже подойдут уже используемое.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="section-4"&gt;Организация тестов&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;В первую очередь пишите юнит-тесты. Они быстрые и простые в поддержке.&lt;/li&gt;
+  &lt;li&gt;На каждый экран должен быть хотя бы один простой интеграционный тест.&lt;/li&gt;
+  &lt;li&gt;100% покрытие тестами нецелесообразно, вы сами должны определить необходимый уровень.&lt;/li&gt;
+  &lt;li&gt;Дублирование кода в тестах не всегда плохо. Важнее наглядность и гибкость к изменениям.&lt;/li&gt;
+  &lt;li&gt;Если вы сомневаетесь писать или не писать определенный тест — напишите.&lt;/li&gt;
+  &lt;li&gt;Перед модификацией древнего кода, покройте удачные сценарии тестами (happy paths).&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   <entry>
     <title>Об интеллекте</title>
     <link rel="alternate" href="http://artursabirov.ru/books/on-intelligence/"/>
@@ -298,85 +370,6 @@
 
 &lt;p&gt;Книга короткая, без лишней воды, с наглядными примерами кода.&lt;/p&gt;
 
-</content>
-  </entry>
-  <entry>
-    <title>[Книги] Mastering Nginx</title>
-    <link rel="alternate" href="http://artursabirov.ru/books/mastering-nginx/"/>
-    <id>http://artursabirov.ru/books/mastering-nginx/</id>
-    <published>2014-05-23T10:47:00Z</published>
-    <updated>2014-05-23T10:47:00Z</updated>
-    <author>
-      <name>Артур Сабиров</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img src="http://artursabirov.ru/images/books/mastering-nginx.jpg" height="300" /&gt;&lt;/p&gt; &lt;p&gt;Книга состоит из перечня директив с их описанием и несколькими use-case’ами.
-Рассказывается, как настроить ssl, балансировку бекендов, как ограничить доступ и защитить бекенд от ddos’а.&lt;/p&gt;
-
-&lt;h3 id="section"&gt;Несколько кейсов из книги&lt;/h3&gt;
-
-&lt;p&gt;Регулярные выражения создают глобальные переменные ($1, $2, $3…), как во многих популярных языках:&lt;/p&gt;
-
-&lt;pre class="highlight nginx"&gt;&lt;span class="k"&gt;rewrite&lt;/span&gt; &lt;span class="s"&gt;'^/images/([a-z]&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="kn"&gt;2&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="s"&gt;)/([a-z0-9]&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="kn"&gt;5&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="s"&gt;)/(.*)&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="s"&gt;.(png|jpg|gif)&lt;/span&gt;$&lt;span class="s"&gt;'&lt;/span&gt; &lt;span class="n"&gt;/&lt;/span&gt; &lt;span class="s"&gt;data?file=&lt;/span&gt;&lt;span class="nv"&gt;$3&lt;/span&gt;&lt;span class="s"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;$4&lt;/span&gt; &lt;span class="s"&gt;last&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Или в логах:&lt;/p&gt;
-
-&lt;pre class="highlight nginx"&gt;&lt;span class="k"&gt;log_format&lt;/span&gt; &lt;span class="s"&gt;imagelog&lt;/span&gt; &lt;span class="s"&gt;'[&lt;/span&gt;&lt;span class="nv"&gt;$time_local&lt;/span&gt;&lt;span class="s"&gt;]&lt;/span&gt; &lt;span class="nv"&gt;$image_file&lt;/span&gt; &lt;span class="nv"&gt;$image_type&lt;/span&gt; &lt;span class="s"&gt;'&lt;/span&gt;
-    &lt;span class="s"&gt;'&lt;/span&gt;&lt;span class="nv"&gt;$body_bytes_sent&lt;/span&gt; &lt;span class="nv"&gt;$status&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;location&lt;/span&gt; &lt;span class="n"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="kn"&gt;rewrite&lt;/span&gt; &lt;span class="s"&gt;^/(.*)&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="s"&gt;.(png|jpg|gif)&lt;/span&gt;$ &lt;span class="n"&gt;/images/&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;$2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kn"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$image_file&lt;/span&gt; &lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kn"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$image_type&lt;/span&gt; &lt;span class="nv"&gt;$2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;access_log&lt;/span&gt; &lt;span class="nc"&gt;logs/example&lt;/span&gt;&lt;span class="s"&gt;.com-images_access.log&lt;/span&gt; &lt;span class="s"&gt;imagelog&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Генерация статической страницы:&lt;/p&gt;
-
-&lt;pre class="highlight nginx"&gt;&lt;span class="k"&gt;location&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;/image404.html&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="kn"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;404&lt;/span&gt; &lt;span class="s"&gt;"image&lt;/span&gt; &lt;span class="s"&gt;not&lt;/span&gt; &lt;span class="s"&gt;found&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="s"&gt;n"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Примитивная защита от DDOS. Ограничение в 1 запрос в секунду для ip-адреса:&lt;/p&gt;
-
-&lt;pre class="highlight nginx"&gt;&lt;span class="k"&gt;http&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-     &lt;span class="kn"&gt;limit_req_zone&lt;/span&gt; &lt;span class="nv"&gt;$binary_remote_addr&lt;/span&gt; &lt;span class="s"&gt;zone=requests:10m&lt;/span&gt; &lt;span class="s"&gt;rate=1r/s&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-     &lt;span class="kn"&gt;limit_req_log_level&lt;/span&gt; &lt;span class="s"&gt;warn&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-     &lt;span class="kn"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-          &lt;span class="kn"&gt;limit_req&lt;/span&gt; &lt;span class="s"&gt;zone=requests&lt;/span&gt; &lt;span class="s"&gt;burst=10&lt;/span&gt; &lt;span class="s"&gt;nodelay&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-     &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Или 10 запросов в течение 10 минут:&lt;/p&gt;
-
-&lt;pre class="highlight nginx"&gt;&lt;span class="k"&gt;http&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-      &lt;span class="kn"&gt;limit_conn_zone&lt;/span&gt; &lt;span class="nv"&gt;$binary_remote_addr&lt;/span&gt; &lt;span class="s"&gt;zone=connections:10m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-      &lt;span class="kn"&gt;limit_conn_log_level&lt;/span&gt; &lt;span class="s"&gt;notice&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-      &lt;span class="kn"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-          &lt;span class="kn"&gt;limit_conn&lt;/span&gt; &lt;span class="s"&gt;connections&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-      &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Кэширование всех запросов к бекенду в memcache:&lt;/p&gt;
-
-&lt;pre class="highlight nginx"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="n"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="kn"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$memcached_key&lt;/span&gt; &lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$uri&lt;/span&gt;&lt;span class="s"&gt;?&lt;/span&gt;&lt;span class="nv"&gt;$args&lt;/span&gt;&lt;span class="s"&gt;»&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="kn"&gt;memcached_pass&lt;/span&gt; &lt;span class="nf"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;11211&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="kn"&gt;error_page&lt;/span&gt; &lt;span class="mi"&gt;404&lt;/span&gt; &lt;span class="mi"&gt;502&lt;/span&gt; &lt;span class="mi"&gt;504&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;@app&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-    &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;@app&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="nf"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Ничего интереснее об nginx’у я не нашел, но и эта книга вполне поможет узнать много нового об этом веб-сервере.&lt;/p&gt;
 </content>
   </entry>
 </feed>
