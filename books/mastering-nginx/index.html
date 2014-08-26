@@ -46,43 +46,9 @@
             <img src="/images/books/mastering-nginx.jpg" />
           </a>
           <p>Книга состоит из перечня директив с их описанием и несколькими use-case’ами.&#x000A;Рассказывается, как настроить ssl, балансировку бекендов, как ограничить доступ и защитить бекенд от ddos’а.</p>&#x000A;&#x000A;<h3 id="section">Несколько кейсов из книги</h3>&#x000A;&#x000A;<p>Регулярные выражения создают глобальные переменные ($1, $2, $3…), как во многих популярных языках:</p>&#x000A;&#x000A;<pre class="highlight nginx"><span class="k">rewrite</span> <span class="s">'^/images/([a-z]</span><span class="p">{</span><span class="kn">2</span><span class="err">}</span><span class="s">)/([a-z0-9]</span><span class="p">{</span><span class="kn">5</span><span class="err">}</span><span class="s">)/(.*)</span><span class="err">\</span><span class="s">.(png|jpg|gif)</span>$<span class="s">'</span> <span class="n">/</span> <span class="s">data?file=</span><span class="nv">$3</span><span class="s">.</span><span class="nv">$4</span> <span class="s">last</span><span class="p">;</span>&#x000A;</pre>&#x000A;&#x000A;<p>Или в логах:</p>&#x000A;&#x000A;<pre class="highlight nginx"><span class="k">log_format</span> <span class="s">imagelog</span> <span class="s">'[</span><span class="nv">$time_local</span><span class="s">]</span> <span class="nv">$image_file</span> <span class="nv">$image_type</span> <span class="s">'</span>&#x000A;    <span class="s">'</span><span class="nv">$body_bytes_sent</span> <span class="nv">$status</span><span class="s">'</span><span class="p">;</span>&#x000A;&#x000A;<span class="k">location</span> <span class="n">/</span> <span class="p">{</span>&#x000A;    <span class="kn">rewrite</span> <span class="s">^/(.*)</span><span class="err">\</span><span class="s">.(png|jpg|gif)</span>$ <span class="n">/images/</span><span class="nv">$1</span><span class="s">.</span><span class="nv">$2</span><span class="p">;</span>&#x000A;    <span class="kn">set</span> <span class="nv">$image_file</span> <span class="nv">$1</span><span class="p">;</span>&#x000A;    <span class="kn">set</span> <span class="nv">$image_type</span> <span class="nv">$2</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="k">access_log</span> <span class="nc">logs/example</span><span class="s">.com-images_access.log</span> <span class="s">imagelog</span><span class="p">;</span>&#x000A;</pre>&#x000A;&#x000A;<p>Генерация статической страницы:</p>&#x000A;&#x000A;<pre class="highlight nginx"><span class="k">location</span> <span class="p">=</span> <span class="n">/image404.html</span> <span class="p">{</span>&#x000A;    <span class="kn">return</span> <span class="mi">404</span> <span class="s">"image</span> <span class="s">not</span> <span class="s">found</span><span class="err">\</span><span class="s">n"</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;</pre>&#x000A;&#x000A;<p>Примитивная защита от DDOS. Ограничение в 1 запрос в секунду для ip-адреса:</p>&#x000A;&#x000A;<pre class="highlight nginx"><span class="k">http</span> <span class="p">{</span>&#x000A;     <span class="kn">limit_req_zone</span> <span class="nv">$binary_remote_addr</span> <span class="s">zone=requests:10m</span> <span class="s">rate=1r/s</span><span class="p">;</span>&#x000A;     <span class="kn">limit_req_log_level</span> <span class="s">warn</span><span class="p">;</span>&#x000A;     <span class="kn">server</span> <span class="p">{</span>&#x000A;          <span class="kn">limit_req</span> <span class="s">zone=requests</span> <span class="s">burst=10</span> <span class="s">nodelay</span><span class="p">;</span>&#x000A;     <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;</pre>&#x000A;&#x000A;<p>Или 10 запросов в течение 10 минут:</p>&#x000A;&#x000A;<pre class="highlight nginx"><span class="k">http</span> <span class="p">{</span>&#x000A;      <span class="kn">limit_conn_zone</span> <span class="nv">$binary_remote_addr</span> <span class="s">zone=connections:10m</span><span class="p">;</span>&#x000A;      <span class="kn">limit_conn_log_level</span> <span class="s">notice</span><span class="p">;</span>&#x000A;      <span class="kn">server</span> <span class="p">{</span>&#x000A;          <span class="kn">limit_conn</span> <span class="s">connections</span> <span class="mi">10</span><span class="p">;</span>&#x000A;      <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;</pre>&#x000A;&#x000A;<p>Кэширование всех запросов к бекенду в memcache:</p>&#x000A;&#x000A;<pre class="highlight nginx"><span class="k">server</span> <span class="p">{</span>&#x000A;    <span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>&#x000A;        <span class="kn">set</span> <span class="nv">$memcached_key</span> <span class="s">"</span><span class="nv">$uri</span><span class="s">?</span><span class="nv">$args</span><span class="s">»</span><span class="p">;</span>&#x000A;        <span class="kn">memcached_pass</span> <span class="nf">127.0.0.1</span><span class="p">:</span><span class="mi">11211</span><span class="p">;</span>&#x000A;        <span class="kn">error_page</span> <span class="mi">404</span> <span class="mi">502</span> <span class="mi">504</span> <span class="p">=</span> <span class="s">@app</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="kn">location</span> <span class="s">@app</span> <span class="p">{</span>&#x000A;        <span class="kn">proxy_pass</span> <span class="nf">127.0.0.1</span><span class="p">:</span><span class="mi">8080</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;</pre>&#x000A;&#x000A;<p>Ничего интереснее об nginx’у я не нашел, но и эта книга вполне поможет узнать много нового об этом веб-сервере.</p>
-          <div id='disqus_thread'></div>
-          <script>
-            var disqus_shortname = 'artursabirovru'; // required: replace example with your forum shortname
-            
-            //var disqus_identifier = 'unique_dynamic_id_1234';
-            var disqus_url = 'http://artursabirov.ru/books/mastering-nginx/';
-            
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript';
-                dsq.async = true; dsq.defer = 'defer';
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-          </script>
         </section>
       </article>
     </section>
-    <script>
-      var disqus_shortname = 'artursabirovru';
-      (function () {
-          var s = document.createElement('script'); s.async = true;
-          s.type = 'text/javascript';
-          s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-      }());
-      
-      
-      var addthis_config = {
-          pubid: "ra-4e4f7ce25d6f5675",
-          data_track_clickback: true,
-          ui_language: "ru",
-          templates: {twitter: '{{text}} {{lurl}}'},
-          data_ga_tracker: "UA-24946626-1"
-      };
-    </script>
-    <script defer="defer" type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e4f7ce25d6f5675&domready=1"></script>
     <script src="/javascripts/application.js" type="text/javascript"></script>
   </body>
 </html>
