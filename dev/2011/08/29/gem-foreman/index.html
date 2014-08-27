@@ -43,11 +43,15 @@
         <h1>Foreman</h1>
         <p>Во время разработки приходится запускать множество процессов: thin, faye, spork, sphinx, node.js. Пр. У каждого проекта своё окружение и переключение между ними занимает не мало времени.  Упростить задачу может Foreman.</p>&#x000A;&#x000A;<h2 id="section">Установка</h2>&#x000A;&#x000A;<pre class="highlight shell">gem install foreman&#x000A;</pre>&#x000A;&#x000A;<p>Создаем конфиг Procfile, в котором прописываем все процессы для запуска.</p>&#x000A;&#x000A;<pre class="highlight plaintext">spork: spork&#x000A;thin: bundle exec rails s thin -p 3003&#x000A;faye: bundle exec rackup faye.ru -s thin -E development&#x000A;resque_sheduler: bundle exec rake resque:scheduler&#x000A;&#x000A;</pre>&#x000A;&#x000A;<h2 id="section-1">Использование</h2>&#x000A;&#x000A;<p>Запуск всех разом</p>&#x000A;&#x000A;<pre class="highlight plaintext">foreman start&#x000A;&#x000A;</pre>&#x000A;&#x000A;<p>Или только необходимые</p>&#x000A;&#x000A;<pre class="highlight plaintext">foreman start thin, faye&#x000A;&#x000A;</pre>&#x000A;&#x000A;<h2 id="section-2">Автозапуск</h2>&#x000A;&#x000A;<p>Генерация скрипта для inittab:</p>&#x000A;&#x000A;<pre class="highlight plaintext">foreman export inittab&#x000A;&#x000A;</pre>&#x000A;&#x000A;<p>и upstart:</p>&#x000A;&#x000A;<pre class="highlight plaintext">foreman export upstart&#x000A;&#x000A;</pre>&#x000A;&#x000A;<h2 id="section-3">Ссылки</h2>&#x000A;&#x000A;<p>Документация — <a href="http://ddollar.github.com/foreman">http://ddollar.github.com/foreman/</a></p>&#x000A;&#x000A;<p>Репозиторий — <a href="https://github.com/ddollar/foreman">https://github.com/ddollar/foreman</a></p>&#x000A;&#x000A;<h2 id="section-4">Резюме</h2>&#x000A;&#x000A;<p>Foreman'у не не хватает запуска в фоновом режиме. Чтобы каждый процесс можно было перезапустить не задев остальные. В остальном же со своей задачей прекрасно справляется.</p>
         <h4 class='meta'>
+          29 Август 2011
           <div class='tags'>
             <a href="/dev/tags/ruby/">ruby</a>
           </div>
         </h4>
       </article>
+      <footer>
+        <!-- / -->
+      </footer>
     </section>
     <script src="/javascripts/application.js" type="text/javascript"></script>
   </body>

@@ -43,11 +43,15 @@
         <h1>Hook для добавления названия ветки в комментарий commit'а</h1>
         <p>Как многие знают, Jira умеет подцеплять коммиты в историю, если в комментарии указать номер задачи.</p>&#x000A;&#x000A;<p>Чтобы не писать для каждого коммита номер, собрал простой hook.</p>&#x000A;&#x000A;<pre class="highlight shell"><span class="c">#!/bin/sh</span>&#x000A;<span class="nv">BRANCH</span><span class="o">=</span><span class="k">$(</span>git rev-parse --abbrev-ref HEAD<span class="k">)</span>&#x000A;<span class="nv">CURRENT</span><span class="o">=</span><span class="sb">`</span>grep -e <span class="s2">"^[^#]"</span> <span class="nv">$1</span><span class="sb">`</span>&#x000A;&#x000A;<span class="k">if</span> <span class="o">[</span> -z <span class="s2">"</span><span class="nv">$CURRENT</span><span class="s2">"</span> <span class="o">]</span>&#x000A;  <span class="k">then&#x000A;    </span><span class="nv">NEW_MSG</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$BRANCH</span><span class="s2">"</span>; cat <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="k">)</span>&#x000A;    <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$NEW_MSG</span><span class="s2">"</span> &gt; <span class="nv">$1</span>&#x000A;<span class="k">fi</span>&#x000A;</pre>&#x000A;&#x000A;<p>Он добавляет название текущей ветки в комментарий, если COMMIT_EDITMSG пуст.</p>&#x000A;&#x000A;<h2 id="section">Установка</h2>&#x000A;&#x000A;<pre class="highlight plaintext">curl https://gist.githubusercontent.com/asabirov/9f40e3d280ee7ad633db/raw/prepare-commit-msg \&#x000A;    &gt; .git/hooks/prepare-commit-msg&#x000A;chmod +x .git/hooks/prepare-commit-msg&#x000A;</pre>
         <h4 class='meta'>
+          07 Май 2014
           <div class='tags'>
             <a href="/dev/tags/git/">git</a>
           </div>
         </h4>
       </article>
+      <footer>
+        <!-- / -->
+      </footer>
     </section>
     <script src="/javascripts/application.js" type="text/javascript"></script>
   </body>

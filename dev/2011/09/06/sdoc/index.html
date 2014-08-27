@@ -43,11 +43,15 @@
         <h1>Sdoc</h1>
         <p>Sdoc — генератор статической документации с возможностью поиска. </p>&#x000A;&#x000A;<h2 id="section">Установка и запуск</h2>&#x000A;&#x000A;<p>По сути является оберткой над стандартным rdoc. Что гарантирует полную поддержку <a href="http://rdoc.sourceforge.net/doc/.">стандартного синтаксиса</a></p>&#x000A;&#x000A;<pre class="highlight plaintext">gem "rake", "0.8.7" &#x000A;&#x000A;</pre>&#x000A;&#x000A;<p>Добавляем задачу для rake в Rails:</p>&#x000A;&#x000A;<p>lib/tasks/sdoc.rake</p>&#x000A;&#x000A;<pre class="highlight ruby"><span class="c1"># Rakefile</span>&#x000A;<span class="nb">require</span> <span class="s1">'sdoc'</span>&#x000A;<span class="no">Rake</span><span class="o">::</span><span class="no">RDocTask</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">rdoc</span><span class="o">|</span>&#x000A;  <span class="n">rdoc</span><span class="p">.</span><span class="nf">rdoc_dir</span> <span class="o">=</span> <span class="s1">'doc/rdoc'</span>&#x000A;  <span class="n">rdoc</span><span class="p">.</span><span class="nf">options</span> <span class="o">&lt;&lt;</span> <span class="s1">'--fmt'</span> <span class="o">&lt;&lt;</span> <span class="s1">'shtml'</span> <span class="c1"># explictly set shtml generator</span>&#x000A;  <span class="n">rdoc</span><span class="p">.</span><span class="nf">template</span> <span class="o">=</span> <span class="s1">'direct'</span> <span class="c1"># lighter template used on railsapi.com</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</pre>&#x000A;&#x000A;<pre class="highlight plaintext">bundle exec rake sdoc&#x000A;</pre>&#x000A;&#x000A;<p>Либо вручную:</p>&#x000A;&#x000A;<pre class="highlight plaintext">bundle exec sdoc -o doc -T direct ./&#x000A;&#x000A;</pre>&#x000A;&#x000A;<h2 id="sdoc-merge">Утилита sdoc-merge</h2>&#x000A;&#x000A;<p>Предназначена для склеивания нескольких комплектов документации в одну.</p>&#x000A;&#x000A;<p>Для примера склейка Ruby и Rails:</p>&#x000A;&#x000A;<pre class="highlight plaintext">sdoc-merge --title "Ruby v1.9, Rails v2.3.2.1" --op merged --names "Ruby,Rails" ruby-v1.9 rails-v2.3.2.1&#x000A;&#x000A;</pre>&#x000A;&#x000A;<h2 id="section-1">Ссылки</h2>&#x000A;&#x000A;<p><a href="https://github.com/voloko/sdoc/">https://github.com/voloko/sdoc/</a></p>&#x000A;&#x000A;<p><a href="https://twitter.com/#!/voloko">@voloko</a></p>
         <h4 class='meta'>
+          06 Сентябрь 2011
           <div class='tags'>
             <a href="/dev/tags/ruby/">ruby</a>
           </div>
         </h4>
       </article>
+      <footer>
+        <!-- / -->
+      </footer>
     </section>
     <script src="/javascripts/application.js" type="text/javascript"></script>
   </body>

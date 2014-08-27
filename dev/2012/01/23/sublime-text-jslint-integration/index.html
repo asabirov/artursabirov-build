@@ -43,11 +43,15 @@
         <h1>JSLint в Sublime Text</h1>
         <p>Расскажу, как совместить подключить JSLint в  Sublime Text 2.</p>&#x000A;&#x000A;<h1 id="cut">cut</h1>&#x000A;&#x000A;<p>Консольный JSLint — <a href="http://www.javascriptlint.com/download.htm">http://www.javascriptlint.com/download.htm</a></p>&#x000A;&#x000A;<p>Создаем новый build-сценарий: Tools → Build Systems → New Build System</p>&#x000A;&#x000A;<p><img alt="" src="/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint.png" /></p>&#x000A;&#x000A;<p>Вставляем и настраиваем путь до jslint (windows):</p>&#x000A;&#x000A;<pre class="highlight javascript"><span class="p">{</span>&#x000A;   <span class="p">[</span><span class="nx">cmd</span><span class="p">]()</span>&#x000A;<span class="p">[</span><span class="s2">"d:/lib/jsl/jsl.exe"</span><span class="p">,</span> <span class="s2">"-process"</span><span class="p">,</span> <span class="s2">"$file"</span><span class="p">],</span>&#x000A;   <span class="p">[</span><span class="nx">selector</span><span class="p">]()</span>&#x000A;<span class="s2">"source.js"</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;</pre>&#x000A;&#x000A;<p>Сохраняем файл, жмем CTRL+B и смотрим результат.</p>&#x000A;&#x000A;<p><img alt="" src="/dev/2012/01/23/sublime-text-jslint-integration/sublime_jslint2.png" /></p>
         <h4 class='meta'>
+          23 Январь 2012
           <div class='tags'>
             <a href="/dev/tags/javascript/">javascript</a>
           </div>
         </h4>
       </article>
+      <footer>
+        <!-- / -->
+      </footer>
     </section>
     <script src="/javascripts/application.js" type="text/javascript"></script>
   </body>
