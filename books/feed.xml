@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Артур Сабиров</title>
   <subtitle>Обзор книг</subtitle>
-  <updated>2014-08-17T16:06:00Z</updated>
+  <updated>2014-08-17T20:06:00+04:00</updated>
   <author>
     <name>Артур Сабиров</name>
   </author>
@@ -10,8 +10,8 @@
     <title>Книги: Growing Rails Applications in Practice</title>
     <link rel="alternate" href="http://artursabirov.ru/books/growing-rails-application-in-practice/"/>
     <id>http://artursabirov.ru/books/growing-rails-application-in-practice/</id>
-    <published>2014-08-17T16:06:00Z</published>
-    <updated>2014-08-17T16:06:00Z</updated>
+    <published>2014-08-17T20:06:00+04:00</published>
+    <updated>2014-08-17T20:06:00+04:00</updated>
     <author>
       <name>Артур Сабиров</name>
     </author>
@@ -82,8 +82,8 @@
     <title>Книги: Об интеллекте</title>
     <link rel="alternate" href="http://artursabirov.ru/books/on-intelligence/"/>
     <id>http://artursabirov.ru/books/on-intelligence/</id>
-    <published>2014-06-13T07:25:00Z</published>
-    <updated>2014-06-13T07:25:00Z</updated>
+    <published>2014-06-13T11:25:00+04:00</published>
+    <updated>2014-06-13T11:25:00+04:00</updated>
     <author>
       <name>Артур Сабиров</name>
     </author>
@@ -214,8 +214,8 @@
     <title>Книги: Быстрое изучение иностранного языка от английского до японского</title>
     <link rel="alternate" href="http://artursabirov.ru/books/fast-language-learning/"/>
     <id>http://artursabirov.ru/books/fast-language-learning/</id>
-    <published>2014-06-13T07:15:00Z</published>
-    <updated>2014-06-13T07:15:00Z</updated>
+    <published>2014-06-13T11:15:00+04:00</published>
+    <updated>2014-06-13T11:15:00+04:00</updated>
     <author>
       <name>Артур Сабиров</name>
     </author>
@@ -232,7 +232,7 @@
 Например, в качестве учебных материалов используются видео, аудио-курсы, сериалы, фильмы, подкасты — на этом, например, базируется обучение в сервисе lingualeo.
 Книга поможет систематизировать занятия.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href="http://artursabirov.ru/images/mindmaps/fast-language-learning.png"&gt;&lt;img alt="Mindmap" src="http://artursabirov.ru/images/mindmaps/fast-language-learning/fast-language-learning-thumb.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://artursabirov.ru/images/mindmaps/fast-language-learning.png"&gt;&lt;img alt="Mindmap" src="http://artursabirov.ru/images/mindmaps/fast-language-learning.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 
 </content>
   </entry>
@@ -240,8 +240,8 @@
     <title>Книги: Ататюрк</title>
     <link rel="alternate" href="http://artursabirov.ru/books/ataturk/"/>
     <id>http://artursabirov.ru/books/ataturk/</id>
-    <published>2014-06-13T06:54:00Z</published>
-    <updated>2014-06-13T06:54:00Z</updated>
+    <published>2014-06-13T10:54:00+04:00</published>
+    <updated>2014-06-13T10:54:00+04:00</updated>
     <author>
       <name>Артур Сабиров</name>
     </author>
@@ -359,8 +359,8 @@
     <title>Книги: Testing Backbone.Js</title>
     <link rel="alternate" href="http://artursabirov.ru/books/testing-backbone-js/"/>
     <id>http://artursabirov.ru/books/testing-backbone-js/</id>
-    <published>2014-05-29T07:03:00Z</published>
-    <updated>2014-05-29T07:03:00Z</updated>
+    <published>2014-05-29T11:03:00+04:00</published>
+    <updated>2014-05-29T11:03:00+04:00</updated>
     <author>
       <name>Артур Сабиров</name>
     </author>

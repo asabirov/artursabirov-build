@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <title>Rails-footnote и RubyMine — Блог Артура Сабирова</title>
     <link href='http://feeds.feedburner.com/artursabirov' rel='alternate' title='ArturSabirov.ru' type='application/rss+xml'>
-    <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/blog.css" rel="stylesheet" type="text/css" />
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js?29' type='text/javascript'></script>
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://feeds.feedburner.com/artursabirov//dev" />
@@ -31,19 +31,19 @@
         </h1>
         <nav>
           <a href="/dev">Разработка</a>
-          <a href="/projects">Проекты</a>
+          <!-- /= link_to "Проекты", "/projects" -->
           <a href="/books">Книги</a>
-          <a href="/life">Жизнь</a>
-          <a href="/about">О себе</a>
+          <a href="/life">Разное</a>
+          <a href="/about">Об авторе</a>
         </nav>
       </section>
     </header>
     <section id='single-column'>
       <article>
         <h1>Rails-footnote и RubyMine</h1>
-        <h2 id="phpstorm---xdebug">PhpStorm  и Xdebug</h2>&#x000A;&#x000A;<p>В backtrace'е у XDebug предусмотрен простой переход к нужному файлу и на нужную строку. Только использует он протокол txmt (TextMate), что не пригодно с PhpStorm.</p>&#x000A;&#x000A;<p><img alt="" src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/xdebug.png" /></p>&#x000A;&#x000A;<p>Решение нашел тут: <a href="http://youtrack.jetbrains.com/issue/IDEA-65879">http://youtrack.jetbrains.com/issue/IDEA-65879</a></p>&#x000A;&#x000A;<p>Ставим плагин Remote Call: <a href="http://plugins.jetbrains.net/plugin?pr=webide&amp;amp;pluginId=6027">http://plugins.jetbrains.net/plugin?pr=webide&amp;pluginId=6027</a></p>&#x000A;&#x000A;<p>И прописываем в конфиге xdebug:</p>&#x000A;&#x000A;<pre class="highlight plaintext">xdebug.file_link_format = "javascript: var r = new XMLHttpRequest; r.open(\"get\", \"http://localhost:8091?message=%f:%l\");r.send()"&#x000A;&#x000A;</pre>&#x000A;&#x000A;<h2 id="rubymine--rails-footnotes">RubyMine и Rails Footnotes</h2>&#x000A;&#x000A;<p>В Gemfile.rb:</p>&#x000A;&#x000A;<pre class="highlight ruby"><span class="n">gem</span> <span class="s1">'rails-footnotes'</span><span class="p">,</span> <span class="s1">'&gt;= 3.7.9'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;</pre>&#x000A;&#x000A;<p>$ rails generate rails_footnotes:install</p>&#x000A;&#x000A;<p>Добавляем фильтр в config/initializers/rails_footnotes.rb:</p>&#x000A;&#x000A;<pre class="highlight ruby"><span class="k">if</span> <span class="n">defined?</span><span class="p">(</span><span class="no">Footnotes</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">.</span><span class="nf">development?</span>&#x000A;  <span class="no">Footnotes</span><span class="p">.</span><span class="nf">run!</span> &#x000A;&#x000A;  <span class="no">Footnotes</span><span class="o">::</span><span class="no">Filter</span><span class="p">.</span><span class="nf">prefix</span> <span class="o">=</span> <span class="s2">"javascript: var r = new XMLHttpRequest; r.open('get', 'http://localhost:8091?message=%s:%d:%d');r.send()"</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</pre>&#x000A;&#x000A;<p><img alt="" src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/footnotes.png" /></p>&#x000A;&#x000A;<h2 id="section">Ссылки</h2>&#x000A;&#x000A;<p><a href="https://github.com/digidigo/ruby_footprints">https://github.com/digidigo/ruby_footprints</a></p>&#x000A;&#x000A;<p><a href="https://github.com/Zolotov/RemoteCall">https://github.com/Zolotov/RemoteCall</a></p>
+        <h2 id="phpstorm---xdebug">PhpStorm  и Xdebug</h2>&#x000A;&#x000A;<p>В backtrace'е у XDebug предусмотрен простой переход к нужному файлу и на нужную строку. Только использует он протокол txmt (TextMate), что не пригодно с PhpStorm.</p>&#x000A;&#x000A;<p><img alt="" src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/xdebug.png" /></p>&#x000A;&#x000A;<p>Решение нашел тут: <a href="http://youtrack.jetbrains.com/issue/IDEA-65879">http://youtrack.jetbrains.com/issue/IDEA-65879</a></p>&#x000A;&#x000A;<p>Ставим плагин Remote Call: <a href="http://plugins.jetbrains.net/plugin?pr=webide&amp;pluginId=6027">http://plugins.jetbrains.net/plugin?pr=webide&amp;pluginId=6027</a></p>&#x000A;&#x000A;<p>И прописываем в конфиге xdebug:</p>&#x000A;&#x000A;<pre class="highlight plaintext"><code>xdebug.file_link_format = "javascript: var r = new XMLHttpRequest; r.open(\"get\", \"http://localhost:8091?message=%f:%l\");r.send()"&#x000A;&#x000A;</code></pre>&#x000A;&#x000A;<h2 id="rubymine--rails-footnotes">RubyMine и Rails Footnotes</h2>&#x000A;&#x000A;<p>В Gemfile.rb:</p>&#x000A;&#x000A;<pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails-footnotes'</span><span class="p">,</span> <span class="s1">'&gt;= 3.7.9'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;</code></pre>&#x000A;&#x000A;<p>$ rails generate rails_footnotes:install</p>&#x000A;&#x000A;<p>Добавляем фильтр в config/initializers/rails_footnotes.rb:</p>&#x000A;&#x000A;<pre class="highlight ruby"><code><span class="k">if</span> <span class="n">defined?</span><span class="p">(</span><span class="no">Footnotes</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">.</span><span class="nf">development?</span>&#x000A;  <span class="no">Footnotes</span><span class="p">.</span><span class="nf">run!</span> &#x000A;&#x000A;  <span class="no">Footnotes</span><span class="o">::</span><span class="no">Filter</span><span class="p">.</span><span class="nf">prefix</span> <span class="o">=</span> <span class="s2">"javascript: var r = new XMLHttpRequest; r.open('get', 'http://localhost:8091?message=%s:%d:%d');r.send()"</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>&#x000A;&#x000A;<p><img alt="" src="/dev/2013/01/22/connect-xdebug-backtrace-with-phpstorm-and-foornotes-with-rubymine/footnotes.png" /></p>&#x000A;&#x000A;<h2 id="section">Ссылки</h2>&#x000A;&#x000A;<p><a href="https://github.com/digidigo/ruby_footprints">https://github.com/digidigo/ruby_footprints</a></p>&#x000A;&#x000A;<p><a href="https://github.com/Zolotov/RemoteCall">https://github.com/Zolotov/RemoteCall</a></p>
         <h4 class='meta'>
-          22 Январь 2013
+          22 January 2013
           <div class='tags'>
             <a href="/dev/tags/продуктивность/">продуктивность</a>
           </div>
@@ -56,4 +56,3 @@
     <script src="/javascripts/application.js" type="text/javascript"></script>
   </body>
 </html>
-

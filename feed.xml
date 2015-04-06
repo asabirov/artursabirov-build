@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Артур Сабиров</title>
   <subtitle>Все разделы</subtitle>
-  <updated>2014-08-27T07:01:00Z</updated>
+  <updated>2014-08-27T11:01:00+04:00</updated>
   <author>
     <name>Артур Сабиров</name>
   </author>
@@ -10,8 +10,8 @@
     <title>Гараж</title>
     <link rel="alternate" href="http://artursabirov.ru/life/2014/08/27/garage/"/>
     <id>http://artursabirov.ru/life/2014/08/27/garage/</id>
-    <published>2014-08-27T07:01:00Z</published>
-    <updated>2014-08-27T07:01:00Z</updated>
+    <published>2014-08-27T11:01:00+04:00</published>
+    <updated>2014-08-27T11:01:00+04:00</updated>
     <author>
       <name>Артур Сабиров</name>
     </author>
@@ -60,15 +60,15 @@
 
 &lt;h3 id="section-3"&gt;Перспективы&lt;/h3&gt;
 
-&lt;p&gt;Недвижимость более выгодное вложение, чем покупка нового автомобиля. Если окажется, что гараж мне не так уж и нужен, сдам в аренду или продам. &lt;/p&gt;
+&lt;p&gt;Недвижимость более выгодное вложение, чем покупка нового автомобиля. Если окажется, что гараж мне не так уж и нужен, сдам в аренду или продам.&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>Книги: Growing Rails Applications in Practice</title>
     <link rel="alternate" href="http://artursabirov.ru/books/growing-rails-application-in-practice/"/>
     <id>http://artursabirov.ru/books/growing-rails-application-in-practice/</id>
-    <published>2014-08-17T16:06:00Z</published>
-    <updated>2014-08-17T16:06:00Z</updated>
+    <published>2014-08-17T20:06:00+04:00</published>
+    <updated>2014-08-17T20:06:00+04:00</updated>
     <author>
       <name>Артур Сабиров</name>
     </author>
@@ -139,8 +139,8 @@
     <title>Книги: Об интеллекте</title>
     <link rel="alternate" href="http://artursabirov.ru/books/on-intelligence/"/>
     <id>http://artursabirov.ru/books/on-intelligence/</id>
-    <published>2014-06-13T07:25:00Z</published>
-    <updated>2014-06-13T07:25:00Z</updated>
+    <published>2014-06-13T11:25:00+04:00</published>
+    <updated>2014-06-13T11:25:00+04:00</updated>
     <author>
       <name>Артур Сабиров</name>
     </author>
@@ -271,8 +271,8 @@
     <title>Книги: Быстрое изучение иностранного языка от английского до японского</title>
     <link rel="alternate" href="http://artursabirov.ru/books/fast-language-learning/"/>
     <id>http://artursabirov.ru/books/fast-language-learning/</id>
-    <published>2014-06-13T07:15:00Z</published>
-    <updated>2014-06-13T07:15:00Z</updated>
+    <published>2014-06-13T11:15:00+04:00</published>
+    <updated>2014-06-13T11:15:00+04:00</updated>
     <author>
       <name>Артур Сабиров</name>
     </author>
@@ -289,7 +289,7 @@
 Например, в качестве учебных материалов используются видео, аудио-курсы, сериалы, фильмы, подкасты — на этом, например, базируется обучение в сервисе lingualeo.
 Книга поможет систематизировать занятия.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href="http://artursabirov.ru/images/mindmaps/fast-language-learning.png"&gt;&lt;img alt="Mindmap" src="http://artursabirov.ru/images/mindmaps/fast-language-learning/fast-language-learning-thumb.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://artursabirov.ru/images/mindmaps/fast-language-learning.png"&gt;&lt;img alt="Mindmap" src="http://artursabirov.ru/images/mindmaps/fast-language-learning.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 
 </content>
   </entry>
@@ -297,8 +297,8 @@
     <title>Книги: Ататюрк</title>
     <link rel="alternate" href="http://artursabirov.ru/books/ataturk/"/>
     <id>http://artursabirov.ru/books/ataturk/</id>
-    <published>2014-06-13T06:54:00Z</published>
-    <updated>2014-06-13T06:54:00Z</updated>
+    <published>2014-06-13T10:54:00+04:00</published>
+    <updated>2014-06-13T10:54:00+04:00</updated>
     <author>
       <name>Артур Сабиров</name>
     </author>
