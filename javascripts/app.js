@@ -1,1 +1,0 @@
-(function(){$(".books-list .book").imagesLoaded(function(){return $(".books-list").masonry({columnWidth:100,gutter:5,itemSelector:".book"})})}).call(this);
