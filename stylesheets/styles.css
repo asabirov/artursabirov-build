@@ -1,8 +1,4 @@
 /* line 1, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
-html, body {
-  height: 100%; }
-
-/* line 4, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
 body {
   font-size: 18px;
   color: #404040;
@@ -11,46 +7,55 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%; }
 
-/* line 12, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
+/* line 9, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
 p {
   margin-bottom: 1em; }
 
-/* line 15, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
+/* line 12, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
 a {
   color: #4064fc;
   text-decoration: none;
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s; }
 
-/* line 22, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
+/* line 19, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
 a:hover, a:focus {
   color: #000000; }
 
-/* line 25, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
+/* line 22, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
 h2 {
   margin-bottom: 15px;
   font-weight: 400;
   font-size: 26px; }
 
-/* line 30, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
+/* line 27, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
 article {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%); }
+  width: 680px;
+  max-width: 100%;
+  margin: 30px auto 20px auto; }
+
+/* line 32, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
+section {
+  margin: 30px 40px; }
 
 /* line 35, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
-section {
-  width: 660px;
-  max-width: 100%;
-  margin: 0 auto 50px auto; }
+section:last-child {
+  margin-bottom: 0; }
 
-/* line 40, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
+/* line 38, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
+.photo {
+  text-align: center;
+  margin-bottom: 50px; }
+  /* line 42, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
+  .photo img {
+    width: 250px;
+    max-width: 100%; }
+
+/* line 46, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
 .hello {
   font-size: 30px;
   text-align: center; }
 
-/* line 44, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
+/* line 50, /Users/cjslade/Dev/www/artursabirov.project/source/stylesheets/styles.sass */
 .about {
   font-size: 23px; }
